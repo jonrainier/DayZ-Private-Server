@@ -1,0 +1,16 @@
+version=1;
+blood=1;
+singleVoice=0;
+gamma=1;
+brightness=1;
+sceneComplexity=300000;
+shadingQuality=7;
+shadowQuality=3;
+viewDistance=1000;
+terrainGrid=10;
+volumeCD=6.5;
+volumeFX=8.5;
+volumeSpeech=5.5;
+volumeVoN=6.5;
+maxSamplesPlayed=32;
+vonRecThreshold=0.029999999;
