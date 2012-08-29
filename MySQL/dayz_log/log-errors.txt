@@ -1,0 +1,13 @@
+120829 14:58:58 [Note] Plugin 'FEDERATED' is disabled.
+120829 14:58:58 [Note] Plugin 'InnoDB' is disabled.
+120829 14:58:59 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3316
+120829 14:58:59 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+120829 14:58:59 [Note] Server socket created on IP: '127.0.0.1'.
+120829 14:58:59 [Note] Event Scheduler: Loaded 0 events
+120829 14:58:59 [Note] .\bin\mysqld: ready for connections.
+Version: '5.5.24-log'  socket: ''  port: 3316  MySQL Community Server (GPL)
+120829 14:59:00 [Note] .\bin\mysqld: Normal shutdown
+
+120829 14:59:00 [Note] Event Scheduler: Purging the queue. 0 events
+120829 14:59:00 [Note] .\bin\mysqld: Shutdown complete
+
