@@ -1,3 +1,0 @@
-.\bin\mysqld, Version: 5.5.24-log (MySQL Community Server (GPL)). started with:
-TCP Port: 3316, Named Pipe: (null)
-Time                 Id Command    Argument
