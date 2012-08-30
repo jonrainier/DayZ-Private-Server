@@ -1,0 +1,274 @@
+﻿*** V 1.46 ***
+- Fixed: Some typos.
+- Added: Support for command #reassign and #mission to scheduler system.
+- Added: Text "BEC" as part of the kick text on all automated kick functions
+- Added: New tag to admin file called groupname, check admin example file
+- Added: Parameter ChatChannelFiles, takes a bool. will create one additional file for each channel, check config example file
+- Added: Warnings to lobbplayers when about 30 sec remaining. will only work if KickLobbyIdles is in use
+- Added: New ways to use flood control. there are now two types to select from. check docs for more info
+- Changed: IngoreChars to IngoreChatChars. edit your configs if you use this.
+- Improved: some code improved in general for many functions.. 
+
+Thanks to Dwarden, the famous PAIN IN THE ASS tester :D
+As usual!.. read the online docs for howit it all works ;)
+
+*** V 1.45 ***
+- Fixed: Schedules file with none ascii chars causes errors.
+- Fixed: !help will only show commands that are availeble for the group the admin is in.
+- Added: Parameter DisallowPlayerNameChars. auto kick players with unwanted chars in their nick. example: [ |^m §0 (0ol ]
+- Added: Parameter MaxPlayerNameLength. set max lenght of player names. min value is 3. auto kick player connecting with longer than set.
+- Added: Run external bat/cmd scripts from the chatline.
+- Added: Command uptime to command file. show server uptime.
+- Improved: New format for time in the scheduler file. make sure to read up on it.
+
+As usual!.. read the docs for howit it all works
+
+*** V 1.44 ***
+- Improved: All error messages during startup from [misc],[reporeter],[heartbeat],[chatrestriction] is logged to the error file
+- Improved: Scheduler system. it now also include days.
+- Added: Support for command #restart,#lock and #unlock to scheduler system.
+- Fixed: Some code in Heartbeat
+- Fixed: Loadscripts was misspelled in the scheduler system.
+- Fixed: Guids with (OK) and (?) on end
+- Removed: Patch checks for bec & bec files. admins need to be responeble for their own security
+
+*** V 1.43.1 ***
+- Changed: some changes done to how it check the paths.
+
+*** V 1.43 ***
+- Security: Bec will no longer be able to run from inside the server directory due to recurity reasons
+- Security: Warn on starup if the admin file is pointed to the server directory/subdir..
+- Security: Warn on starup if the command file is pointed to the server directory/subdir.
+- Fixed: Minor bug in flood control..
+- Fixed: if arguments to !sht (shutdown) was misspelled. "abort & info" the server would instant shutdown.
+- Added: Scheduler system. define schedules : http://ibattle.org/install-and-configure/setting-up-the-scheduler/
+
+*** V 1.42 ***
+- Improved: Exception handling
+- Improved: Info on Error messages 
+
+*** V 1.41 ***
+- Fixed: Relogin, will try max 3 attempts before it auto quits, will not re-try if the socket is closed.
+- Fixed: a sockets was not closing after the its request.
+- Fixed: Newline was not added lines in error file.
+- Fixed: Never ending loop in servercheck.
+- Improved Reduced numbrers of threads.
+- Improved Error message on some errors.
+
+*** V 1.40.2 *** HotFix
+- Fixed: 1.4x Broke Language filter.
+
+*** V 1.40.1 *** HotFix
+- Fixed: Issue with shutdown command. using !sht abort , !sht abort , !sht N did not shutdown the server
+
+*** V 1.40 ***
+- Fixed: KickLobbyIdlers. would kick idlers after 180 sec even if not defined in the config.
+- Fixed: Flood Control was not logged to BElog file when it was activated/deactivated.
+- Improved: More encoding fixes.
+- Improved: Shutdown command can noe use time !sht 5 will shutdown the server after 5 sec. !sht info to see how long left
+- Improved: Code in general optimized. 
+
+*** V 1.39 ***
+- Added: Error logdir.
+- Added: Future support for say in lobby warnings. "just waiting for new A2/Oa patch to enable this"
+- Improved: Suppport for private messages with say. !say name ! text
+- Improved: code for chatrestriction.
+- improved: exception handling on unicode errors. 
+
+*** V 1.38 ***
+- Added: Simple Connect/Flood Control. will lock server based on N numbers of players in lobby,
+		 and unlock it when the number gets below N player. "when players join the mission/is fully ingame"
+		 so server can prossess data of players before it unlocks again
+- Added: Autokick lobby idlers thats takes up a slot and not playing. min timeout is 180 sec.
+- Added: support for Say command in the command file
+- Fixed: Yet another encoding issue found and hopefully resolved.
+
+** NOTE **
+A players is considered to be in the lobby until hes/she is fully ingame.
+A player sitting in example the briefing screen will be seen as if the player is in the lobby.
+A players loading will also bee seen as if they are in the lobby.
+
+*** V 1.37 *** 
+- Fixed: Version checker did print out wrong version on updates.
+- Fixed: Pinfo was showing players join date wrong.
+- Fixed: Ainfo was showing dissconected admins as beeing online.
+- Removed: Pcapy removed. there will be a standalone app for thouse who want to log markers.
+- Improved: Unnecessary libarys taken out. size redused in general.
+- Improved: Program Packed with UPX to reduce size more.
+
+*** V 1.36 ***
+- Fixed: Added a error check on playerconnect. in some cases exception keyerror occures
+- Fixed: Issue with looking for the BEServer file in some cases
+- Added: More error checking for admin.xml file. blocks containing error will be ignored unless its a parsing error
+- Added: More error checking for command.xml file. blocks containing error will be ignored unless its a parsing error
+
+*** V 1.35 ***
+- Fixed: Config file should now work with ansii, utf8 Without BOM and utf8 With BOM.
+- Fixed: Bug in Server startup check.
+- Added: New Command. makeroom. kick N players who joined last to make room.
+- Added: New Command. help. !help , !help command shows availeble commands/ description of a command
+- Added: New Command. pinfo. will show general info about a player. name, id, jointime and ip.
+- Added: New Command. ainfo. will show Bec admins that are online.
+- Improved: Admin files do no longer needs to be in the config directory. Custom path can be set.
+- Improved: Command files do no longer needs to be in the config directory. Custom path can be set.
+- Improved: NickFilterFile parameter. 
+- Improved: WordFilterFile parameter.
+- Changed: Password and BeBanFile is now replaced with BePath instead
+- Changed: Command.xml file has one extra tag call desc. this it to contains help info about the command.
+
+*** V 1.34 ***
+- Fixed: some log strings cleanups.
+- Fixed: problems with encoding when 2 or more char types was used. example: йфяæøå 
+
+*** V 1.33 *** 
+- Fixed: recursion depth problem in recheck_gban
+- Fixed: recursion depth problem in check_failedreports
+- Improved: Minor changes to config handler.
+
+*** V 1.32 *** 
+- Fixed "mission" commands. some missions with names longer than 48 chars didnt work.
+- Removed: "Motd". it was really annoying as it spamed up the console and other rcons connected.
+
+*** V 1.31 *** 
+- Fixed: Bug in a guid recheck funtion due to Guid not shown in Lobby. error is now ignored.
+- Added: Motd
+- Changed/Improved: Warnings are reset once a player goes back to lobby.
+
+*** V 1.30 ***
+- Added: Optional: IgnoreChars parameter to [Misc].will be used along with AsciiChat. Sometimes you want to allow some symbolds not listed in the Ascii table. example æøå
+- Added: more internal logging functions. 
+- Fixed: small bug in unwantednames check.
+- Fixed: Tmp admins can no longer give a Perm admin warning..
+- Fixed: Missing timeout on retrys for hack reporting.
+- Fixed: Admins can not give them self a warning with warn command.
+- Improved: Config file can be saved in ansii or utf8 format. utf8 with bom is not supported for config file yet.
+- improved: command "warn" can have a custom text set in the Commands.xml file in the Text tag. take a look in the Commands_Example for a exmple.
+- improved: If guid check fails or is not done on a player during connection, it will be checked later
+- improved: "bad language warning" gives feedback to which word was triggerd to the player.
+- improved: some code in general optimised.
+
+*** V 1.21 ***
+- Fixed: Mass warning for no reason should not happend anymore if warning system is enabled
+- Fixed: Bad language filter rewrorked, but it will be limited due to the clbuttic problem.
+- Fixed: The socket that checked guids was not closing properly after it was done with its request.
+- Improved: Reporting_Failures.log function. file will be deleted upon startup if its empty.
+
+*** V 1.20 ***
+- Added: Verify user account upon startup if reporter block is enabled.
+- Added: Info on the titlebar. usefull when running multiple becs.
+- Added: Announcement of admins that connects. "atm. This is only shown to players who are ingame"
+- Added: Broadcast info from some commands to global. example maxping, lock ,unlock are shown to players.
+- Added: Optional: parameter Timeout, define custom timeout on startup in seconds. Default is 30 if not defined
+- Added: Optional: parameter to allow only ascii on chat / True|False
+- Added: Optional: parameter for bad language on chat.
+- Added: Optional: Warnings parameter.
+- Added: New command warn, warns a player, this will only have effect if the "Warnings parameter" is set higher than 0
+- Added: Function to add/remove temp admin.
+- Added: Optional: chat restriction on channels if wanted.
+- Added: Support for Marker logger, still a bit in wip. position is not logged for markers..
+  ** Note to be able to use MapLogger you need to have WinPcap 4.x installed.
+- Improved: Version Check is a bit improved.
+- Improved: Config handler. this will have no real effect on the end user. but its done to ease up the dev prosess incases new config values need to be added.  
+- Removed: SpamProtection. it wasnt really any usefull.
+- Changed: every block in the config must start with uppcercase.  [Bec] not [bec] so on. you need to modify old configs.
++ some more small stuff..
+
+*** V 1.10 ***
+- Added: More internal logging functions.
+- Added: Reporting Failure file. in case a hack report could not be sent the it's stored in a file, it will automatically re-upload when possible and clean up the file automaticly.
+- Added: Usage of custom reason on the chatline "" example. !kpl name !r you been a badboy"". the kid and bid base commands does not support this option.
+- Fixed: Missing newline on GameHack violations bans.
+- Fixed: Hack Report function would not send reports due to wrong variable name.
+- Fixed: Hack reports should not try to sent reports if reporting function is disabled.
+- Fixed: If a ban was added manually it was deleted due to wrong usage of writebans.
+- Fixed: Tailban bug, small issue tailing ban files.
+- Fixed: None ascii chars as reason caused errors. If reason is None ascii the default reason is set to: Admins Decision!
+- Changed: Color on print lines are removed. in favour of custom colors. Color Scheme can be defined in the Misc block by adding: Color = XX
+
+*** V 1.00 ***
+- Added: AntiSpam chat function.
+- Added: NickFilterFile
+- Changed: some config settings.
+- Improved: Config handler. only bec block is required. [misc],[reporter] and [heartbeat] are optional.
+- Fixed: Adjusted Bec to new BE version. 1.27 for usage of new command.
+- Fixed: Ban bug,  hopefully resolved. need more feedback on this tho.
+- Fixed: ServerExeName had some issues.
+- Fixed: utf8 issues with BOM.
+- Some other improvements made to the code.
+
+*** V 0.99.1 ***
+- Fixed: Added hidden parameter for the config file incase server exe name is not arma2server or arma2oaserver
+        ServerExeName = YourArmaExeName.exe
+
+*** V 0.99.0 ***
+- Fixed: Support for Multi homing ! hopefully the issue is fully resolved now.
+- Fixed: Some exit messages was missing their sleep before auto-exiting. so you never saw the message before it quit. normal timeout is 4 sec.
+- Fixed: bidkick command changed to bid and will ban instead of kick. its needs a BE id to be able to ban. use #beclient players to get the list
+- Fixed: Minor Colorscheme issues.
+- Fixed: Some code was improved for Heartbeat
+- Fixed: Cleanup in General in the modules and classes.
+- Fixed: Compiling script to include some missing info on details of app.        
+- Added: kid command, will kick a player based on the Be Id
+- Added: OPTION: AsciiOnly .auto kick players who uses None asci chars in player name. example йфч.
+         this might do jobs for admins on pub servers easier. especially if they dont know how to type æøå or cyrillic etc.
+         but negaitve is might piss of players. when set to false. it uses utf8 ^^
+         Note. players may still write with none ascii chars.
+- Added: Splash. To disable splash. just rename or remove the splash.bmp file
+- Added: Simple Icon on the exe
+- Note bid and kid are base commands to be put in the Commands.xml file in the <cmd> </cmd> Tag
+       thise two commands are only usefull if the player has some chars you cant type.
+       you will need to use #beclient players to get the Id of the player
+
+*** V 0.98.1 ***
+- Added: Reimplemented Ip parameter, removing it broke multihome support.
+
+*** V 0.98.0 ***
+- Added: Version Check, Bec will Notify you on startup if there is a newer version out.
+- Added: Simple Parser check on the config file. only valid format is ANSI
+- Added: Param check on the config file. in case some parameters are missing it will notify you. this is not the same as the parser check
+- Changed: Hack reports from older versions are refused. keep bec up-to-date for hack reporting to work.
+- Fixed: If Bec was running as a service. in example Firedaemon. when the Arma server was shutdown Bec didn't shutdown the reactor in itself.
+- Fixed: Timec error.
+- Fixed: File set in BeBanFile parameter should not be defined in [heartbeat]. its ignored if set.
+- Fixed: Lower ranked admin can no longer exec kick or ban on a higher ranked admin even if they have permission to execute the command.
+- Fixed: Equal ranked admins can only kick each other.Ban possible, Also. no ban on your self is no longer possible
+- Removed: Ip as a parameter.. Hard coded ip 127.0.0.1
+- Removed: StartTime as a parameter. Hard coded 15 seconds.
+- Some other cleanup
+
+*** V0.97.1 ***
+- Fixed to get correct socket of arma server. there was a small bug in getting the correct one.
+
+*** V 0.97.0 ***
+- Improved: New better function to check for the arma processes.
+- Improved: Better Startup procedure. Bec will now first wait for the server exe, then wait for the server to create a socket before trying to login.
+  in older versions of Bec, it tried to logon once it had found the server running. this caused problems since the socket was not always ready.
+- Removed: deprecated parameter "serverparampath", people have a hard time understanding it anyway.
+- Fixed: Relogin function was a bit messed up. Note. Bec will only relogin on corrupt data or if the client is no longer authorized
+- Fixed: Socket did not close when no connection was established or possible to make... it just hang.
+
+*** V 0.96.0 ***
+- Added: Console Colors. should work from win 2000 server and up.
+- Added: Logging of execution on commands, it was only printing it to console before.
+- Added: Tail of own Be Ban file.
+- Added: Reload bans on Be Ban file Changes.
+- Added: local heartbeat function. if a server is running multiple dedi servers, you can make bans work on all the servers.
+  Heartbeat files are set by definfing paths to your befiles and only new added bans are added. "its not a mirror"
+
+*** V 0.95.0 ***
+- Chat stored into separate file
+- Be event-file only log Be events now. not clutter with chat anymore
+- Added: a check on names.
+- Added: Checking of Guid to a central database
+- Added: Hack reporting function to central database
+  note. to be able to use the cbdb "central ban  database" you need an account.
+ 
+ *** V 0.94.0 ***
+official release.
+
+
+Release version
+|   SubVersion
+|  |   Hot Fixes
+|  |  |
+NN.NN.NN
