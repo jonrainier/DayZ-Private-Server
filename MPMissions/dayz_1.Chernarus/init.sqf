@@ -50,5 +50,25 @@ if (!isDedicated) then {
 	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
+	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+	
+	//EXTRAS
+	
+	 _deadbody = allMissionObjects "Body1" + allMissionObjects "Body2";
+    {
+        dayzFire = [_x,2,0,false,false];
+        nul=dayzFire spawn BIS_Effects_Burn;
+    } forEach _heliCrash;
+	
+	[] spawn {
+        while { true } do 
+          {
+                _deadbody = allMissionObjects "Body1" + allMissionObjects "Body2";
+                if ( (count _deadbody) > 0 ) then
+                { 
+                        { deleteVehicle _x } foreach (_deadbody);
+                };
+                sleep 15;
+          };
+        };
 };
