@@ -74,7 +74,7 @@ if (!isDedicated) then {
                 sleep 15;
           };
         };
-		        {
+        {
 //      set EH for every player
          _x call fnc_vehicleEventHandler;
 
