@@ -36,6 +36,9 @@ if ((!isServer) && (player != player)) then
   waitUntil {time > 3};
 };
 
+object_setHitServer = compile preprocessFileLineNumbers "fix\object_setHitServer.sqf";
+fnc_vehicleEventHandler = compile preprocessFileLineNumbers "fix\vehicle_init.sqf";
+
 if (isServer) then {
 	//Run the server monitor
 	//_id = ["Volha_1_TK_CIV_EP1",getMarkerPos "carloc",0] spawn object_spawnDamVehicle;
@@ -71,4 +74,11 @@ if (!isDedicated) then {
                 sleep 15;
           };
         };
+		        {
+//      set EH for every player
+         _x call fnc_vehicleEventHandler;
+
+// remove logging after testing!!!
+         diag_log format["DEBUG: set EH for vehicle: %1",typeof _x];
+        } forEach vehicles;
 };
