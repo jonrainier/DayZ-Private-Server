@@ -39,9 +39,6 @@ if ((!isServer) && (player != player)) then
 object_setHitServer = compile preprocessFileLineNumbers "fix\object_setHitServer.sqf";
 fnc_vehicleEventHandler = compile preprocessFileLineNumbers "fix\vehicle_init.sqf";
 
-object_damage = compile preprocessFileLineNumbers "fix\fix1.sqf";
-set_EH = compile preprocessFileLineNumbers "fix\fix2.sqf";
-
 if (isServer) then {
 	//Run the server monitor
 	//_id = ["Volha_1_TK_CIV_EP1",getMarkerPos "carloc",0] spawn object_spawnDamVehicle;
@@ -77,16 +74,4 @@ if (!isDedicated) then {
                 sleep 15;
           };
         };
-        {
-// need wait for creation all vehicles, when first player join.
-        waituntil{_cnt=count allMissionObjects "UH1Wreck_DZ";_cnt==5};
-        _heliCrash = allmissionobjects "UH1Wreck_DZ";
-        {
-          dayzFire = [_x,2,0,false,false];
-          nul=dayzFire spawn BIS_Effects_Burn;
-        } forEach _heliCrash;
-        {
-//      set EH for every player
-         _x call set_EH;
-        } forEach vehicles;
 };
