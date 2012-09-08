@@ -36,9 +36,6 @@ if ((!isServer) && (player != player)) then
   waitUntil {time > 3};
 };
 
-object_setHitServer = compile preprocessFileLineNumbers "fix\object_setHitServer.sqf";
-fnc_vehicleEventHandler = compile preprocessFileLineNumbers "fix\vehicle_init.sqf";
-
 set_obj_dmg = compile preprocessFileLineNumbers "fixes\set_obj_dmg.sqf";
 set_EH = compile preprocessFileLineNumbers "fixes\set_EH.sqf";
 
