@@ -36,8 +36,8 @@ if ((!isServer) && (player != player)) then
   waitUntil {time > 3};
 };
 
-set_obj_dmg = compile preprocessFileLineNumbers "fixes\set_obj_dmg.sqf";
-set_EH = compile preprocessFileLineNumbers "fixes\set_EH.sqf";
+set_obj_dmg = compile preprocessFileLineNumbers "fix\set_obj_dmg.sqf";
+set_EH = compile preprocessFileLineNumbers "fix\set_EH.sqf";
 
 if (isServer) then {
 	//Run the server monitor
