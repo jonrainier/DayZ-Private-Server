@@ -1,7 +1,7 @@
-startLoadingScreen ["","DayZ_loadingScreen"];
 /*	
 	INITILIZATION
 */
+startLoadingScreen ["","DayZ_loadingScreen"];
 enableSaving [false, false];
 
 //REALLY IMPORTANT VALUES
@@ -36,8 +36,36 @@ if ((!isServer) && (player != player)) then
   waitUntil {time > 3};
 };
 
-set_obj_dmg = compile preprocessFileLineNumbers "fix\set_obj_dmg.sqf";
-set_EH = compile preprocessFileLineNumbers "fix\set_EH.sqf";
+// reassign functions
+// call compile preprocessFileLineNumbers "fixes\_fixes.sqf";
+// damage eventhanling
+set_obj_dmg = compile preprocessFileLineNumbers "fixes\set_obj_dmg.sqf";
+fnc_vehicleEventHandler = compile preprocessFileLineNumbers "fixes\vehicle_init.sqf";
+// action hooks
+player_build = compile preprocessFileLineNumbers "fixes\player_build.sqf";
+player_drink = compile preprocessFileLineNumbers "fixes\player_drink.sqf";
+player_eat = compile preprocessFileLineNumbers "fixes\player_eat.sqf";
+player_useMeds = compile preprocessFileLineNumbers "fixes\player_useMeds.sqf";
+player_wearClothes = compile preprocessFileLineNumbers "fixes\player_wearClothes.sqf";
+player_tentPitch = compile preprocessFileLineNumbers "fixes\tent_pitch.sqf";
+player_fillWater = compile preprocessFileLineNumbers "fixes\water_fill.sqf";
+player_switchModel = compile preprocessFileLineNumbers "fixes\player_switchModel.sqf";
+// other hooks
+player_gearSync = compile preprocessFileLineNumbers "fixes\player_gearSync.sqf";
+player_humanityMorph = compile preprocessFileLineNumbers "fixes\player_humanityMorph.sqf";
+player_updateGui = compile preprocessFileLineNumbers "fixes\player_updateGui.sqf";
+// count player magazines
+player_countmagazines = compile preprocessFileLineNumbers "fixes\player_countmagazines.sqf";
+// original function
+player_build_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_build.sqf";
+player_drink_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_drink.sqf";
+player_eat_orig		= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_eat.sqf";
+player_useMeds_orig	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_useMeds.sqf";
+player_wearClothes_orig	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_wearClothes.sqf";
+player_tentPitch_orig	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\tent_pitch.sqf";
+player_fillWater_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\water_fill.sqf";
+player_gearSync_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_gearSync.sqf";
+// player_reloadMag 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_reloadMags.sqf";
 
 if (isServer) then {
 	//Run the server monitor
@@ -53,36 +81,21 @@ if (!isDedicated) then {
 	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-	
-	//EXTRAS
-	
-	 _deadbody = allMissionObjects "Body1" + allMissionObjects "Body2";
-    {
-        dayzFire = [_x,2,0,false,false];
-        nul=dayzFire spawn BIS_Effects_Burn;
-    } forEach _heliCrash;
-	
-	[] spawn {
-        while { true } do 
-          {
-                _deadbody = allMissionObjects "Body1" + allMissionObjects "Body2";
-                if ( (count _deadbody) > 0 ) then
-                { 
-                        { deleteVehicle _x } foreach (_deadbody);
-                };
-                sleep 15;
-          };
-        };
-		// need wait for creation all vehicles, when first player join.
-        waituntil{_cnt=count allMissionObjects "UH1Wreck_DZ";_cnt==5};
-        _heliCrash = allmissionobjects "UH1Wreck_DZ";
-        {
-          dayzFire = [_x,2,0,false,false];
-          nul=dayzFire spawn BIS_Effects_Burn;
-        } forEach _heliCrash;
-        {
-//      set EH for every player
-         _x call set_EH;
-        } forEach vehicles;
+	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
+
+// 	need wait for creation all vehicles, when first player join.
+	waituntil{_cnt=count allMissionObjects "UH1Wreck_DZ";_cnt==5};
+	_heliCrash = allmissionobjects "UH1Wreck_DZ";
+	{
+	  dayzFire = [_x,2,0,false,false];
+	  nul=dayzFire spawn BIS_Effects_Burn;
+//	  diag_log format["DEBUG: %1 [%2]",typeOf _x,mapGridPosition (position _x)];
+	} forEach _heliCrash;
+
+	{
+//	set EH for every player
+	 _x call fnc_vehicleEventHandler;;
+	} forEach vehicles;
+
 };
+
