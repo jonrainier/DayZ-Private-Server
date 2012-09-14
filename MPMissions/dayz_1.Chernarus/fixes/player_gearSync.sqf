@@ -11,6 +11,7 @@ _objects = nearestObjects [getPosATL player, ["Car", "Helicopter", "Motorcycle",
 } foreach _objects;
 
 private ["_backpackWpnQtys","_backpackWpnTypes","_backpackWpn","_backpackMag","_countr"];
+dayz_myBackpack = unitBackpack player;
 _backpackWpn = getWeaponCargo unitBackpack player;
 _backpackMag = getMagazineCargo unitBackpack player;
 
