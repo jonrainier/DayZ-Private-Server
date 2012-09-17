@@ -9,7 +9,7 @@ echo.
 echo.
 echo.
 echo Executing spawn script...
-.\MySQL\bin\mysql --user root --password=root --host=127.0.0.1 --port=3316 --database=hivemind --execute="call pMain()"
+.\MySQL\bin\mysql --user=root --password=root --host=127.0.0.1 --port=3316 --database=hivemind --execute="call pMain()"
 ping 127.0.0.1 -n 5 >NUL
 .\MySQL\cecho {0A}	OK.{07}
 echo.
