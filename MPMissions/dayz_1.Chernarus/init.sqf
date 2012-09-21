@@ -24,6 +24,8 @@ progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 
+// sleep 0.1;
+
 if ((!isServer) && (isNull player) ) then
 {
 waitUntil {!isNull player};
@@ -54,8 +56,10 @@ player_switchModel = compile preprocessFileLineNumbers "fixes\player_switchModel
 player_gearSync = compile preprocessFileLineNumbers "fixes\player_gearSync.sqf";
 player_humanityMorph = compile preprocessFileLineNumbers "fixes\player_humanityMorph.sqf";
 player_updateGui = compile preprocessFileLineNumbers "fixes\player_updateGui.sqf";
+player_selectSlot = compile preprocessFileLineNumbers "fixes\ui_selectSlot.sqf";
+player_reloadMag = compile preprocessFileLineNumbers "fixes\player_reloadMags.sqf";
 // count player magazines
-player_countmagazines = compile preprocessFileLineNumbers "fixes\player_countmagazines.sqf";
+player_countmagazines 	= compile preprocessFileLineNumbers "fixes\player_countmagazines.sqf";
 // original function
 player_build_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_build.sqf";
 player_drink_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_drink.sqf";
@@ -65,7 +69,6 @@ player_wearClothes_orig	= compile preprocessFileLineNumbers "\z\addons\dayz_code
 player_tentPitch_orig	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\tent_pitch.sqf";
 player_fillWater_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\water_fill.sqf";
 player_gearSync_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_gearSync.sqf";
-// player_reloadMag 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_reloadMags.sqf";
 
 if (isServer) then {
 	//Run the server monitor
@@ -82,7 +85,15 @@ if (!isDedicated) then {
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
-
+	dayzPlayerLogin = [];
+	_doLoop = 0;
+	while { count (dayzPlayerLogin) == 0 } do {
+		call compile format["startLoadingScreen ['Reconnect penalty: %1','RscDisplayLoadMission']",60-_doLoop];
+		_doLoop=_doLoop+1;
+		progressLoadingScreen (_doLoop/60);
+		sleep 1;
+	};
+	endLoadingScreen;
 // 	need wait for creation all vehicles, when first player join.
 	waituntil{_cnt=count allMissionObjects "UH1Wreck_DZ";_cnt==5};
 	_heliCrash = allmissionobjects "UH1Wreck_DZ";

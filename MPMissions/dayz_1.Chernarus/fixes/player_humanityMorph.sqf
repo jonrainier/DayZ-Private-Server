@@ -63,6 +63,8 @@ if (count _medical > 0) then {
 	player setVariable ["USEC_injured",false,true];
 	player setVariable ["USEC_inPain",false,true];	
 };
+if (r_fracture_legs) then { player setHit["legs",1]; };
+if (r_fracture_arms) then { player setHit["hands",1]; };
 
 //General Stats
 player setVariable["humanity",_humanity,true];

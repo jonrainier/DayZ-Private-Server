@@ -1,7 +1,7 @@
 /*
 Rewritten by TeeTime 25.5.2012
 ok, rewritten by f0rt (ashfor03) 08.09.2012
-[]model] call player_switchModel;
+[model] call player_switchModel;
 */
 private["_class","_position","_dir","_group","_oldUnit","_newUnit","_currentWpn","_muzzles","_currentAnim"];
 _class 			= _this;
