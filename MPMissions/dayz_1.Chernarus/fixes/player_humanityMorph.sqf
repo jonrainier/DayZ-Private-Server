@@ -63,6 +63,8 @@ if (count _medical > 0) then {
 	player setVariable ["USEC_injured",false,true];
 	player setVariable ["USEC_inPain",false,true];	
 };
+if (r_fracture_legs) then { player setHit["legs",1]; };
+if (r_fracture_arms) then { player setHit["hands",1]; };
 
 //General Stats
 player setVariable["humanity",_humanity,true];
@@ -70,7 +72,7 @@ player setVariable["zombieKills",_zombieKills,true];
 player setVariable["headShots",_headShots,true];
 player setVariable["humanKills",_humanKills,true];
 player setVariable["banditKills",_banditKills,true];
-player setVariable["characterID",str(_charID),true];
+player setVariable["characterID",_charID,true];
 player setVariable["worldspace",_worldspace,true];
 
 dayzPlayerMorph = [_charID,player,_playerUID,[_zombieKills,_headShots,_humanKills,_banditKills],_humanity];

@@ -24,7 +24,7 @@ progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 
-sleep 0.1;
+// sleep 0.1;
 
 if ((!isServer) && (isNull player) ) then
 {
@@ -41,23 +41,24 @@ if ((!isServer) && (player != player)) then
 // reassign functions
 // call compile preprocessFileLineNumbers "fixes\_fixes.sqf";
 // damage eventhanling
-set_obj_dmg = compile preprocessFileLineNumbers "fixes\set_obj_dmg.sqf";
-fnc_vehicleEventHandler = compile preprocessFileLineNumbers "fixes\vehicle_init.sqf";
+set_obj_dmg 		= compile preprocessFileLineNumbers "fixes\set_obj_dmg.sqf";
+fnc_vehicleEventHandler	= compile preprocessFileLineNumbers "fixes\vehicle_init.sqf";
 // action hooks
-player_build = compile preprocessFileLineNumbers "fixes\player_build.sqf";
-player_drink = compile preprocessFileLineNumbers "fixes\player_drink.sqf";
-player_eat = compile preprocessFileLineNumbers "fixes\player_eat.sqf";
-player_useMeds = compile preprocessFileLineNumbers "fixes\player_useMeds.sqf";
-player_wearClothes = compile preprocessFileLineNumbers "fixes\player_wearClothes.sqf";
-player_tentPitch = compile preprocessFileLineNumbers "fixes\tent_pitch.sqf";
-player_fillWater = compile preprocessFileLineNumbers "fixes\water_fill.sqf";
-player_switchModel = compile preprocessFileLineNumbers "fixes\player_switchModel.sqf";
+player_build 		= compile preprocessFileLineNumbers "fixes\player_build.sqf";
+player_drink 		= compile preprocessFileLineNumbers "fixes\player_drink.sqf";
+player_eat 		= compile preprocessFileLineNumbers "fixes\player_eat.sqf";
+player_useMeds 		= compile preprocessFileLineNumbers "fixes\player_useMeds.sqf";
+player_wearClothes 	= compile preprocessFileLineNumbers "fixes\player_wearClothes.sqf";
+player_tentPitch 	= compile preprocessFileLineNumbers "fixes\tent_pitch.sqf";
+player_fillWater 	= compile preprocessFileLineNumbers "fixes\water_fill.sqf";
+player_switchModel 	= compile preprocessFileLineNumbers "fixes\player_switchModel.sqf";
 // other hooks
-player_gearSync = compile preprocessFileLineNumbers "fixes\player_gearSync.sqf";
-player_humanityMorph = compile preprocessFileLineNumbers "fixes\player_humanityMorph.sqf";
-player_updateGui = compile preprocessFileLineNumbers "fixes\player_updateGui.sqf";
-player_selectSlot = compile preprocessFileLineNumbers "fixes\ui_selectSlot.sqf";
-player_reloadMag = compile preprocessFileLineNumbers "fixes\player_reloadMags.sqf";
+player_gearSync 	= compile preprocessFileLineNumbers "fixes\player_gearSync.sqf";
+player_humanityMorph 	= compile preprocessFileLineNumbers "fixes\player_humanityMorph.sqf";
+player_updateGui 	= compile preprocessFileLineNumbers "fixes\player_updateGui.sqf";
+player_selectSlot 	= compile preprocessFileLineNumbers "fixes\ui_selectSlot.sqf";
+player_reloadMag 	= compile preprocessFileLineNumbers "fixes\player_reloadMags.sqf";
+player_packTent 	= compile preprocessFileLineNumbers "fixes\player_packTent.sqf";
 // count player magazines
 player_countmagazines 	= compile preprocessFileLineNumbers "fixes\player_countmagazines.sqf";
 // original function
@@ -85,7 +86,6 @@ if (!isDedicated) then {
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
-
 	dayzPlayerLogin = [];
 	_doLoop = 0;
 	while { count (dayzPlayerLogin) == 0 } do {
