@@ -1,1 +1,0 @@
-5 "" !"this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';" !"spawn BIS_Effects_AirDestruction" !"spawn BIS_Effects_AirDestructionStage2" !"spawn BIS_Effects_Burn"
