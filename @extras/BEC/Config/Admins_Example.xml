@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<BEAdmins>
+	<!-- 
+	define admins.
+	
+	name : name of the admin. do not need to be ingame player name.
+	guid : match players guid.
+	group : admin level. value must be a number.
+	groupname : name of the group the admin has.
+	
+	Note: keep <..id= > in order for your admin block. else parsing the file will cause errors.
+	-->
+	
+	<admin id="0">
+		<name>nux</name>
+		<guid>a0755addc0ab2820a2acb2a05f54ce0a</guid>
+		<group>0</group>
+		<groupname>Super Admin</groupname>
+	</admin>
+	
+	<admin id="1">
+		<name>alfred</name>
+		<guid>c1335fcdf0af5870a2ec12ad5a34c206</guid>
+		<group>3</group>
+		<groupname>Noob Admin</groupname>
+	</admin>
+	
+</BEAdmins>

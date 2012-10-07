@@ -1,0 +1,77 @@
+﻿<?xml version="1.0"?>
+<Scheduler>
+	
+	<!-- 
+		*** INTERNAL COMMANDS ***
+	-->
+	
+	<!-- Show text ingame after 20 sec with loop enabled -->
+	<job id="0">
+		<time>000020</time>
+		<day>1,2,3,4,5,6,7</day>
+		<loop>1</loop> 
+		<cmd>say -1 Annoying text that will repeate itself each 20 sec</cmd>	
+		<cmdtype>0</cmdtype>			
+	</job>
+
+	<!-- Show text ingame after 22 sec without loops enabled -->
+	<job id="1">
+		<time>000022</time>
+		<day>1,2,3,4,5,6,7</day>
+		<loop>0</loop> 
+		<cmd>say -1 Annoying text that is shown once after 22 sec</cmd>	
+		<cmdtype>0</cmdtype>			
+	</job>
+
+	<!-- Show text ingame after 30 min with loop enabled -->
+	<job id="2">
+		<time>003000</time>
+		<day>1,2,3,4,5,6,7</day>
+		<loop>1</loop> 
+		<cmd>say -1 Annoying text that will repeate itself each 30 min</cmd>	
+		<cmdtype>0</cmdtype>			
+	</job>
+	
+	<!-- Show text ingame after 1 hour, 35 min and 30 sec with loop enabled -->
+	<job id="3">
+		<time>013530</time>
+		<day>1,2,3,4,5,6,7</day>
+		<loop>1</loop> 
+		<cmd>say -1 Annoying text that will repeate itself each 1 hour,35 min and 30 sec</cmd>	
+		<cmdtype>0</cmdtype>			
+	</job>	
+	
+	<!-- Shutdown the server 08:05 Am. -->
+	<job id="4">
+		<time>08:05</time>
+		<day>1,2,3,4,5,6,7</day>
+		<loop>0</loop> 
+		<cmd>#shutdown</cmd>	
+		<cmdtype>0</cmdtype>			
+	</job>
+	
+	<!-- Start a warfare mission after 1 min -->
+	<job id="5">
+		<time>000100</time>
+		<day>1,2,3,4,5,6,7</day>
+		<loop>0</loop> 
+		<cmd>#mission 48_warfarev2_071liteco.takistan</cmd>	
+		<cmdtype>0</cmdtype>			
+	</job>
+
+
+	
+	<!-- 
+		*** EXTERNAL COMMANDS ***
+	-->
+	
+	<!-- run test.bat every 2 hour with loop enabled -->
+	<job id="6">
+		<time>020000</time>
+		<day>1,2,3,4,5,6,7</day>
+		<loop>1</loop> 
+		<cmd>c:\path\test.bat</cmd>
+		<cmdtype>1</cmdtype>			
+	</job>	
+
+</Scheduler>
