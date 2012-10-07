@@ -86,9 +86,9 @@ if (!isDedicated) then {
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
-	dayzPlayerLogin = [];
+	penaltyTimeout = true;
 	_doLoop = 0;
-	while { count (dayzPlayerLogin) == 0 } do {
+	while { penaltyTimeout } do {
 		call compile format["startLoadingScreen ['Reconnect penalty: %1','RscDisplayLoadMission']",60-_doLoop];
 		_doLoop=_doLoop+1;
 		progressLoadingScreen (_doLoop/60);
