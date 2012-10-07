@@ -1,1 +1,0 @@
-start Bec -f Config.cfg
