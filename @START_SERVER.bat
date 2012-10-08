@@ -1,6 +1,4 @@
 @echo off
-echo.
-echo.
 echo Starting MySQL database. Please wait 5-10 seconds.
 start /MIN /D.\MySQL\ MySQL.bat
 ping 127.0.0.1 -n 15 >NUL
