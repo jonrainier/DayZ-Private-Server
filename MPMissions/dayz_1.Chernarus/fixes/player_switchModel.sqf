@@ -179,8 +179,7 @@ private ["_newBackpackType","_backpackWpn","_backpackMag"];
 	removeAllWeapons _oldUnit;
 	{_oldUnit removeMagazine _x;} forEach  magazines _oldUnit;
 
-	dayz_originalPlayer = objNull; // always delete old player object
-	if (!isNull dayz_originalPlayer) then {
+	if (isNull dayz_originalPlayer) then {
 		dayz_originalPlayer = _oldUnit;
 		_oldUnit addEventHandler ["HandleDamage",{false}];
 		_oldUnit disableAI "ANIM";
