@@ -6,7 +6,7 @@ enableSaving [false, false];
 
 //REALLY IMPORTANT VALUES
 dayZ_hivePipe1 = 	"\\.\pipe\dayz";	//The named pipe
-dayZ_instance =	222;					//The instance
+dayZ_instance =	1;					//The instance
 hiveInUse	=	true;
 dayzHiveRequest = [];
 initialized = false;
