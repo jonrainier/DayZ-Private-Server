@@ -12,6 +12,7 @@ dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
 tzOffset=0; // in hours
+penaltyTimeout = true;
 
 //Load in compiled functions
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
@@ -88,7 +89,6 @@ if (!isDedicated) then {
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 
-	penaltyTimeout = true;
 	_doLoop = 0;
 	while { penaltyTimeout } do {
 		call compile format["startLoadingScreen ['Reconnect penalty: %1','RscDisplayLoadMission']",60-_doLoop];
