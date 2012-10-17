@@ -61,6 +61,7 @@ player_updateGui 	= compile preprocessFileLineNumbers "fixes\player_updateGui.sq
 player_selectSlot 	= compile preprocessFileLineNumbers "fixes\ui_selectSlot.sqf";
 player_reloadMag 	= compile preprocessFileLineNumbers "fixes\player_reloadMags.sqf";
 player_packTent 	= compile preprocessFileLineNumbers "fixes\player_packTent.sqf";
+fnc_usec_selfActions 	= compile preprocessFileLineNumbers "fixes\fn_selfActions.sqf";
 // count player magazines
 player_countmagazines 	= compile preprocessFileLineNumbers "fixes\player_countmagazines.sqf";
 // original function
