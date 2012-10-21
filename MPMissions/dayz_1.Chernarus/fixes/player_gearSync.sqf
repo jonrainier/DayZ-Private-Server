@@ -12,11 +12,11 @@ _objects = nearestObjects [getPosATL player, ["Car", "Helicopter", "Motorcycle",
 
 private ["_backpackWpnQtys","_backpackWpnTypes","_backpackWpn","_backpackMag","_countr"];
 dayz_myBackpack = unitBackpack player;
-_backpackWpn = getWeaponCargo unitBackpack player;
-_backpackMag = getMagazineCargo unitBackpack player;
+_backpackWpn = getWeaponCargo dayz_myBackpack;
+_backpackMag = getMagazineCargo dayz_myBackpack;
 
-clearWeaponCargoGlobal unitBackpack player;
-clearMagazineCargoGlobal unitBackpack player;
+clearWeaponCargoGlobal dayz_myBackpack;
+clearMagazineCargoGlobal dayz_myBackpack;
 
 //Fill backpack contents
 //Weapons

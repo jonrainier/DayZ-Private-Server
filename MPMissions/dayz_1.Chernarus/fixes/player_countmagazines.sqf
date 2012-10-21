@@ -2,7 +2,7 @@
 count player magazines with ammo count
 value = call player_countmagazines;
 return all player magazines with ammo count
-(get code from dayz_forceSave)
+(code from dayz_forceSave)
 */
 private ["_dialog","_control","_magazineArray","_item","_val","_max"];
 disableSerialization;
@@ -14,8 +14,6 @@ if ( isNull _dialog ) then {
 };
 
 _magazineArray = 	[];
-
-
 for "_i" from 109 to 120 do 
 {
 	_control = 	_dialog displayCtrl _i;
@@ -31,7 +29,6 @@ for "_i" from 109 to 120 do
 	};
 };
 
-
 for "_i" from 122 to 129 do 
 {
 	_control = 	_dialog displayCtrl _i;
@@ -46,7 +43,6 @@ for "_i" from 122 to 129 do
 		};
 	};
 };
-//closeDialog 0;
 disableUserInput false;
 dayz_Magazines=_magazineArray;
 _magazineArray

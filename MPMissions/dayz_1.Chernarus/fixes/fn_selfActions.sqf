@@ -135,7 +135,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 3))
 		{
 			_damage = [_vehicle,_x] call object_getHit;
 			if (_damage > 0) then {
-				_color = "color='#99ff00'";
+				_color = "color='#99bb00'";
 				_part = "PartGeneric";
 				_cmpt = _x;
 				_damagePercent = round((1 - _damage) * 100);

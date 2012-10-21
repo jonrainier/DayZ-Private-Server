@@ -31,9 +31,6 @@ private ["_weapons","_magazines","_primweapon","_secweapon"];
 
 	if ( (_playerUID == dayz_playerUID) && (count _magazines == 0) && (count (magazines player) > 0 )) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
 
-
-//	if ( count _magazines == 0 ) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
-
 	_primweapon	= primaryWeapon player;
 	_secweapon	= secondaryWeapon player;
 
@@ -46,10 +43,6 @@ private ["_weapons","_magazines","_primweapon","_secweapon"];
 		_weapons = _weapons + [_secweapon];
 	};
 	
-//	if(count _magazines == 0) then {
-//		_magazines = magazines player;
-//	};
-
 //BackUp Backpack
 private ["_newBackpackType","_backpackWpn","_backpackMag"];
 	dayz_myBackpack = unitBackpack player;
@@ -98,12 +91,10 @@ private ["_newBackpackType","_backpackWpn","_backpackMag"];
 //Equip New Charactar
 	{
 		if (typeName _x == "ARRAY") then {_newUnit addMagazine [_x select 0,_x select 1] } else { _newUnit addMagazine _x };
-		//sleep 0.05;
 	} forEach _magazines;
 	
 	{
 		_newUnit addWeapon _x;
-		//sleep 0.05;
 	} forEach _weapons;
 
 //Check and Compare it
@@ -116,7 +107,6 @@ private ["_newBackpackType","_backpackWpn","_backpackMag"];
 		//Add the Missing
 		{
 			_newUnit addWeapon _x;
-			//sleep 0.2;
 		} forEach _weapons;
 	};
 	
@@ -196,9 +186,6 @@ private ["_newBackpackType","_backpackWpn","_backpackMag"];
 	player disableConversation true;
 	
 	player setVariable ["bodyName",dayz_playerName,true];
-
-	_playerUID=getPlayerUID player;
 	_playerObjName = format["player%1",_playerUID];
 	call compile format["player%1 = player;",_playerUID];
 	publicVariable _playerObjName;
-

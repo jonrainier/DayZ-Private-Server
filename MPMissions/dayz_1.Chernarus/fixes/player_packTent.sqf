@@ -8,8 +8,6 @@ _objectID 	= _obj getVariable ["ObjectID","0"];
 _objectUID	= _obj getVariable ["ObjectUID","0"];
 player playActionNow "Medic";
 
-diag_log format["DELETE: player_packTent: %1:%2:%3",_obj,_objectID,_objectUID];
-
 player removeAction s_player_packtent;
 s_player_packtent = -1;
 
@@ -26,11 +24,11 @@ if(_ownerID == dayz_characterID) then {
 	
 	_holder = "WeaponHolder" createVehicle _pos; 
 	
-	_weapons = 		getWeaponCargo _obj;
+	_weapons = 	getWeaponCargo _obj;
 	_magazines = 	getMagazineCargo _obj;
 	_backpacks = 	getBackpackCargo _obj;
 	
-	dayzDeleteObj = [_dir,_pos,_objectID,_objectUID];
+	dayzDeleteObj = [_objectID,_objectUID];
 	publicVariable "dayzDeleteObj";
 	if (isServer) then {
 		dayzDeleteObj call local_deleteObj;

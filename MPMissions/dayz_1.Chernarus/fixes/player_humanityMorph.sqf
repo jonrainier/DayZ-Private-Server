@@ -29,7 +29,6 @@ _banditKills 	= player getVariable ["banditKills",0];
 
 //Switch
 	_model call player_switchModel;
-
 //Login
 
 //set medical values

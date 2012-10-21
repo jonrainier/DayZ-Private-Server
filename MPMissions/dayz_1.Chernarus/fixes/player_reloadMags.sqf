@@ -12,9 +12,6 @@ _create = 	getArray (_config >> "ItemActions" >> "ReloadMag" >> "output");
 
 _textConsume =	getText(configFile >> "CfgMagazines" >> (_consume select 0) >> "displayName");
 _textCreate =	getText(configFile >> "CfgMagazines" >> (_create select 0) >> "displayName");
-//_qtyConsume =	getText(configFile >> "CfgMagazines" >> (_consume select 0) >> "count");
-//_qtyCreate =	getText(configFile >> "CfgMagazines" >> (_create select 0) >> "count");
-
 
 _amountNeed = count _consume;
 _amountHas = {_x == (_consume select 0)} count magazines player;
