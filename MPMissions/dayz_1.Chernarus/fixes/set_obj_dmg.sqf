@@ -17,6 +17,9 @@ if (_dam < 1 ) then {
 	};
 	if (_total > 0.98) then {
         	_total = 1;
+		if ( _selection in dayz_explosiveParts ) then {
+			_unit setVariable ["totalDmg",_total,true];
+		};
 	};
 	if ( _total>0 ) then {
         	_unit setVariable [_strH,_total,true];
