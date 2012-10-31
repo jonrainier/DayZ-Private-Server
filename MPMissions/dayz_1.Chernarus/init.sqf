@@ -1,7 +1,7 @@
+startLoadingScreen ["","DayZ_loadingScreen"];
 /*	
 	INITILIZATION
 */
-startLoadingScreen ["","DayZ_loadingScreen"];
 enableSaving [false, false];
 
 //REALLY IMPORTANT VALUES
@@ -11,9 +11,6 @@ hiveInUse	=	true;
 dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
-tzOffset=0; // in hours
-penaltyTimeout = true; // enable reconnect penalty
-deathMessage = false;
 
 //Load in compiled functions
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
@@ -27,8 +24,6 @@ progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 
-sleep 0.1;
-
 if ((!isServer) && (isNull player) ) then
 {
 waitUntil {!isNull player};
@@ -41,42 +36,9 @@ if ((!isServer) && (player != player)) then
   waitUntil {time > 3};
 };
 
-// reassign functions
-// damage eventhanling
-set_obj_dmg 		= compile preprocessFileLineNumbers "fixes\set_obj_dmg.sqf";
-fnc_vehicleEventHandler	= compile preprocessFileLineNumbers "fixes\vehicle_init.sqf";
-// action hooks
-player_build 		= compile preprocessFileLineNumbers "fixes\player_build.sqf";
-player_drink 		= compile preprocessFileLineNumbers "fixes\player_drink.sqf";
-player_eat 		= compile preprocessFileLineNumbers "fixes\player_eat.sqf";
-player_useMeds 		= compile preprocessFileLineNumbers "fixes\player_useMeds.sqf";
-player_wearClothes 	= compile preprocessFileLineNumbers "fixes\player_wearClothes.sqf";
-player_tentPitch 	= compile preprocessFileLineNumbers "fixes\tent_pitch.sqf";
-player_fillWater 	= compile preprocessFileLineNumbers "fixes\water_fill.sqf";
-player_switchModel 	= compile preprocessFileLineNumbers "fixes\player_switchModel.sqf";
-// other hooks
-player_gearSync 	= compile preprocessFileLineNumbers "fixes\player_gearSync.sqf";
-player_humanityMorph 	= compile preprocessFileLineNumbers "fixes\player_humanityMorph.sqf";
-player_updateGui 	= compile preprocessFileLineNumbers "fixes\player_updateGui.sqf";
-player_selectSlot 	= compile preprocessFileLineNumbers "fixes\ui_selectSlot.sqf";
-player_reloadMag 	= compile preprocessFileLineNumbers "fixes\player_reloadMags.sqf";
-player_packTent 	= compile preprocessFileLineNumbers "fixes\player_packTent.sqf";
-fnc_usec_selfActions 	= compile preprocessFileLineNumbers "fixes\fn_selfActions.sqf";
-player_death 		= compile preprocessFileLineNumbers "fixes\player_death.sqf";
-// count player magazines
-player_countmagazines 	= compile preprocessFileLineNumbers "fixes\player_countmagazines.sqf";
-// original function
-player_build_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_build.sqf";
-player_drink_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_drink.sqf";
-player_eat_orig		= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_eat.sqf";
-player_useMeds_orig	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_useMeds.sqf";
-player_wearClothes_orig	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_wearClothes.sqf";
-player_tentPitch_orig	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\tent_pitch.sqf";
-player_fillWater_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\water_fill.sqf";
-player_gearSync_orig 	= compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_gearSync.sqf";
-
 if (isServer) then {
 	//Run the server monitor
+	//_id = ["Volha_1_TK_CIV_EP1",getMarkerPos "carloc",0] spawn object_spawnDamVehicle;
 	hiveInUse	=	true;
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 };
@@ -89,23 +51,4 @@ if (!isDedicated) then {
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
-
-	_doLoop = 0;
-	while { penaltyTimeout && (_doLoop < 60) } do {
-		call compile format["startLoadingScreen ['Reconnect penalty: %1','RscDisplayLoadMission']",60-_doLoop];
-		_doLoop=_doLoop+1;
-		progressLoadingScreen (_doLoop/60);
-		sleep 1;
-	};
-	endLoadingScreen;
-// 	need wait for creation all vehicles, when first player join.
-	waitUntil{!(isNil "objectStreamComplite")};
-	{
-	  nul = [_x,2,0,false,false] spawn BIS_Effects_Burn;
-//	  diag_log format["DEBUG: %1 [%2]",typeOf _x,mapGridPosition (position _x)];
-	} forEach allMissionObjects "UH1Wreck_DZ";
-
-//	set EH for every player
-	{ _x call fnc_vehicleEventHandler; } forEach vehicles;
-
 };

@@ -14,7 +14,7 @@ echo.
 echo.
 echo.
 echo Starting server...
-start .\Expansion\beta\arma2oaserver.exe -mod=@dayz;@hive -name=cfgdayz -config=cfgdayz\server.cfg -cfg=cfgdayz\arma2.cfg -profiles=cfgdayz -world=Chernarus -exThreads=0 -maxMem=1024
+start .\Expansion\beta\arma2oaserver.exe -mod=@dayz;@hive -name=cfgdayz -config=cfgdayz\server.cfg -cfg=cfgdayz\arma2.cfg -profiles=cfgdayz
 .\MySQL\cecho {0A}	OK.{07} 
 echo.
 echo.

@@ -47,6 +47,10 @@
 5 "eventhandler"
 5 "loading"
 5 "remoteControl"
+1 "toString"
+1 "toArray"
+1 "ctrlset"
+5 "rland"
 //5 "dayz_serverObjectMonitor set [count dayz_serverObjectMonitor, _object];"
 1 "BIS_Effects" //kicking not needed anymore, monitoring only
 5 "BIS_" !"BIS_Effects"
