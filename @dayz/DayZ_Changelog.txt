@@ -1,10 +1,67 @@
-HOTFIX : TBO 2012
+Community Notes: 
+    * V1.7.4.4
 
-	Affected addons:
-		* 
-		* 
+Community Change log:
 
-	Community Changelog:
+    * [Prerequisites]   beta-patch 98866.
+    * [Prerequisites]   Microsoft Visual C++ 2010 SP1 x86 Redistributable (http://www.microsoft.com/en-us/download/details.aspx?id=8328)
+    * [Prerequisites]   New Mission File Downloaded from (http://www.silentspy.net/utility/dayz/mission-generator/)
+
+    * [NEW] class Mi17_TK_EP1 Now Unbanned. (Mi17_DZ)
+    * [NEW] An2_TK_EP1 Now Unbanned.(AN2_DZ)
+    * [NEW] AH6X Now Unbanned. (AH6X_DZ)
+    * [NEW] BAF_Offroad_D Now Unbanned.
+    * [NEW] BAF_Offroad_W Now Added.
+    * [NEW] Fully Removed Save button from action menu.
+    * [NEW] New combat mode icon (G17) thanks Alexander.
+    * [NEW] Gender section screen thanks F0rt.
+    * [NEW] You can no longer place tents in ponds.
+    * [NEW] Disabled greeting menu .
+    * [NEW] Disabled radio messages to be heard and shown in the left lower corner of the screen.
+    * [NEW] General speed up of the login process.
+    * [NEW] Street Lights now active in towns.
+    * [NEW] (*.2 Hotfix)Added some Anti-cheat.
+    * [NEW] (*.3 Hotfix)Added local copy of cert if it cant get one online, version checks.
+
+
+    * [UPDATED] Combat Logging "Fired Near" checks are now limited to 8 metre radius.
+    * [UPDATED] Combat Logging "Projectile Near" Have now been removed while we look for a less intensive way to track projectiles.
+    * [UPDATED] Combat Logging is now removed on death.
+    * [UPDATED] Corrected legs and hands fractures they must be set with actual value.
+    * [UPDATED] (*.1 Hotfix)Updated hive .dlls to fix a reconnect issue with prepared statements.
+    * [UPDATED] (*.1 Hotfix)Increased m107 loot chance to 0.02. 
+    * [UPDATED] (*.1 Hotfix)Lowered As50 loot chance to 0.01
+
+    * [Fixed]   Adding checks for female skin humanity/login.
+    * [Fixed]   Adding female skin to variables.
+    * [Fixed]   Fixed Parachute so jumping out of choppers won?t kill you.
+    * [Fixed]   Event Handle for wrecked choppers this should allow the smoke on wrecks to work all the time.
+    * [Fixed]   Event Handle for Vehicles this fix's problems with local vehilce damage calls..
+    * [Fixed]   Remove objects from DB by objectID and objectUID only. (Should fix Deployable problems)
+    * [Fixed]   Debug menu options are no longer editable.
+    * [Fixed]   Locked Singleplayer Menu
+    * [Fixed]   (*.1 Hotfix) Players with high CharacterID weren't dying properly.
+    * [Fixed]   (*.2 Hotfix) Fixed 2nd Parachute removal issue.
+
+    * [REMOVED] Damaged logging to .rpt removed all traces of dmg to a player.
+    * [REMOVED] An2_1_TK_CIV_EP1 Got removed during testing devs felt it lacked perpose in the game.
+    * [REMOVED] An2_2_TK_CIV_EP1 Got removed during testing devs felt it lacked perpose in the game.
+    * [REMOVED] MV22 Got removed during testing devs felt it lacked perpose in the game.
+    * [REMOVED] S1203_ambulance_EP1 Got replaced during testing to a hmmv class vehicle.
+    * [REMOVED] BAF_L85A2_RIS_CWS From Loot table.
+    * [REMOVED] UH60_wreck_EP1.
+    * [REMOVED] HMMWV_Ambulance_CZ_DES_EP1 Removed due to its heal abilty.
+    * [REMOVED] Dogs Removed while we rewrite the hud and correct a few other issues. (attak, Getin/out of vehicles)
+    * [REMOVED] UH60M_MEV_EP1 Removed due to its heal abilty.
+
+
+Upstream hive (public hive):
+    Adjusted the respawn rates of vehicles. Previously all vehicles had pretty long respawn time making them a bit too rare.
+    Still requires a server restart for vehicles to show up in-game.
+    * [UPDATED] Destroyed low-end (boats, bicycles) vehicles now respawn after 3h.
+    * [UPDATED] Destroyed medium-end (normal cars, motorcycle, quads) vehicles respawn after 12h.
+    * [UPDATED] Destroyed high-end ( aircraft, all-terrain) vehicles respawn after 24h.
+    Note: Respawn rates are our recommended rule set, they may differ on some private hive servers.
 
 _____________________________________
 HOTFIX : 31th OCTOBER 2012
