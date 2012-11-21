@@ -1,5 +1,10 @@
 (current patch candidate)
 
+   [99112]  Optimized: Servers with many players (>20) should run faster.
+   [99013]  Changed: Max. number of concurrent players on a hosted server increased to 16 (was 8 until now).
+   [98939]  Fixed: Linux Date format wrong (https://dev-heaven.net/issues/17313)
+   [98866]  Fixed: duplicated items in dead bodies (https://dev-heaven.net/issues/54384)
+   [98342]  Fixed: AI did not enter some corner covers at all, or entered it from a wrong direction
    [98219]  Improved: AI now smarter when selecting attack position, it should no more plan attacks from very close (https://dev-heaven.net/issues/32115)
    [98137]  Changed: AI soldiers now glancing at their targets more frequently while moving in combat.
    [98135]  Fixed: AI sometimes running back and forth when attacking (https://dev-heaven.net/issues/32115)
