@@ -1,5 +1,5 @@
-![OpenDayZ Logo](http://s9.postimage.org/k0ew1lo3x/logo.png)
-OpenDayZ is a server component for running a DayZ private/public server.
+![OpenDayZ Logo](http://dl.dropbox.com/u/28915256/Open%20DayZ%20Community.png)<br />
+   OpenDayZ is a server component for running a DayZ private/public server, created by Pwnoz0r.
 
 ##Requirements
 * Minimum of 1204MB RAM (1GB)
