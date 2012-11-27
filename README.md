@@ -22,9 +22,10 @@ If you're on a 64-Bit OS then append 'x86' to the end of the Program Files direc
 Same applies for ArmA II: Operation Arrowhead, copy the contents into the same folder as the one you just created along with the ArmA II files, overwriting if necessary.
 ###Install - Part 2
 After merging both directories, download the latest release from the GitHub master repo then copy the contents of the downloaded files into the directory where you merged both ArmA II and ArmA II: Operation Arrowhead to make ArmA II: Combined Operations. Your folder structure should contain the following directories:
-      /serverfolder/Addons/
-      /serverfolder/BattleEye/
-      /serverfolder/cfgdayz/
-      /serverfolder/@dayz/
-      /serverfolder/@hive/
-      /serverfolder/MySQL/
+
+    /serverfolder/Addons/
+    /serverfolder/BattleEye/
+    /serverfolder/cfgdayz/
+    /serverfolder/@dayz/
+    /serverfolder/@hive/
+    /serverfolder/MySQL/
