@@ -1,4 +1,4 @@
-![OpenDayZ Logo](http://i.imgur.com/AUBrA.png)
+![OpenDayZ Logo](http://s9.postimage.org/k0ew1lo3x/logo.png)
 OpenDayZ is a server component for running a DayZ private/public server.
 
 ##Requirements
