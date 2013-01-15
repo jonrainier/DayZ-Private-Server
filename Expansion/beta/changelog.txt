@@ -1,5 +1,11 @@
 (current patch candidate)
 
+   [100296]  Fixed: MP: Player head movement using numpad keys was not visible to other players.
+   [100257]  Fixed: ballisticsComputer uses wrong velocity (https://dev-heaven.net/issues/6823)
+   [99685]  Changed: Default settings changed to requiredSecureId=1 (http://www.bistudio.com/english/company/developers-blog/344-secure-player-id-introduced)
+   [99408]  Changed: AI network objects now fully initialized before running init scripts (to fix https://dev-heaven.net/issues/64708)
+   [99331]  Fixed: artillery computer is not affected by zeroing
+   [99184]  New: server.cfg can use localClient[]={127.0.0.1}; to indicate clients with unlimited bandwidth (https://dev-heaven.net/issues/62500)
    [99112]  Optimized: Servers with many players (>20) should run faster.
    [99013]  Changed: Max. number of concurrent players on a hosted server increased to 16 (was 8 until now).
    [98939]  Fixed: Linux Date format wrong (https://dev-heaven.net/issues/17313)
