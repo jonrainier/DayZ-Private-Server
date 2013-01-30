@@ -44,12 +44,9 @@ Configuring time can be great if you want to play DayZ without the hassle of nig
     ;If using Custom type, offset from UTC in hours (can be negative as well)
     ;Offset = 0
     ;If using Static type (Hour value always the same on every server start), the value (0-24) to set the Hour to
-    ;Hour = 8
+    Hour = 8
     
-Remember to read the comment lines for more information and help if needed.
-###Player Inventory Config
-You can change a players starting inventory by editing the .... which will allow you to enter the ID's of the items you would like to make a player start of with. For example:
-    
+This will set the time of the server to 8AM Arma time. Remember to uncomment the hour line to set the specific time and read the comment lines for more information and help if needed.
     
 ##Community
 Join the community! Help make OpenDayZ better by visiting our website, convieniently located [here](http://opendayz.net) where you can suggest new ideas and help out other community members.
