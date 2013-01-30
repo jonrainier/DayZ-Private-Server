@@ -2,7 +2,7 @@
    OpenDayZ is a server component for running a DayZ private/public server, created by Pwnoz0r.
 
 ##Requirements
-* Minimum of 1204MB RAM (1GB)
+* Minimum of 1024MB RAM (1GB)
 * 2.0GHZ Processor or higher
 * 20GB Free HDD space
 * Steam/Retail Copy of ArmA II: Combined Operations
