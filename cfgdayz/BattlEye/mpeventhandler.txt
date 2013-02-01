@@ -108,10 +108,6 @@
 //5 "markertype" //covered by 5 "marker"
 5 "teamtype"
 5 "BIS_fnc_swapVars"
-5 "fn_swapVars.sqf"
-5 "remotecmd"
-5 "promptRName.sqf"
-5 "%"
 //all below detected already by above
 //5 "removeAllWeapons"
 //5 "removeAllItems"

@@ -272,28 +272,23 @@ if ( defined $opt{regexp} ) {
     }
 }
 
-# --- get list of tables and views to hotcopy ---
+# --- get list of tables to hotcopy ---
 
 my $hc_locks = "";
 my $hc_tables = "";
-my $hc_base_tables = "";
-my $hc_views = "";
-my $num_base_tables = 0;
-my $num_views = 0;
 my $num_tables = 0;
 my $num_files = 0;
 
 foreach my $rdb ( @db_desc ) {
     my $db = $rdb->{src};
-    my @dbh_base_tables = get_list_of_tables( $db );
-    my @dbh_views = get_list_of_views( $db );
+    my @dbh_tables = get_list_of_tables( $db );
 
     ## filter out certain system non-lockable tables. 
     ## keep in sync with mysqldump.
     if ($db =~ m/^mysql$/i)
     {
-      @dbh_base_tables = grep 
-        { !/^(apply_status|schema|general_log|slow_log)$/ } @dbh_base_tables
+      @dbh_tables = grep 
+        { !/^(apply_status|schema|general_log|slow_log)$/ } @dbh_tables
     }
 
     ## generate regex for tables/files
@@ -308,19 +303,10 @@ foreach my $rdb ( @db_desc ) {
 
         ## filter (out) tables specified in t_regex
         print "Filtering tables with '$t_regex'\n" if $opt{debug};
-        @dbh_base_tables = ( $negated 
-                             ? grep { $_ !~ $t_regex } @dbh_base_tables
-                             : grep { $_ =~ $t_regex } @dbh_base_tables );
-
-        ## filter (out) views specified in t_regex
-        print "Filtering tables with '$t_regex'\n" if $opt{debug};
-        @dbh_views = ( $negated 
-                       ? grep { $_ !~ $t_regex } @dbh_views
-                       : grep { $_ =~ $t_regex } @dbh_views );
+        @dbh_tables = ( $negated 
+                        ? grep { $_ !~ $t_regex } @dbh_tables
+                        : grep { $_ =~ $t_regex } @dbh_tables );
     }
-
-    ## Now concatenate the base table and view arrays.
-    my @dbh_tables = (@dbh_base_tables, @dbh_views);
 
     ## get list of files to copy
     my $db_dir = "$datadir/$db";
@@ -361,25 +347,15 @@ foreach my $rdb ( @db_desc ) {
 
     $rdb->{files}  = [ @db_files ];
     $rdb->{index}  = [ @index_files ];
-    my @hc_base_tables = map { quote_names("$db.$_") } @dbh_base_tables;
-    my @hc_views = map { quote_names("$db.$_") } @dbh_views;
-    
-    my @hc_tables = (@hc_base_tables, @hc_views);
+    my @hc_tables = map { quote_names("$db.$_") } @dbh_tables;
     $rdb->{tables} = [ @hc_tables ];
 
     $hc_locks .= ", "  if ( length $hc_locks && @hc_tables );
     $hc_locks .= join ", ", map { "$_ READ" } @hc_tables;
+    $hc_tables .= ", "  if ( length $hc_tables && @hc_tables );
+    $hc_tables .= join ", ", @hc_tables;
 
-    $hc_base_tables .= ", "  if ( length $hc_base_tables && @hc_base_tables );
-    $hc_base_tables .= join ", ", @hc_base_tables;
-    $hc_views .= ", "  if ( length $hc_views && @hc_views );
-    $hc_views .= join " READ, ", @hc_views;
-
-    @hc_tables = (@hc_base_tables, @hc_views);
-
-    $num_base_tables += scalar @hc_base_tables;
-    $num_views += scalar @hc_views;
-    $num_tables += $num_base_tables + $num_views;
+    $num_tables += scalar @hc_tables;
     $num_files  += scalar @{$rdb->{files}};
 }
 
@@ -491,10 +467,7 @@ if ( $opt{dryrun} ) {
         print "FLUSH TABLES /*!32323 $hc_tables */\n";
     }
     else {
-        # Lock base tables and views separately.
-        print "FLUSH TABLES $hc_base_tables WITH READ LOCK\n"
-          if ( $hc_base_tables );
-        print "LOCK TABLES $hc_views READ\n" if ( $hc_views );
+        print "FLUSH TABLES $hc_tables WITH READ LOCK\n";
     }
     
     print "FLUSH LOGS\n" if ( $opt{flushlog} );
@@ -511,24 +484,16 @@ else {
         # flush tables to make on-disk copy up to date
         $start = time;
         $dbh->do("FLUSH TABLES /*!32323 $hc_tables */");
-        printf "Flushed tables ($hc_tables) in %d seconds.\n", time-$start unless $opt{quiet};
     }
     else {
-        # Lock base tables and views separately, as 'FLUSH TABLES <tbl_name>
-        # ... WITH READ LOCK' (introduced in 5.5) would fail for views.
-        # Also, flush tables to make on-disk copy up to date
-        $dbh->do("FLUSH TABLES $hc_base_tables WITH READ LOCK")
-          if ( $hc_base_tables );
-        printf "Flushed $num_base_tables tables with read lock ($hc_base_tables) in %d seconds.\n",
-               time-$start unless $opt{quiet};
-
-        $start = time;
-        $dbh->do("LOCK TABLES $hc_views READ") if ( $hc_views );
-        printf "Locked $num_views views ($hc_views) in %d seconds.\n",
-               time-$start unless $opt{quiet};
-
+        $dbh->do("FLUSH TABLES $hc_tables WITH READ LOCK");
+        printf "Locked $num_tables tables in %d seconds.\n", time-$start unless $opt{quiet};
         $hc_started = time;	# count from time lock is granted
+
+        # flush tables to make on-disk copy up to date
+        $start = time;
     }
+    printf "Flushed tables ($hc_tables) in %d seconds.\n", time-$start unless $opt{quiet};
     $dbh->do( "FLUSH LOGS" ) if ( $opt{flushlog} );
     $dbh->do( "RESET MASTER" ) if ( $opt{resetmaster} );
     $dbh->do( "RESET SLAVE" ) if ( $opt{resetslave} );
@@ -837,27 +802,12 @@ sub get_list_of_tables {
 
     my $tables =
         eval {
-            $dbh->selectall_arrayref('SHOW FULL TABLES FROM ' .
-                                     $dbh->quote_identifier($db) .
-                                     ' WHERE Table_type = \'BASE TABLE\'')
+            $dbh->selectall_arrayref('SHOW TABLES FROM ' .
+                                     $dbh->quote_identifier($db))
         } || [];
     warn "Unable to retrieve list of tables in $db: $@" if $@;
 
     return (map { $_->[0] } @$tables);
-}
-
-sub get_list_of_views {
-    my ( $db ) = @_;
-
-    my $views =
-        eval {
-            $dbh->selectall_arrayref('SHOW FULL TABLES FROM ' .
-                                     $dbh->quote_identifier($db) .
-                                     ' WHERE Table_type = \'VIEW\'')
-        } || [];
-    warn "Unable to retrieve list of views in $db: $@" if $@;
-
-    return (map { $_->[0] } @$views);
 }
 
 sub quote_names {

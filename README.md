@@ -1,7 +1,8 @@
 ![OpenDayZ Logo](http://dl.dropbox.com/u/28915256/Open%20DayZ%20Community.png)<br />
+   OpenDayZ is a server component for running a DayZ private/public server, created by Pwnoz0r.
 
 ##Requirements
-* Minimum of 1024MB RAM (1GB)
+* Minimum of 1204MB RAM (1GB)
 * 2.0GHZ Processor or higher
 * 20GB Free HDD space
 * Steam/Retail Copy of ArmA II: Combined Operations
@@ -27,6 +28,7 @@ After merging both directories, download the latest release from the GitHub mast
     /serverfolder/@hive/
     /serverfolder/MySQL/
     /serverfolder/MPMissions/
+    /serverfolder/MPMissions/
     
 ###Installation - Part 3
 After you have completed all of the previous install instructions you can now move on to changing the config. Navigate in your DayZ server directory, then to cfgdayz. Inside you'll find a server.cfg which will allow you to change the default settings of the server to your liking, such as the server name, password and much more.
@@ -51,5 +53,7 @@ You can change a players starting inventory by editing the .... which will allow
     
 ##Community
 Join the community! Help make OpenDayZ better by visiting our website, convieniently located [here](http://opendayz.net) where you can suggest new ideas and help out other community members.
+###Disclaimer
+OpenDayZ is **not** affiliated with Bohemia Interactive or involved with the official DayZ development.
 ###Author
 Created by Pwnoz0r, GitHub readme by RazorFlint

@@ -681,7 +681,7 @@
 { "ER_SLAVE_CANT_CREATE_CONVERSION", 1678, "Can\'t create conversion table for table \'%-.192s.%-.192s\'" },
 { "ER_INSIDE_TRANSACTION_PREVENTS_SWITCH_BINLOG_FORMAT", 1679, "Cannot modify @@session.binlog_format inside a transaction" },
 { "ER_PATH_LENGTH", 1680, "The path specified for %.64s is too long." },
-{ "ER_WARN_DEPRECATED_SYNTAX_NO_REPLACEMENT", 1681, "\'%s\' is deprecated and will be removed in a future release." },
+{ "ER_WARN_DEPRECATED_SYNTAX_NO_REPLACEMENT", 1681, "The syntax \'%s\' is deprecated and will be removed in MySQL %s." },
 { "ER_WRONG_NATIVE_TABLE_STRUCTURE", 1682, "Native table \'%-.64s\'.\'%-.64s\' has the wrong structure" },
 { "ER_WRONG_PERFSCHEMA_USAGE", 1683, "Invalid performance_schema usage." },
 { "ER_WARN_I_S_SKIPPED_TABLE", 1684, "Table \'%s\'.\'%s\' was skipped since its definition is being modified by concurrent DDL statement" },
@@ -727,4 +727,3 @@
 { "ER_BINLOG_UNSAFE_INSERT_TWO_KEYS", 1724, "INSERT... ON DUPLICATE KEY UPDATE  on a table with more than one UNIQUE KEY is unsafe" },
 { "ER_TABLE_IN_FK_CHECK", 1725, "Table is being used in foreign key check." },
 { "ER_UNSUPPORTED_ENGINE", 1726, "Storage engine \'%s\' does not support system tables. [%s.%s]" },
-{ "ER_BINLOG_UNSAFE_AUTOINC_NOT_FIRST", 1727, "INSERT into autoincrement field which is not the first part in the composed primary key is unsafe." },

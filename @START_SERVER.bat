@@ -1,13 +1,13 @@
 @echo off
 echo Starting MySQL database. Please wait 5-10 seconds.
-start /D.\MySQL\ MySQL.bat
-ping 127.0.0.1 -n 5 >NUL
+start /MIN /D.\MySQL\ MySQL.bat
+ping 127.0.0.1 -n 15 >NUL
 .\MySQL\cecho {0A}	OK.{07}
 echo.
 echo.
 echo.
 echo Executing spawn script...
-.\MySQL\bin\mysql.exe --user=dayz --password=dayz --host=127.0.0.1 --port=3306 --database=hivemind --execute="call pMain()"
+.\MySQL\bin\mysql --user=root --password=root --host=127.0.0.1 --port=3316 --database=hivemind --execute="call pMain()"
 ping 127.0.0.1 -n 5 >NUL
 .\MySQL\cecho {0A}	OK.{07}
 echo.
