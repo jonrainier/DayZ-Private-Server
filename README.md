@@ -24,13 +24,20 @@ After merging both directories, download the latest release from the GitHub mast
     /serverfolder/Addons/
     /serverfolder/BattleEye/
     /serverfolder/cfgdayz/
-    /serverfolder/@dayz/
     /serverfolder/@hive/
     /serverfolder/MySQL/
     /serverfolder/MPMissions/
     /serverfolder/MPMissions/
     
 ###Installation - Part 3
+Next head over to http://dayzmod.com and download the latest version of dayz **(1.7.4.4)**. After downloading, create a new folder in the directory where you installed the server called '@dayz' inside should be another folder called 'addons' which contains the *.pbo files. 
+
+Your folder structure should look like the following:
+    
+    /serverfolder/@dayz/
+    /serverfolder/@dayz/addons/
+
+###Installation - Part 4
 After you have completed all of the previous install instructions you can now move on to changing the config. Navigate in your DayZ server directory, then to cfgdayz. Inside you'll find a server.cfg which will allow you to change the default settings of the server to your liking, such as the server name, password and much more.
 
 ##Extra Config Options
@@ -49,7 +56,7 @@ Configuring time can be great if you want to play DayZ without the hassle of nig
 This will set the time of the server to 8AM Arma time. Remember to uncomment the hour line to set the specific time and read the comment lines for more information and help if needed.
     
 ##Community
-Join the community! Help make OpenDayZ better by visiting our website, convieniently located [here](http://opendayz.net) where you can suggest new ideas and help out other community members.
+Join the community! Help make OpenDayZ better by visiting our website located [here](http://opendayz.net) where you can suggest new ideas, help out other community members.
 ###Disclaimer
 OpenDayZ is **not** affiliated with Bohemia Interactive or involved with the official DayZ development.
 ###Author
