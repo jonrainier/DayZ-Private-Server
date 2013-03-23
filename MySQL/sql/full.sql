@@ -621,7 +621,7 @@ BEGIN
 
 # maximum number of INSTANCE id's USED.
 #-----------------------------------------------
-	DECLARE sInstance VARCHAR(8) DEFAULT 391;
+	DECLARE sInstance VARCHAR(8) DEFAULT 1;
 #-----------------------------------------------
 #maximum number of vehicles allowed !!! theoretical max. amount
 #-----------------------------------------------
