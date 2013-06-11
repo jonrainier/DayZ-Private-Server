@@ -19,20 +19,11 @@ start .\Expansion\beta\arma2oaserver.exe -mod=@hive;@dayz -name=cfgdayz -config=
 echo.
 echo.
 echo.
-echo.
-echo.
-echo.
 .\MySQL\cecho {0B}Launcher created by Pwnoz0r.{07}
 ping 127.0.0.1 -n 5 >NUL
 echo.
 echo.
 echo.
-echo.
 .\MySQL\cecho {0A}Leaving le launcher...{07}
 ping 127.0.0.1 -n 5 >NUL
-echo.
-echo.
-echo.
-echo.
-echo.
 exit

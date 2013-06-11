@@ -42,6 +42,7 @@ if ((!isServer) && (player != player)) then
 
 if (isServer) then {
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+	"atp"	addPublicVariableEventHandler { diag_log format["%1", _this select 1];};
 };
 
 if (!isDedicated) then {
@@ -52,5 +53,6 @@ if (!isDedicated) then {
 	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
+	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+	[] execVM "\z\addons\dayz_code\system\antihack.sqf";
 };
