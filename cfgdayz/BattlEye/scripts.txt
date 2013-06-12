@@ -3,10 +3,10 @@
 1 actionKeys   !"if (_dikCode in (actionKeys \"GetOver\")) then {" // #121
 1 activateAddons  // #195
 1 actualunit
-1 addAction !"raddActioncode"  !"\"addAction\"," !"= player addAction [format[localize \"str_" !"_action = player addAction [format[(localize \"str_init_take\"),_name]," !"_action = player addAction [format[(localize \"STR_DAYZ_CODE_1\"),_name], \""  !"s_player_grabflare = player addAction [format[localize \"str_actions_medical_15\",_text], \""  !"_action = _vehicle addAction [format[\"Add AMMO to %1\",_weaponName], \""  !"raddActioncode = compile PreprocessFile (BIS_PathMPscriptCommands + 'addAction.sqf')"  !"raddAction = 'addAction'" // #120
-1 addBackpack   !"_newUnit addBackpack _newBackpackType;"  !"player addBackpack _backpackType;"  !"player addBackpack _bcpk;"  !"player addBackpack _ba" // #119
+1 addAction !"s_player_holderPickup = _holder addAction [format[(localize \"str_init_take\"),_name]" !"raddActioncode"  !"\"addAction\"," !"= player addAction [format[localize \"str_" !"_action = player addAction [format[(localize \"str_init_take\"),_name]," !"_action = player addAction [format[(localize \"STR_DAYZ_CODE_1\"),_name], \""  !"s_player_grabflare = player addAction [format[localize \"str_actions_medical_15\",_text], \""  !"_action = _vehicle addAction [format[\"Add AMMO to %1\",_weaponName], \""  !"raddActioncode = compile PreprocessFile (BIS_PathMPscriptCommands + 'addAction.sqf')"  !"raddAction = 'addAction'" // #120
+1 addBackpack  !"_holder addbackpackcargoGlobal [_x,(_objWpnQty select _countr)];" !"_newUnit addBackpack _newBackpackType;"  !"player addBackpack _backpackType;"  !"player addBackpack _bcpk;"  !"player addBackpack _ba" // #119
 1 addCamShake   !"addCamShake [5, 0.5, 25];"  !"addCamShake [2, 1, 25];"  !"addCamShake [15, 0.8, 25];"  !"addCamShake [2, 0.5, 25];"  !"addCamShake [_temp,(_looptime + 1),30];" // #118
-1 addMagazine !"for \"_i\" from 1 to _qtynew_create_mags_full do {" !"raddMagazineCargocode={diag_log(\"WARNING illegal RE raddMagazineCargocode with args:\"+str(_this));};" !"addMagazineCargo" !"raddMagazinecode" !"player addMagazine _magType;"  !"_animalbody addMagazine _rawfoodtype;"  !"_agent addMagazine _loot;"  !"ile >> \"cfgmagazines\" >> (configName _item))) then {_unit addMagazine configName _item;};"  !"player addMagazine 'machete_swing';"  !"if (typeName _x == \"ARRAY\") then {_newUnit addMagazine [_x select 0,_x select 1] } else { _newUnit addMagazine _x"  !"player addMagazine 'crowbar_swing';"  !"player addMagazine _x;"  !"player addMagazine [_item,_val];"  !"raddMagazinecode = compile PreprocessFile (BIS_PathMPscriptCommands + 'addMagazine.sqf')"  !"player addMagazine \"ItemBandage\";"  !"raddMagazine = 'addMagazine'"  !"\"addMagazine\","  !"wUnit addMagazine _x };" // #117
+1 addMagazine !"player removeMagazine _meat;\nplayer addMagazine _meatcooked;\nif !(_meat in magazines player) exitWith" !"publicVariable \"PVDZ_hlt_Morphine\";\n} else {\nplayer addMagazine \"ItemMorphine\";\nr_interrupt = false;" !"player addMagazine [\"Quiver\",_qty_quiverarrows];" !"for \"_i\" from 1 to _qtynew_create_mags_full do {" !"raddMagazineCargocode={diag_log(\"WARNING illegal RE raddMagazineCargocode with args:\"+str(_this));};" !"addMagazineCargo" !"raddMagazinecode" !"player addMagazine _magType;"  !"_animalbody addMagazine _rawfoodtype;"  !"_agent addMagazine _loot;"  !"ile >> \"cfgmagazines\" >> (configName _item))) then {_unit addMagazine configName _item;};"  !"player addMagazine 'machete_swing';"  !"if (typeName _x == \"ARRAY\") then {_newUnit addMagazine [_x select 0,_x select 1] } else { _newUnit addMagazine _x"  !"player addMagazine 'crowbar_swing';"  !"player addMagazine _x;"  !"player addMagazine [_item,_val];"  !"raddMagazinecode = compile PreprocessFile (BIS_PathMPscriptCommands + 'addMagazine.sqf')"  !"player addMagazine \"ItemBandage\";"  !"raddMagazine = 'addMagazine'"  !"\"addMagazine\","  !"wUnit addMagazine _x };" // #117
 1 addSwitchableUnit   !"addSwitchableUnit _newUnit;"  !"addSwitchableUnit dayz_originalPlayer;" // #116
 1 addWeapon !"addWeaponCargo" !"raddWeaponcode"  !"player addWeapon \"Loot\";"  !"player addWeapon"  !"player addWeapon \"Flare\";"  !"igfile >> \"cfgweapons\" >> (configName _item))) then {_unit addWeapon configName _item;};"  !"raddWeapon = 'addWeapon'"  !"_newUnit addWeapon _x;"  !"\"addWeapon\","  !"player addWeapon _x;"  !"raddWeaponcode = compile PreprocessFile (BIS_PathMPscriptCommands + 'addWeapon.sqf')" // #115
 1 aList
@@ -14,14 +14,14 @@
 1 allowDamage   !"_object allowDamage false;"  !"player allowDamage false;"  !"player allowDamage true;" // #113
 1 allowDammage   !"this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';" // #112
 1 attachObject !"lightAttachObject" // #194
-1 attachTo !"_flare attachTo [player,[0,0,0],\"granat2\"];" !"_fl attachto [_v,[0,0,0],\"destructionEffect2\"]"  !"_point attachTo [_unit,_modelPos,_wound];" // #111
+1 attachTo !"_bolt attachTo [_hitObject,_val,_hitMemoryPt];" !"_flare attachTo [player,[0,0,0],\"granat2\"];" !"_fl attachto [_v,[0,0,0],\"destructionEffect2\"]"  !"_point attachTo [_unit,_modelPos,_wound];" // #111
 1 BIS_Effects_AirDestructionStage !"BIS_Effects_AirDestructionStage2 = compile preprocessFileLineNumbers"   !"%2]spawn BIS_Effects_AirDestructionStage2\",_int, _t];" !"BIS_Effects_AirDestructionStage2=compile preprocessFileLineNumbers" // #110
 1 buttonSetAction   !"buttonSetAction [104,\"\"];" // #109
 1 campaignConfigFile !"_pathConfig = [configfile,campaignconfigfile,missionconfigfile] select _t" // #193
 1 clearMagazineCargo !"rclearMagazineCargocode"  !"rclearMagazineCargocode = compile PreprocessFile (BIS_PathMPscriptCommands + 'clearMagazineCargo.sqf')"  !"apon\",\"addWeaponCargo\",\"addWPCur\",\"animate\",\"callVar\",\"clearMagazineCargo\",\"clearWeaponCargo\",\"createDiaryRecord\",\"createMarkerL"  !"\"clearMagazineCargo\","  !"rclearMagazineCargo = 'clearMagazineCargo'"  !"clearMagazineCargoGlobal _firePlace;" // #108
 1 clearVehicleInit   !"etDropInterval _dr;_i=_i+1;sleep 0.2;};};_pos=getpos _v;clearVehicleInit _v;if!(isDedicated)then{deletevehicle _fl;deletevehicle"  !"clearVehicleInit _v;"  !";_pos=getpos _v;clearVehicleInit _v;if!(isDedicated)then{deletevehicle _fl;deletevehicle _sm;};if(surfaceiswater(_pos)&&(_pos se" // #107
 1 clearWeaponCargo !"rclearWeaponCargocode"  !"rclearWeaponCargocode = compile PreprocessFile (BIS_PathMPscriptCommands + 'clearWeaponCargo.sqf')"  !"apon\",\"addWeaponCargo\",\"addWPCur\",\"animate\",\"callVar\",\"clearMagazineCargo\",\"clearWeaponCargo\",\"createDiaryRecord\",\"createMarkerL"  !"\"clearWeaponCargo\","  !"earMagazineCargo\",\"clearWeaponCargo\",\"createDiaryRecord\",\"createMarkerLocal\",\"createSimpleTask\",\"createTaskSet\",\"debugLog\",\"dele"  !"rclearWeaponCargo = 'clearWeaponCargo'" !"clearWeaponCargoGlobal _firePlace" // #106
-1 closeDialog   !"closeDialog 0;dayz_selectGender = 'Survivor2_DZ';"  !"if ((_this select 1) == 22) then {closeDialog 129; true} else {false}"  !"closeDialog 0;"  !"closeDialog 0;};" // #105
+1 closeDialog  !"closeDialog 0;dayz_selectGender = 'Survivor2_DZ';"  !"if ((_this select 1) == 22) then {closeDialog 129; true} else {false}"  !"closeDialog 0;"  !"closeDialog 0;};" // #105
 1 combatMode !"setCombatMode" // #192
 1 commander  // #191
 1 commandingMenu !="\"showCommandingMenu\"" !"rshowCommandingMenucode" !"'showCommandingMenu'" // #190
@@ -31,7 +31,7 @@
 1 "crashList = allmissionobject"  // #187
 1 createAgent   !"if (_type == \"DZ_Pastor\") then { _agent = createAgent [_type, _Pos, [], 0, \"NONE\"]; } else { _agent = createAgen"  !"_agent = createAgent [_type, _Pos, [], 0, \"FORM\"]; };"  !"_agent = createAgent [_type, _position, [], _radius, _method];" // #104
 1 createCenter !"createcenter sidelogic" // #186
-1 createDialog   !"createDialog \"RscDisplayGenderSelect\";" // #103
+1 createDialog !"createDialog 'horde_journal_front_cover';" !"createDialog \"horde_journal_front_cover\";" !"createDialog 'horde_journal_pages_bandits';" !"createDialog 'horde_journal_pages_journal_humanity';" !"createDialog 'horde_journal_pages_headshots';" !"createDialog 'horde_journal_pages_humanity_art';" !"createDialog 'horde_journal_pages_murders';" !"createDialog 'horde_journal_pages_zombies';" !"createDialog \"RscDisplayGenderSelect\";" // #103
 1 createGearDialog   !"createGearDialog [player, \"RscDisplayGear\"];" // #102
 1 createGroup !"_group 		= createGroup west;"  !"BIS_MPF_dummygroup = createGroup sideLogic;"  !"_group   = createGroup west;" // #101
 1 createMarker !"\"createMarkerLocal\"" !"BIS_GITA_fnc_createMarkers" !"rcreateMarkerLocalcode" !"os \"respawn_west\", _debug] call BIS_fnc_areEqual)) then {" !"_markerstr = createMarkerLocal [\"MaxZeds\", _position]" !"'createMarkerLocal'" !"'createMarkerLocal.sqf'" !"rcreateMarkerLocalcode={diag_log(\"FACO RE(DEL)rcreateMarkerLocalcode args:\"+str(_this));};" // #185
@@ -40,33 +40,33 @@
 1 createSoundSource   !"_snd = createSoundSource [\"Sound_Fire\", getpos _v,"  !"a = createSoundSource[\"Sound_Flies\",getpos (_this"  !"_snd = createSoundSource [\"Sound_Fire\", getpos _v, [], 0];"  !"_sound = createSoundSource[\"Sound_Flies\",_"  !"_sound = createSoundSource[\"Sound_Flies\",_pos"  !"a = createSoundSource[\"Sound_Flies\",getpos (_t" // #99
 1 createTask !="createTaskSet" !"_newUnit 	= _group createUnit [_class,getMarkerPos \"respawn_west\",[],0,\"NONE\"];" !"BIS_EW_fnc_createtask"  !"_task = _this createTask [[_taskType], 1.0];" // #98
 1 createUnit !"_newUnit 	= _group createUnit [_class,dayz_spawnPos" !"_newUnit 	= _group createUnit [_class,getMarkerPos \"respawn_west\",[],0,\"NONE\"];"   !"BIS_MPF_logic = BIS_MPF_dummygroup createUnit [\"Logic\", [1000,10,0], [], 0, \"NONE\"];"  !"_newUnit  = _group createUnit [_class,dayz_spawnPos,"  !"_newUnit  = _group createUnit [_class,dayz_spawnPos,[],0,\"NONE\"];" // #97
-1 createVehicle !"spawn player_alertZombies;" !="createVehicleLocal"  !"_item = createVehicle [\"WeaponHolder\", _iPos, [], _radius, \"CAN_COLLIDE\"];"  !"_item = createVehicle [\"WeaponHolder\", position player, [], 0.0, \"CAN_COLLIDE\"]" // #96
-1 createVehicleLocal !"_obj = _class createVehicleLocal (getMarkerpos \"respawn_west\");" !"_obj = _class createVehicleLocal _new;" !"\"#lightpoint\" createVehicleLocal (getPosATL _flare);" !"_object =  _type createVehicleLocal _position;" !"\"#particlesource\" createVehicleLocal _x;" !"\"Logic\" createVehicleLocal getPosATL _unit;" !"\"#particlesource\" createVehicleLocal getPosATL _unit;" !"_Crater= \"CraterLong\" createvehiclelocal [_pos select 0, _pos select 1, 0];" !"\"#particlesource\" createVehicleLocal _pos;" !"\"#particlesource\" createVehicleLocal getpos _v;"
+1 createVehicle !createVehicleLocal !"_bolt = createVehicle [\"WoodenArrowF\", _endPos, [], 0, \"CAN_COLLIDE\"];\n_bolt se" !"spawn player_alertZombies;" !="createVehicleLocal"  !"_item = createVehicle [\"WeaponHolder\", _iPos, [], _radius, \"CAN_COLLIDE\"];"  !"_item = createVehicle [\"WeaponHolder\", position player, [], 0.0, \"CAN_COLLIDE\"]" // #96
+1 createVehicleLocal !"_object = _type createVehicleLocal [_position select 0,_position select 1,-100];" !"_obj = _class createVehicleLocal (getMarkerpos \"respawn_west\");" !"_obj = _class createVehicleLocal _new;" !"\"#lightpoint\" createVehicleLocal (getPosATL _flare);" !"_object =  _type createVehicleLocal _position;" !"\"#particlesource\" createVehicleLocal _x;" !"\"Logic\" createVehicleLocal getPosATL _unit;" !"\"#particlesource\" createVehicleLocal getPosATL _unit;" !"_Crater= \"CraterLong\" createvehiclelocal [_pos select 0, _pos select 1, 0];" !"\"#particlesource\" createVehicleLocal _pos;" !"\"#particlesource\" createVehicleLocal getpos _v;"
 1 ctrlActivate   !"ctrlActivate _control;" // #95
 1 ctrlCommit !"_control ctrlCommit 0" !"_textControl ctrlcommit 0.01"  !"_primaryWeaponControl ctrlCommit 0.0;"  !"_control ctrlCommit 0;"  !"(_controlsBuffer select _x) ctrlCommit _ctrl_delay;"  !"_group ctrlCommit 0;"  !"_ctrl1 ctrlCommit 1;"  !"ctrlCommit 0;" // #94
 1 ctrlEnable !"_control ctrlenable false" !"_adminGroupIDC ctrlEnable _isAdmin"  !"_btnAbort ctrlEnable false;"  !"_disp_ctrl ctrlEnable true;"  !"_btnAbort ctrlEnable fals" // #93
 1 ctrlParent   !"_display = ctrlParent _control;"  !"_dialog = ctrlParent _control;" // #92
 1 ctrlPosition !"((ctrlPosition _delayControl) select 1)" !"_pos = 		ctrlPosition _group;" !"_pos =   ctrlPosition _group;"  !"_pos =   ctrlPosition _group;"  !"_posX = ((ctrlPosition _disp_ctrl) select 0)+ (_move_ctrl select 0);"  !"_pos = ctrlPosition _control;"  !"_y = (ctrlPosition _control) select 1;"  !"_ctrl1Pos = ctrlPosition _ctrl1;"  !"= ctrlPosition _control;"  !"_grpPos = ctrlPosition _control;" // #91
 1 ctrlSetEventHandler   !"_menu ctrlSetEventHandler [\"ButtonClick"  !"_menu ctrlSetEventHandler [\"ButtonClick\",_compile];" // #90
-1 ctrlSetStructuredText   !"_descriptionControl ctrlSetStructuredText  parseText(_selectedItemDescription);" // #89
-1 ctrlShow !"((_this select 0) displayctrl 8401) ctrlshow false" !"_control ctrlShow true;"  !"(_display displayCtrl 1302) ctrlShow true;"  !"_ctrlFracture ctrlShow true;"  !"_group ctrlShow true;"  !"_menu ctrlShow false;"  !"_control ctrlShow false;"  !"(_display displayCtrl 1301) ctrlShow true;" // #87
+1 ctrlSetStructuredText !"space getVariable \"horde_myDisplay\") displayCtrl _x) ctrlSetStructuredText parseText format [\"%1\", _b];\n} forEach _need_to_blank" !"space getVariable \"horde_myDisplay\") displayCtrl _x) ctrlSetStructuredText parseText format [\"%1\", _5];\n};\nif (_count == _full_b" !"ace getVariable \"horde_myDisplay\") displayCtrl 1800) ctrlSetStructuredText parseText format [_str_left_text, _1, _2, _3, _4, _5," !"ace getVariable \"horde_myDisplay\") displayCtrl 1801) ctrlSetStructuredText parseText format [\"%1\", _top_value];" !"_descriptionControl ctrlSetStructuredText  parseText(_selectedItemDescription);" // #89
+1 ctrlShow !"ctrlShow [1906, false];\n((uiNamespace getVariable \"horde_myDisplay\")" !"((_this select 0) displayctrl 8401) ctrlshow false" !"_control ctrlShow true;"  !"(_display displayCtrl 1302) ctrlShow true;"  !"_ctrlFracture ctrlShow true;"  !"_group ctrlShow true;"  !"_menu ctrlShow false;"  !"_control ctrlShow false;"  !"(_display displayCtrl 1301) ctrlShow true;" // #87
 1 ctrlText !"_return = ctrlText _control;" // #183
 1 currentMuzzle   !"_currentWpn = currentMuzzle player;"  !"_currentWpn =  currentMuzzle player;" // #86
 1 currentTask !="\"setCurrentTask\"" !="\"setCurrentTaskArrays\"" !"rsetCurrentTaskArrayscode" !"rsetCurrentTask" !"rsetCurrentTaskArrays" !"'setCurrentTaskArrays.sqf'" !"rsetCurrentTaskcode = compile PreprocessFile (BIS_PathMPscriptCommands + 'setCurrentTask.sqf')" !"rsetCurrentTaskcode" // #182
-1 currentWeapon !"\"_currentWeaponHolders\"" !"_move = switch (currentWeapon player) do {" !"if ((currentWeapon player == \"\")) then { player action [\"SWITCHWEAPON\","  !"_currentWpn = currentWeapon p" // #85
+1 currentWeapon !"_weapon = currentWeapon player;" !"\"_currentWeaponHolders\"" !"_move = switch (currentWeapon player) do {" !"if ((currentWeapon player == \"\")) then { player action [\"SWITCHWEAPON\","  !"_currentWpn = currentWeapon p" // #85
 1 currentZeroing  // #181
 1 CursorOnGroupMember !"CursorOnGroupMemberSelected"  // #180
 1 CursorOnGroupMemberSelected  // #179
-1 cursorTarget !"dayz_myCursorTarget" !"_object = cursorTarget;"  !"if (inflamed cursorTarget and _hasRawMeat and _canDo) then {"  !"_unit =   cursorTarget;"  !"ursorTarget) and _isVehicle and !_isMan and _hasToolbox and (damage cursorTarget < 1)) then {"  !"ursorTarget >= 2) and (count (crew cursorTarget))== 0 and ((vectorUp cursorTarget) select 2) < 0.5) then {"  !"t = cursorTarget isKindOf \"TentStorage\";"  !"_isVehicle = cursorTarget isKindOf \"AllVehicles\";"  !"if(cursorTarget == dayz_hasFire and _canDo) then {"  !"if (!isNull cursorTarget and !dayz_heartBeat) then {"  !"_menClose = cursorTarget;" // #84
-1 cutText !"cutText [\"\", \"BLACK\",0]" !"cutText [localize \"str_player_24\", \"PLAIN DOWN\"];" !"cutText [localize \"str_abort_playerclose\", \"PLAIN DOWN\"];" !"1 cutText [\"Disconnected!\", \"PLAIN\"];" !"cutText [\"\",\"BLACK OUT\"];" !"cutText [localize \"STR_DAYZ_CODE_2\", \"PLAIN DOWN\"];" !"cutText [localize \"str_fireplace_01\", \"PLAIN DOWN\"]" !"cutText [localize \"str_player_25\", \"PLAIN DOWN\"];" !"3100 cuttext [\"\",\"plain\"];"  !"1 cutText [\"\", \"BLACK\",0];"  !"cutText [format[localize \"str_abort_playerclose\",_text], \"PLAIN DOWN\""  !"startLoadingScreen[\"\",\"RscDisplayLoadCustom\"];cutText[\"\",\"BLACK OUT\"];enableSaving[false,false];dayzHiveRequest=[];"  !"(Killed by %1%2)\",AttackedByName,_tmp];999 cutText[_killmsg,\"PLAIN DOWN\",7];diag_log(format[\"KILLERMSG Last atta"  !"cutText [format[localize \"str_player_05\""  !"{cutText [(localize \"str_player_21\") , \"PLAIN DOWN\"]};"  !"1 cutText [\"\", \"PLAIN\"];"  !"azines == 0) && (count (magazines player) > 0 )) exitWith {cutText [\"can't count magazines!\", \"PLAIN DOWN\"]};"  !"if (_onLadder) exitWith {cutText [(localize \"str_player_21\") , \"PLAIN DOWN\"]};"  !"cutText[localize \"str_medical_healing\", \"PLAIN\", 2];"  !"cutText [format["  !"1 cutText [\"Something went wrong! disconnect and"  !"0 cutText [\"\", \"BLACK\",10];"  !"0 cutText [\"\", \"BLACK IN\",3];"  !"cutText [format[(localize  \"str_player_consumed\"),_t"  // #82
-1 damage !"if (alive player) then { player SetDamage 1;};" !"0.1 fadeSound 0;" !"if (((alive _y) AND {(local _y)}) AND {((damage _y == 0) AND {(_y distance _point > dayz_spawnArea+_ahead)})" !"local_zombieDamage" !"_damage" !"fn_damageActions.sqf" !"fnc_usec_damageUnconscious" !"allowDamage" !"vehicle_handleDamage" !"\"HandleDamage\"" !"fnc_usec_damageHandle" !"dayz_damageCounter"  !"_damage = _this select 2;"  !"_damage =  _this select 2;"  !"0.1 - 0.09 * speed * damage"  !"ursorTarget) and _isVehicle and !_isMan and _hasToolbox and (damage cursorTarget < 1)) then {"  !"ec_damageHandler;0} ];"  !"fn_damageHandler.sqf\";sleep 0.05;player removeEventHandler[\"HandleDamage\",mydamage_eh1];mydamage_eh1=player addev"  !"if (_damage"  !"_damageOrg = _hitter getVariable[\"firedDamage\",0];"  !"private[\"_unit\",\"_targets\",\"_move\",\"_damage\",\"_wound\",\"_index\",\"_cnt\",\"_sound\",\"_local\",\"_dir\",\"_hpList\""  !"player setdamage 0;"  !"r_player_timeout = round(((random 2) * _damage) * 40);"  !"_damage = _this select 1;"  !"[_unit, \"damage\"] call server_updateObject;"  !"fn_damageHandlerZ.sqf\""  !"_total = [_unit,_hit,_damage] call object_setHitServer;"  !"1 - damage" // #81
+1 cursorTarget !_cursorTarget !"dayz_myCursorTarget" !"_object = cursorTarget;"  !"if (inflamed cursorTarget and _hasRawMeat and _canDo) then {"  !"_unit =   cursorTarget;"  !"ursorTarget) and _isVehicle and !_isMan and _hasToolbox and (damage cursorTarget < 1)) then {"  !"ursorTarget >= 2) and (count (crew cursorTarget))== 0 and ((vectorUp cursorTarget) select 2) < 0.5) then {"  !"t = cursorTarget isKindOf \"TentStorage\";"  !"_isVehicle = cursorTarget isKindOf \"AllVehicles\";"  !"if(cursorTarget == dayz_hasFire and _canDo) then {"  !"if (!isNull cursorTarget and !dayz_heartBeat) then {"  !"_menClose = cursorTarget;" // #84
+1 cutText !"player removeMagazine \"ItemBloodbag\";\ncutText [\"Transfusion in progress, remain still...\"" !"0 cutText [\"\",\"BLACK\"];" !"cutText [\"\", \"BLACK\",0]" !"cutText [localize \"str_player_24\", \"PLAIN DOWN\"];" !"cutText [localize \"str_abort_playerclose\", \"PLAIN DOWN\"];" !"1 cutText [\"Disconnected!\", \"PLAIN\"];" !"cutText [\"\",\"BLACK OUT\"];" !"cutText [localize \"STR_DAYZ_CODE_2\", \"PLAIN DOWN\"];" !"cutText [localize \"str_fireplace_01\", \"PLAIN DOWN\"]" !"cutText [localize \"str_player_25\", \"PLAIN DOWN\"];" !"3100 cuttext [\"\",\"plain\"];"  !"1 cutText [\"\", \"BLACK\",0];"  !"cutText [format[localize \"str_abort_playerclose\",_text], \"PLAIN DOWN\""  !"startLoadingScreen[\"\",\"RscDisplayLoadCustom\"];cutText[\"\",\"BLACK OUT\"];enableSaving[false,false];dayzHiveRequest=[];"  !"(Killed by %1%2)\",AttackedByName,_tmp];999 cutText[_killmsg,\"PLAIN DOWN\",7];diag_log(format[\"KILLERMSG Last atta"  !"cutText [format[localize \"str_player_05\""  !"{cutText [(localize \"str_player_21\") , \"PLAIN DOWN\"]};"  !"1 cutText [\"\", \"PLAIN\"];"  !"azines == 0) && (count (magazines player) > 0 )) exitWith {cutText [\"can't count magazines!\", \"PLAIN DOWN\"]};"  !"if (_onLadder) exitWith {cutText [(localize \"str_player_21\") , \"PLAIN DOWN\"]};"  !"cutText[localize \"str_medical_healing\", \"PLAIN\", 2];"  !"cutText [format["  !"1 cutText [\"Something went wrong! disconnect and"  !"0 cutText [\"\", \"BLACK\",10];"  !"0 cutText [\"\", \"BLACK IN\",3];"  !"cutText [format[(localize  \"str_player_consumed\"),_t"  // #82
+1 damage !"if ((alive player) && (r_fracture_legs)) then { player SetDamage 1;};" !_damage !"\"firedDamage\"" !"if (alive player) then { player SetDamage 1;};" !"0.1 fadeSound 0;" !"if (((alive _y) AND {(local _y)}) AND {((damage _y == 0) AND {(_y distance _point > dayz_spawnArea+_ahead)})" !"local_zombieDamage" !"_damage" !"fn_damageActions.sqf" !"fnc_usec_damageUnconscious" !"allowDamage" !"vehicle_handleDamage" !"\"HandleDamage\"" !"fnc_usec_damageHandle" !"dayz_damageCounter"  !"_damage = _this select 2;"  !"_damage =  _this select 2;"  !"0.1 - 0.09 * speed * damage"  !"ursorTarget) and _isVehicle and !_isMan and _hasToolbox and (damage cursorTarget < 1)) then {"  !"ec_damageHandler;0} ];"  !"fn_damageHandler.sqf\";sleep 0.05;player removeEventHandler[\"HandleDamage\",mydamage_eh1];mydamage_eh1=player addev"  !"if (_damage"  !"_damageOrg = _hitter getVariable[\"firedDamage\",0];"  !"private[\"_unit\",\"_targets\",\"_move\",\"_damage\",\"_wound\",\"_index\",\"_cnt\",\"_sound\",\"_local\",\"_dir\",\"_hpList\""  !"player setdamage 0;"  !"r_player_timeout = round(((random 2) * _damage) * 40);"  !"_damage = _this select 1;"  !"[_unit, \"damage\"] call server_updateObject;"  !"fn_damageHandlerZ.sqf\""  !"_total = [_unit,_hit,_damage] call object_setHitServer;"  !"1 - damage" // #81
 1 deActivateKey !"call (compile \"deactivateKey (_keyString + (str _i))\");" // #178
 1 deleteGroup !"group (_this select 0); deleteVehicle (_this select 0); deleteGroup _mygrp"  !"deleteGroup _myGroup;"  !"nctions_mainscope]]; _mygrp = group (_this select 0); deleteVehicle (_this select 0); deleteGroup _mygrp;};};      if (isnil 'RE"  !"_functions_mainscope]]; _mygrp = group (_this select 0); deleteVehicle (_this select 0); deleteGroup _mygrp;};};      if (isnil"  !"= group (_this select 0); deleteVehicle (_this select 0); deleteGroup _mygrp;};};      if (isnil 'RE') then {[] execVM '" // #80
 1 deleteMarker !"deleteMarkerLocal" // #177
 1 deleteMarkerLocal   !"deleteMarkerLocal \"Agro80\";" // #79
-1 detach  // #176
-1 dialog !"\"initDialog\"" !"createDialog \"RscDisplayGenderSelect\";" !"closeDialog 0;dayz_selectGender" !"'initDialog'" !"_control = 	_dialog displayCtrl _i"  !"private [\"_control\",\"_dialog\",\"_deltaY\",\"_y\"];"  !"_dialog =    findDisplay 106;"  !"_dialog = findDisplay 106;"  !"lder\",\"_config\",\"_isOk\",\"_muzzles\",\"_playerID\",\"_claimedBy\",\"_text\",\"_control\",\"_dialog\",\"_item\",\"_val\",\"_max\",\"_bolts\",\"_quiver"  !"private[\"_dialog\",\"_magazineArray\",\"_control\",\"_item\",\"_val\",\"_max\"];"  !"!dialog"  !"waitUntil { !dialog; };"  !"_control =  _dialog displayCtrl _i;"  !"private [\"_dialog\",\"_control\",\"_magazineArray\",\"_item\",\"_val"  !"(_dialog displayCtrl 345) ctrlsettext (localize \"STR_CA_ADV_HIDE\");"  !"_dialog = ctrlParent _control;"  !"private [\"_control\",\"_dialog\",\"_action\",\"_disp_ctrl\",\"_OPT_advanced_array\",\"_in_delay\",\"_no_move\",\"_hidden"  !"if ( isNull _dialog ) then {" // #78
-1 direction !"\"direction\"" !"weaponDirection" !"eyeDirection"  !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player, ("  !"[round(direction player),_charPos];"  !"_dir =   getNumber (_config >> \"direction\");"  !"_worldspace  = [round(direction player),getPosATL player];"  !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player,"  !"_eyeDir = direction _x;" // #77
+1 detach !"player removeAction s_player_dropflare;\ndetach _flare;\ns_player_grabflare = -1;\ns_player_removeflare = -1;" // #176
+1 dialog !"createDialog \"horde_journal_front_cover\";" !closeDialog !_dialog !"\"initDialog\"" !"createDialog \"RscDisplayGenderSelect\";" !"closeDialog 0;dayz_selectGender" !"'initDialog'" !"_control = 	_dialog displayCtrl _i"  !"private [\"_control\",\"_dialog\",\"_deltaY\",\"_y\"];"  !"_dialog =    findDisplay 106;"  !"_dialog = findDisplay 106;"  !"lder\",\"_config\",\"_isOk\",\"_muzzles\",\"_playerID\",\"_claimedBy\",\"_text\",\"_control\",\"_dialog\",\"_item\",\"_val\",\"_max\",\"_bolts\",\"_quiver"  !"private[\"_dialog\",\"_magazineArray\",\"_control\",\"_item\",\"_val\",\"_max\"];"  !"!dialog"  !"waitUntil { !dialog; };"  !"_control =  _dialog displayCtrl _i;"  !"private [\"_dialog\",\"_control\",\"_magazineArray\",\"_item\",\"_val"  !"(_dialog displayCtrl 345) ctrlsettext (localize \"STR_CA_ADV_HIDE\");"  !"_dialog = ctrlParent _control;"  !"private [\"_control\",\"_dialog\",\"_action\",\"_disp_ctrl\",\"_OPT_advanced_array\",\"_in_delay\",\"_no_move\",\"_hidden"  !"if ( isNull _dialog ) then {" // #78
+1 direction !"[round(direction player),getPosATL player];" !"_dir = direction _obj;" !"\"direction\"" !"weaponDirection" !"eyeDirection"  !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player, ("  !"[round(direction player),_charPos];"  !"_dir =   getNumber (_config >> \"direction\");"  !"_worldspace  = [round(direction player),getPosATL player];"  !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player,"  !"_eyeDir = direction _x;" // #77
 1 disableAI   !"this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';"  !"_agent disableAI \"FSM\";"  !"disableAI \"FSM\";"  !"_agent disableAI \"AUTOTARGET\";" // #76
 1 disableConversation   !"player disableConversation true;" // #75
 1 disableUserInput   !"disableUserInput false;"  !"disableUserInput true;" // #74
@@ -83,13 +83,13 @@
 1 "foreach tent"
 1 gearSlotData !"_mag = gearSlotData _control;" !"_item = 	gearSlotData _control"  !"_item =  gearSlotData _control;"  !"_item = gearSlotData _control;" // #69
 1 getFSMVariable   !"_lieDown = _dogHandle getFSMVariable \"_actionLieDown\";" // #68
-1 getMagazineCargo   !"iag_log str(getMagazineCargo unitBackpack _newUnit);" !"_magazines = (getMagazineCargo _object) select 1;"  !"_backpackMag = getMagazineCargo uni"  !"_backpackMag = getMagazineCargo unitBackpack player;"  !"getMagazineCargo dayz_myBackpack;"  !"dayz_myBackpackMags = getMagazineCargo dayz_myBackpack;" !"_mags = getMagazineCargo _firePlace" // #67
+1 getMagazineCargo !"_magazines = 	getMagazineCargo _obj;" !"_mag_arr = getMagazineCargo _backpack;"  !"iag_log str(getMagazineCargo unitBackpack _newUnit);" !"_magazines = (getMagazineCargo _object) select 1;"  !"_backpackMag = getMagazineCargo uni"  !"_backpackMag = getMagazineCargo unitBackpack player;"  !"getMagazineCargo dayz_myBackpack;"  !"dayz_myBackpackMags = getMagazineCargo dayz_myBackpack;" !"_mags = getMagazineCargo _firePlace" // #67
 1 getPlayerUID   !"deathHandled = true;" !"PVDZ_plr_Discorem = getPlayerUID player;"  !"er)and(alive Player)and(player==player)};_uid=(getPlayerUID vehicle player);"  !"_playerUID = getPlayerUID player;"  !"_playerID = getPlayerUID player;"  !"yName==\"\")})then{AttackedByName=getPlayerUID _klr;};_weapon=weaponState _klr;_weapon=if(_weapon select 0==\"Throw\")then{_weapon s"  !"ame==\"\")})then{AttackedByName=getPlayerUID _klr;};_weapon=weaponState _klr;_weapon=if(_weapon select 0==\"Throw\")then{_weapon sel" // #65
 1 getTerrainHeightASL   !"_terrainHeight = getTerrainHeightASL [_curpos select 0, _curpos select 1];" // #64
 1 Hack-Men
-1 hasWeapon   !"if (isnil 'BIS_fnc_hasWeapon' || false) then {" !"if (player hasWeapon \"MeleeCrowbar\") then {" // #62
+1 hasWeapon  !"if (player hasWeapon \"ItemWatch\") then" !"if (isnil 'BIS_fnc_hasWeapon' || false) then {" !"if (player hasWeapon \"MeleeCrowbar\") then {" // #62
 1 HaxSmokeOn
-1 hideBody !="dayzHideBody = objNull"  !"hideBody _body;" !"PVDZ_obj_HideBody"  !"licVariableEventHandler{(_this select 1)call fnc_usec_damageVehicle};\"dayzHideBody\"addPublicVariableEventHandler{hideBody(_this" // #61
+1 hideBody !"addPublicVariableEventHandler {hideBody (_this select 1)}" !"\"dayzHideBody\"" !="dayzHideBody = objNull"  !"hideBody _body;" !"PVDZ_obj_HideBody"  !"licVariableEventHandler{(_this select 1)call fnc_usec_damageVehicle};\"dayzHideBody\"addPublicVariableEventHandler{hideBody(_this" // #61
 1 hideObject !"rhideObjectcode"  !"rhideObjectcode = compile PreprocessFile (BIS_PathMPscriptCommands + 'hideObject.sqf')"  !",\"globalRadio\",\"groupChat\",\"groupRadio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kbtell\",\"land\",\"move"  !"dio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kbtell\",\"land\",\"move\",\"moveIn\",\"playAction\",\"playAction"  !"\"hideObject\""  !"sion\",\"globalChat\",\"globalRadio\",\"groupChat\",\"groupRadio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kb"  !"rhideObject = 'hideObject'" // #60
 1 hint !"hintC" !"hintSilent" !"rhintcode" !"'BIS_fnc_hints'" !"'hint.sqf'" !"player_taskHint" !"rtaskHint = 'taskHint'"  !"rhint = 'hint'"  !"rhintcode = compile PreprocessFile (BIS_PathMPscriptCommands + 'hint.sqf')"  !",\"globalRadio\",\"groupChat\",\"groupRadio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kbtell\",\"land\",\"move"  !"dio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kbtell\",\"land\",\"move\",\"moveIn\",\"playAction\",\"playAction"  !"sion\",\"globalChat\",\"globalRadio\",\"groupChat\",\"groupRadio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kb"  !"\"hint\"," // #59
 1 hintC !"rhintcode" !"rhintCcode" !"rtaskHintcode"   !"\"hintC\","  !",\"globalRadio\",\"groupChat\",\"groupRadio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kbtell\",\"land\",\"move"  !"rhintC = 'hintC'"  !"dio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kbtell\",\"land\",\"move\",\"moveIn\",\"playAction\",\"playAction"  !"sion\",\"globalChat\",\"globalRadio\",\"groupChat\",\"groupRadio\",\"hideObject\",\"hint\",\"hintC\",\"kbAddTopic\",\"kbreact\",\"kbRemoveTopic\",\"kb"  !"rhintCcode = compile PreprocessFile (BIS_PathMPscriptCommands + 'hintC.sqf')" // #58
@@ -97,7 +97,7 @@
 1 "if (alive player) then { player SetDamage 1;};"  // #175
 1 inflame !"inflamed"  !"if(({inflame"  !"(_this select 0) inflame true" // #56
 1 isAgent   !"r(group(vehicle _klr));};if((!(isPlayer _klr))AND{(isAgent teamMember _klr)})then{_klr=agent(teamMember _klr);};};if((isPlayer _" // #55
-1 isFlatEmpty   !"if (!((count (_testPos isFlatEmpty [_objDist, 0, _maxGradient, _objDist max 5, _waterMode, _s" // #54
+1 isFlatEmpty  !"_x = _new isflatempty [\n0, \n0, \n0.1*_size, \n_size, \n1, \nfalse, \nif (_isPlayer) t" !"if (!((count (_testPos isFlatEmpty [_objDist, 0, _maxGradient, _objDist max 5, _waterMode, _s" // #54
 1 isFormationLeader  // #174
 1 isKeyActive   !"if (isKeyActive (_keyString + (str _i))) then" // #53
 1 isShowing3DIcons  // #173
@@ -127,34 +127,35 @@
 1 markerShape !"setMarkerShape" // #161
 1 mark_player
 1 maut
+1 menu !_menu !gear_ui_offMenu !"\"showCommandingMenu\"" !" 'BIS_fnc_commsMenu" !" 'BIS_fnc_createmenu' "
 1 _minimap
-1 modelToWorld   !"_bsz_pos = _obj modelToWorld _bsz_pos;" !"_cornerLow = _this ModeltoWorld (_boundingBox select 0);" !"_pos = _unit modelToWorld [ sin(_deg) * _trip, cos(_deg) * _trip, 0];" !"_iPos = _obj modelToWorld _x;" // #46
+1 modelToWorld  !"_pos = player modeltoWorld [0,1,0];\n\n_item = createVehicle [\"WeaponHolder\", _pos, []" !"_pos modeltoworld [0,_size/2,0]" !"_bsz_pos = _obj modelToWorld _bsz_pos;" !"_cornerLow = _this ModeltoWorld (_boundingBox select 0);" !"_pos = _unit modelToWorld [ sin(_deg) * _trip, cos(_deg) * _trip, 0];" !"_iPos = _obj modelToWorld _x;" // #46
 1 moonIntensity   !"+ moonIntensity" // #45
 1 morphto
-1 moveTo !"movetocompleted" !="kbRemoveTopic" !="_unit moveTo _pos" !"_agent moveto  _initpos;"  !"_agent moveTo _targetPos;"  !"_unit moveTo _pos;"  !"_agent moveTo _pos;"  !"_agent moveTo _myDest;"  !"_agent moveTo (getPosATL player);" // #44
+1 moveTo !moveToFailed !"movetocompleted" !="kbRemoveTopic" !="_unit moveTo _pos" !"_agent moveto  _initpos;"  !"_agent moveTo _targetPos;"  !"_unit moveTo _pos;"  !"_agent moveTo _pos;"  !"_agent moveTo _myDest;"  !"_agent moveTo (getPosATL player);" // #44
 1 musekeys
 1 Myscripts
 1 nearObjects   !"_nearby = _position nearObjects [\"building\",_radius];" !"forEach(_plyr nearObjects["ReammoBox",20])" // #41
-1 owner !"_flare setVariable [\"owner\",player,true];" !"setOwner" !"zombie_findOwner"  !"_canPickLight = isNull (_nearLight getVariable [\"owner\",objNull]);" // #40
+1 owner !"\"_ownerID\"" !"\"owner\"" !"_flare setVariable [\"owner\",player,true];" !"setOwner" !"zombie_findOwner"  !"_canPickLight = isNull (_nearLight getVariable [\"owner\",objNull]);" // #40
 1 pathtoscrdir
 1 playableUnits   !"_local = { _unit distance _x < _dis; } count playableUnits <= 1;" !"!= _plr) AND (_x distance _y < dayz_cantseeDist)} count playableUnits) then {" !"count playableUnits == 0 and isServer"  !"if (count playableUnits == 0 and isServer) then {"  !"forEach playableUnits" !"(playableUnits select _y)" !"_list=playableUnits;_count=count _list;" // #39
 1 "player execVM"
 1 playScriptedMission  // #160
 1 "publicVariable \"gprim\";"  // #159
 1 "publicVariable \"norrnRalie\""  // #158
-1 publicVariable !"publicVariableServer" !"publicVariable \"PVDZ_hlt_Morphine\";" !"publicVariable \"dayzPublishObj\"" !"publicVariable \"PVDZ_obj_RoadFlare\";" !"publicVariable \"PVDZ_hlt_Bleed\";" !"publicVariable \"PVDZ_hlt_Epi\";"!"addPublicVariableEventHandler"  !"publicVariable \"dayzUpdateVehicle\";"  !"publicVariable \"dayzHumanity\";"  !"publicVariable \"dayzSetFuel\";"  !"publicVariable \"dayzLogin\";"  !"publicVariable \"dayzLogin2\";"  !"publicVariable \"usecEpi\";"  !"publicVariable _playerObjName;"  !"publicVariable \"dayzLoginRecord\";"  !"publicVariable \"usecPainK\";"  !"ge2.sqf\";BIS_Effects_globalEvent={BIS_effects_gepv=_this;publicVariable\"BIS_effects_gepv\";_this call BIS_Effects_dwEvent;};BIS_E"  !"publicVariable \"usecMorphine\";"  !"publicVariable \"BIS"  !"publicVariable \"usecBandage\";"  !"publicVariable \"dayzHitV\";"  !"publicVariable \"dayzPlayerSave\";"  !"publicVariable \"usecBleed\";"  !"publicVariable \"dayzDiscoRem\";"  !"publicVariable \"dayzRoadFlare\";"  !"publicVariable \"remExFP\";"  !"publicVariable \"dayzHideBody\";" // #37
-1 reload !"preloadCamera" !"dayz_preloadFinished" !"PRELOAD_" !"player_reloadMag" !"BIS_CPP_Muzzle_ForceReload"  !"dayz_clientPreload"  !"dayz_clientPreload and !(isNull _agent)"  !"entPreload } do {"  !"reload player;"  !"dayz_clientPreload = true;" // #36
-1 removeAllEventHandlers !"z\addons\dayz_code\init\veh_ResetEH.sqf" // #157
+1 publicVariable !"publicVariableServer" !"addPublicVariableEventHandler" !"publicVariable \"BIS_" !"publicVariable \"PVDZ_" !"publicVariable \"dayzDiscoRem\";" !"publicVariable \"dayzHideBody\";" !"publicVariable \"dayzHitV\";" !"publicVariable \"dayzHumanity\";" !"publicVariable \"dayzLogin\";" !"publicVariable \"dayzLogin2\";" !"publicVariable \"dayzLoginRecord\";" !"publicVariable \"dayzPlayerSave\";" !"publicVariable \"dayzPublishObj\"" !"publicVariable \"dayzRoadFlare\";" !"publicVariable \"dayzSetFuel\";" !"publicVariable \"dayzUpdateVehicle\";" !"publicVariable \"remExFP\";" !"publicVariable \"usecBandage\";" !"publicVariable \"usecBleed\";" !"publicVariable \"usecEpi\";" !"publicVariable \"usecMorphine\";" !"publicVariable \"usecPainK\";"
+1 reload !"I should probably reload it" !"preloadCamera" !"dayz_preloadFinished" !"PRELOAD_" !"player_reloadMag" !"BIS_CPP_Muzzle_ForceReload"  !"dayz_clientPreload"  !"dayz_clientPreload and !(isNull _agent)"  !"entPreload } do {"  !"reload player;"  !"dayz_clientPreload = true;" // #36
+1 removeAllEventHandlers !"_this removeAllEventHandlers \"HandleDamage\";"   // #157
 1 removeAllWeapons !"rremoveAllWeaponscode"   !"removeAllWeapons _oldUn"  !"rremoveAllWeapons = 'removeAllWeapons'"  !"ion\",\"playActionnow\",\"playmove\",\"playmovenow\",\"playMusic\",\"playsound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrent"  !"ionnow\",\"playmove\",\"playmovenow\",\"playMusic\",\"playsound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrentTask\",\"setCur"  !"\"removeAllWeapons\","  !"removeAllWeapons _oldUnit;"  !"rremoveAllWeaponscode = compile PreprocessFile (BIS_PathMPscriptCommands + 'removeAllWeapons.sqf')"  !"sound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrentTask\",\"setCurrentTaskArrays\",\"setDate\",\"setDir\",\"setGroupID\",\"s" // #35
 1 removeEventHandler   !"player removeEventHandler [\"FiredNear\",eh_player_killed];"  !"player removeEventHandler[\"HandleDamage\",mydamage_eh1];" !"player removeEventHandler[\"HandleDamage\",mydamage_eh1]" // #34
-1 removeMagazine   !"player removeMagazine _item;" !"player removeMagazines _create;" !"player removeMagazine \"ItemBandage\";" !"{player removeMagazines _x} forEach MeleeMagazines;"  !"player removeMagazine _itemorignal;"  !"player removeMagazine 'crowbar_swing';"  !"ldUnit removeMagazine _x;} forEach  magazines _oldUnit;"  !"player removeMagazine _magType;"  !"player removeMagazine \"ItemPainkiller\";"  !"nit removeMagazine _x;} forEach  magazines _oldUnit;"  !"player removeMagazine \"ItemHeatPack\";" // #33
-1 removeMagazines !"player removeMagazines _create;" !"removeMagazinesTurret" !"{player removeMagazines _x} forEach MeleeMagazines;" // #156
+1 removeMagazine !removeMagazines  !"player removeMagazine \"WoodenArrow\";\n};\nplayer addMagazine [\"Quiver\"" !"if (_isMedic and !_started) then {\nplayer removeMagazine \"ItemBloodbag\";" !"for \"_x\" from 1 to _qty do {\nplayer removeMagazine _meat;\nplayer addMagazine _meatcooked;" !"player removeMagazine \"ItemMorphine\";\n\n_unit setVariable [\"hit_legs\",0];" !"player removeMagazine _item;" !"player removeMagazine \"ItemBandage\";" !"player removeMagazine _itemorignal;" !"player removeMagazine 'crowbar_swing';" !"player removeMagazine _magType;" !"player removeMagazine \"ItemPainkiller\";" !"player removeMagazine \"ItemHeatPack\";"
+1 removeMagazines !removeMagazinesTurret   !"player removeMagazines \"ItemWaterbottleUnfilled\";" !"{player removeMagazines _x} forEach [\"hatchet_swing\"" !"player removeMagazines _create;" !"removeMagazinesTurret" !"{player removeMagazines _x} forEach MeleeMagazines;" // #156
 1 removeMagazinesTurret  // #155
-1 removeWeapon  // #154
-1 reveal   !"player reveal _object;" !"_x reveal [_projectile,4];"  !"player reveal _holder;"  !"player reveal _unit;"  !"reveal _x} forEach (nearestObjects [getPosATL player, [\"AllVehicles\",\"WeaponHolder\",\"StashSmall\",\"StashMedium\",\"TentStorage\",\"BuiltItems\"]," // #32
+1 removeWeapon !"player removeWeapon \"Melee" // #154
+1 reveal !"_fire setPos _location; \nplayer reveal _fire;\n\n_fire spawn player_fireMonitor;" !"player reveal _tent;" !"player reveal _bag;"  !"player reveal _object;" !"_x reveal [_projectile,4];"  !"player reveal _holder;"  !"player reveal _unit;"  !"reveal _x} forEach (nearestObjects [getPosATL player, [\"AllVehicles\",\"WeaponHolder\",\"StashSmall\",\"StashMedium\",\"TentStorage\",\"BuiltItems\"]," // #32
 1 sCode !"\"_slotsCode\"" !"rremoveAllWeaponscode" !"rsetCurrentTaskArrayscode"                                                                                                                           
 1 scopeName   !"scopeName \"loop\";"  !"scopeName \"main\";"  !"scopeName \"" // #31
-1 scriptName   !"scriptName \"Functions"  !"scriptName \"ui" !"scriptName \"missions_acr"  !"scriptName \"MP"  !"scriptName \"fn_flies.sqf\";" // #30
+1 scriptName  !"scriptName \"Functions\\misc\\fn_damageHandler.sqf\";" !"scriptName \"Functions\\arrays\\fn_selectRandom.sqf\";" !"scriptName \"Functions\\misc\\fn_selfActions.sqf\";" !"scriptName \"Functions\\misc\\fn_damageActions.sqf\";" !"scriptName \"Functions"  !"scriptName \"ui" !"scriptName \"missions_acr"  !"scriptName \"MP"  !"scriptName \"fn_flies.sqf\";" // #30
 1 selectBestPlaces !"selectbestplaces [_randrefpoint,dayz_animalDistance,_favouritezones" !"selectbestplaces [(getpos _agent),500,_favouritezones,10,5];" // #153
 1 selectNoPlayer  // #152
 1 selectPlayer   !"selectPlayer _newUnit;"  !"selectPlayer dayz_originalPlayer;" // #28
@@ -166,7 +167,7 @@
 1 setFog   !"0 setFog _currentFog;"  !"timeUntilCompletion setFog _targetWeatherValue;" // #24
 1 setFuel !"local_setFuel"  !"dayzSetFuel spawn local_setFuel;"  !"local_setFuel =    compile preprocessFileLineNumbers \"" // #23
 1 setGroupId !"\"setGroupID\"" !"'setGroupID'" !"'setGroupID.sqf'" !"rsetGroupIDcode" !"rsetGroupIDcode={diag_log(\"FACO RE(DEL)rsetGroupIDcode args:\"+str(_this));};" // #149
-1 setHit !"object_setHitServer"  !"object_setHit.sqf\""  !"ayer setHit[\"hands\",1];"  !"[player,\"legs\", (_fractures select 0)] call object_setHit;"  !"t setHit[\"legs\",0];"  !"player setHit[\"legs\",1];" // #22
+1 setHit !"_unit setHit [_selection, _dam];" !"object_setHitServer"  !"object_setHit.sqf\""  !"ayer setHit[\"hands\",1];"  !"[player,\"legs\", (_fractures select 0)] call object_setHit;"  !"t setHit[\"legs\",0];"  !"player setHit[\"legs\",1];" // #22
 1 setLightAmbient   !"_lightArea setLightAmbient [0.2,0.01,0.01];"  !"_li setLightAmbient[0.8, 0.6, 0.2];" // #21
 1 setLightBrightness   !"_lightArea setLightBrightness 0.2;"  !"_li setLightBrightness 0;" // #20
 1 setMarkerBrush !"setMarkerBrushLocal" // #148
@@ -174,22 +175,24 @@
 1 setMarkerDir !"setMarkerDirLocal"  // #147
 1 setMarkerDirLocal  // #146
 1 setMarkerPos "\"setMarkerPosLocal\""  !"\"setMarkerPos" // #18
-1 setMarkerText  // #145
+1 setMarkerText !setMarkerTextLocal // #145
+1 "setMarkerTextLocal"
 1 setMarkerTypeLocal
 1 setOvercast   !"0 setOvercast _currentOvercast;" // #17
 1 setOwner  // #144
 1 setParticleCircle  // #143
 1 setParticleParams   !"then{_smoke=\"#particlesource\"createVehicleLocal _pos;_smoke attachto[_v,[0,0,0],\"destructionEffect1\"];_smoke setParticleParams[["  !"_smoke setParticleParams"  !"cleRandom[0.3,[1,1,0],[0,0,0],0,0.3,[0,0,0,0],0,0];_fl setParticleParams[[\""  !"_fl setParticleParams"  !"_source setParticleParams"  !"_smoke setParticleParams [[\"" // #16
 1 setPlayable   !"setPlayable _newUnit;"  !"setPlayable dayz_originalPlayer;" // #15
-1 setPos !"_flare setPos (getPos _flare);" !"player setPosATL (getPosATL player);" !="_agent setpos _Pos;" !"_unit setPosATL (getPosATL _unit);" !"setPosition" !"_oldUnit setPosATL [_createSafePos select 0, _createSafePos select 1, 0];" !="player setPosATL _mylastPos" !"_agent setPosATL _position" !="_item setPosATL _iPos" !"(vehicle player) setpos _lastpos" !"BIS_fnc_sceneSetPosFormation" !"_bolt setPosATL _endPos" !"player setPosATL dayz_spawnPos;"  !"_setPos =    _worldspace select 1;"  !"_test = (_this select 0) setPos (position (_this select 0)); if (isnil \"_test\") then {_test"  !"t 0,_pos select 1,0];_Crater setdir(_dir+(180 * _i));_Crater setpos[_pos select 0,_pos select 1,0];_Crater setPos[_pos select 0,"  !"_object setPos _position;"  !"preloadCamera _setPos"  !"etPosATL _setPos;"  !"_Crater setPos [_pos sele" // #14
+1 setPos !"_item setPosATL _pos;\n};\n_item addMagazineCargoGlobal [_itemtodrop,1];" !"_obj setPosATL(_new);\n};" !"_object setPos [_position select 0,_position select 1,0];" !"_flare setPos (getPos _flare);" !"player setPosATL (getPosATL player);" !="_agent setpos _Pos;" !"_unit setPosATL (getPosATL _unit);" !"setPosition" !"_oldUnit setPosATL [_createSafePos select 0, _createSafePos select 1, 0];" !="player setPosATL _mylastPos" !"_agent setPosATL _position" !="_item setPosATL _iPos" !"(vehicle player) setpos _lastpos" !"BIS_fnc_sceneSetPosFormation" !"_bolt setPosATL _endPos" !"player setPosATL dayz_spawnPos;"  !"_setPos =    _worldspace select 1;"  !"_test = (_this select 0) setPos (position (_this select 0)); if (isnil \"_test\") then {_test"  !"t 0,_pos select 1,0];_Crater setdir(_dir+(180 * _i));_Crater setpos[_pos select 0,_pos select 1,0];_Crater setPos[_pos select 0,"  !"_object setPos _position;"  !"preloadCamera _setPos"  !"etPosATL _setPos;"  !"_Crater setPos [_pos sele" // #14
 1 setPosition !="ctrlSetPosition" // #142
 1 setRain   !"0 setRain drn_var_DynamicWeather_Rain;" // #13
 1 setRepairCargo  // #141
 1 setSize  // #140
 1 setSkill   !"_agent setSkill 0;" // #12
 1 setSpeedMode   !"_agent setSpeedMode \"LIMITED\";" // #11
-1 setText !"ctrlSetText" // #139
+1 setText  !_setText  !ctrlSetText
 1 setUnitPos !"_agent setUnitPos "Middle";"  !"_agent setUnitPos \"Middle\";" // #10
+1 setUnitRecoilCoefficient
 1 setVehicleInit  // #138
 1 setVelocity   !"_item setvelocity [0,0,1];" !"player setVelocity [-(_vel select 0),  -(_vel select 1),  0];" !"_agent setvelocity [0, 0, 1];" !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player,"  !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player, (" // #9
 1 setWaypointType  // #137
@@ -207,9 +210,9 @@
 1 "tentList = allmissionobjects \"Land_A_tent\""  // #132
 1 terrainIntersect !"terrainIntersectASL" // #131
 1 terrainIntersectASL !"(!(terrainIntersectASL [_zPos, _eye])"  !"_cantSee = terrainIntersectASL [_tPos, _zPos];" // #5
-1 titleCut !"rtitleCutcode"  !"skiptime\",\"spawn\",\"switchAction\",\"switchCamera\",\"taskHint\",\"titleCut\",\"titleText\"];_library=[\"execVM\",\"JIPexec\",\"JIPrequest\",\"sa"  !"rtitleCut = 'titleCut'"  !"c\",\"setWPtype\",\"showCommandingMenu\",\"sideChat\",\"sideRadio\",\"skiptime\",\"spawn\",\"switchAction\",\"switchCamera\",\"taskHint\",\"titleCut"  !"ideRadio\",\"skiptime\",\"spawn\",\"switchAction\",\"switchCamera\",\"taskHint\",\"titleCut\",\"titleText\"];_library=[\"execVM\",\"JIPexec\",\"JIPr"  !"rtitleCutcode = compile PreprocessFile (BIS_PathMPscriptCommands + 'titleCut.sqf')"  !"\"titleCut\","  !",\"setWPtype\",\"showCommandingMenu\",\"sideChat\",\"sideRadio\",\"skiptime\",\"spawn\",\"switchAction\",\"switchCamera\",\"taskHint\",\"titleCut\"," // #4
+1 titleCut !"rtitleCut = 'titleCut'" !"rtitleCutcode" !"\"titleCut\""
 1 unassignVehicle  // #130
-1 unitBackpack !"dayz_myBackpack =	unitBackpack player"  !"_backpackWpn = getWeaponCargo unitBackpack player;"  !"rgo unitBackpack _newUnit);"  !"_bag = unitBackpack player;"  !"dayz_myBackpack = unitBackpack player;"  !"iag_log str(getMagazineCargo unitBackpack _newUnit);"  !"pn = getWeaponCargo unitBackpack player;" // #3
+1 unitBackpack !"_backpack = unitBackpack player;" !"dayz_myBackpack =	unitBackpack player"  !"_backpackWpn = getWeaponCargo unitBackpack player;"  !"rgo unitBackpack _newUnit);"  !"_bag = unitBackpack player;"  !"dayz_myBackpack = unitBackpack player;"  !"iag_log str(getMagazineCargo unitBackpack _newUnit);"  !"pn = getWeaponCargo unitBackpack player;" // #3
 1 unitPos !"setUnitPos" // #129
 1 "{_unt1 addweapon _x} forEach _w2p3n4;"  // #125
 1 "_v setVehicleInit format [\"[this, %1, %2,false,true]spawn BIS_Effects_Burn"  // #196
@@ -220,115 +223,34 @@
 1 waypoint // #198
 1 weaponDirection !"_turretDir = _firer weaponDirection _weapon"  !"_turretDir = _firer weaponDirection _weapon;" // #2
 1 weaponsTurret   !"_weapons = _vehicle weaponsTurret _turret;" // #1
-1 worldToModel   !"_relPos = _building worldToModel _point;" !"_relPos = _building worldToModel (getPosATL _unit1);" // #0
-1 "\"You\""
+1 worldToModel  !"_x = _pos worldToModel _new;\n_dir = _dir + (if ((_x select 1)==0) then { 0 } els" !"_relPos = _building worldToModel _point;" !"_relPos = _building worldToModel (getPosATL _unit1);" // #0
 /////////////////// Other suspicious patterns:
-1 expression
-1 maut
-1 "foreach tent"
-1 HaxSmokeOn
-1 Smokeshellpurple
+5 "Admin Fucker"
+5 BigFuckinBullets
+5 ZombieShield
+5 antiAggro_zeds
+5 zeus_star
+5 Metallica
+5 infiSTAR
 1 Myscripts
-1 Flare1
-1 aList
 1 mapscanrad
 1 mapm
 1 mapopt
 1 "player execVM"
-1 musekeys
-1 "\"You\""
-1 "ers...\""
-1 "Entities \"Air\""
-1 action_crate1
-1 Hack-Men
 1 morphto
-1 101000
 1 _dummyveh
 1 _minimap
 1 marker_mapesp
-1 list_vec
 1 actualunit
 1 setMarkerTypeLocal !"rsetMarkerPosLocalcode"
 1 mark_player
 1 pathtoscrdir
-1 exstr
-1 _dayz_wep
-1 "KOR GoJa"
-1 "hacks select"
-1 "_abox = \"AmmoBoxBig\")"
-1 "_cba_int_code"
-1 "_eh0 = _unit addEventHandler"
-1 "_pm = createMarkerLocal)"
-1 "_repairTarget setdammage 0;"
-1 "[_abox] execVM"
-1 "\"   God Mode .No Death.Instant Respawn.\""
-1 "\"   Spawn Box\",\"semilegitboxattachto.sqf"
-1 "\"\"\"\"expression\"\"\"\""
-1 "\"\"\"\"pmark\"\"\"\""
-1 "\"\"+\"\""
-1 "\"bowonky\""
-1 "\"gm0sqf\""
-1 "\"his ca\",\"ll compil\",\"e preproces\",\"sFileLineNumbers"
-1 "\"Starting Integrated Hack...\";"
-1 "\"YourScript\keybinds.sqf\""
-1 "\"Zombies are now Mike Tyson\""
-1 "\tele.sqf"
-1 "%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0%0"
-1 "addGroupIcon PlayersMarkerType;"
-1 "All In One God Mode"
-1 "Alt Click on Map to Teleport"
-1 "anti_god_loop_inf)"
-1 "apon = primaryWeapon player;"
-1 "AsUS_GaM"
-1 "bowonky)"
-1 "buttyhole..."
-1 "call compile _tp;"
-1 "Monky"
-1 "CBA_EVENT_KEY_LOGIC = \"HeliHEmpty\""
-1 "_xeh"
-1 "compile _cght"
-1 "CORPORAL"
-1 "DBDBDB"
-1 "dwarden"
-1 "dyno.data"
-1 "GroundCheats"
-1 "Haus spawnen"
-1 "HeliHEmpty"
-1 "help0sqf"
-1 "if(format[name v] =="
-1 "invisibru"
-1 "kill aura zombies"
-1 "LBDblClick"
-1 "LMB on Map to Tele"
-1 "m0aark0Pods0=True"
-1 "marker setMarkerTypeLocal \"waypoint\")"
-1 "MPGH"
-1 "nsd0h0"
-1 "nst\ns_modules\functions"
-1 "ours Truly...\",_nul"
-1 "player addWeapon \"NVGoggles\";)"
-1 "player distance nukepos"
-1 "ProDayz"
-1 "publicVariableServer "wizard""
-1 "R0pair Vehic0e Your 0n"
-1 "remwep"
-1 "Repair + Refue0 Vehicle"
 1 "reprflcrst"
 1 "RscConfigEditor_Main"
-1 "_XEH"
-1 "sucessful.."
-1 "TOTONE"
 1 "veh = \"AmmoBoxBig\" createVehicle"
-1 "God"
 1 "vet@start.sqf"
 1 "wuat"
 1 "YourScript"
-1 "fullkitdd.sqf"
 1 "zombieshield"
-1 "setMarkerTextLocal"
 1 "Infinite Ammo ON!"
-1 "Vehicle Repaired.. ready to roll."
-1 "TTT"
-1 setWeaponReloadingTime
-1 setWeaponState
-1 "dayz_" !"dayZ_everyonesTents" !"dayZ_lastPlayerUpdate" !"dayz_baseTypes" !"dayz_temperaturnormal" !"dayz_playerName" !"dayz_heartBeat" !"dayz_monitorPeriod" !"dayzClickTime" !"dayz_spawnDelay" !"dayz_lootDelay" !"dayz_lootWait" !"dayz_maxCurrentZeds" !"dayz_inVehicle" !"dayz_statusArray" !"dayzGearSave" !"dayz_ZombieBuildings" !"dayz_LootBuildings" !"dayz_losChance" !"dayz_authed" !"dayz_clientPreload" !"dayz_loadScreenMsg" !"dayz_preloadFinished" !"dayz_localswarmSpawned" !"dayz_swarmSpawnZombies" !"dayz_Locations" !"dayz_locationsActive" !"dayz_Trash" !"dayz_lastSave" !"dayz_damageCounter" !"dayz_lowHumanity" !"dayz_canDisconnect" !"dayz_heartBeat" !"dayz_lastCheckBit" !"dayz_CLChances" !"dayz_CLBase" !"dayz_currentDay" !"dayz_panicCooldown" !"dayz_losCheck_attack" !"dayz_losCheck" !"dayz_monitorPeriod" !"DAYZ_woundHit_ok" !"dayz_surfaceNoise" !"DAYZ_woundHit" !"dayz_areaAffect" !"dayz_futurePos" !"Dayz_GUI_R" !"Dayz_GUI_G" !"Dayz_GUI_B" !"dayz_myBackpack" !"dayz_spawnWait" !"dayz_guiHumanity" !"dayz_lastHumanity" !"deathHandled" !"dayz_noPenalty" !"dayz_heavenCooldown" !"dayz_maxMaxWeaponHolders" !"dayz_forceSave" !"dayz_lastCheckSave" !"dayz_resetSelfActions" !"dayz_unsaved" !"dayz_combat" !"dayz_spawnCheck" !"dayz_DeathActioned" !"dayz_track_death_1" !"dayz_locationCheck" !"dayz_firstGroup" !"dayz_gui" !"dayz_medicalH" !"dayz_originalPlayer" !"dayz_disableRespawn" !"dayz_monitor1" !"dayz_animalCheck" !"dayz_slowCheck" !"dayz_musicH" !"dayz_myMagazines" !"dayz_myItems" !"dayz_myWeapons" !"DAYZ_disVisual" !"dayz_myBackpackMags" !"dayz_myBackpackWpns" !"DayZ_loadingScreen" !"DAYZ_disAudial" !"dayz_firedCooldown" !"dayz_versionNo" !"DAYZ: CLIENT IS RUNNING DAYZ_CODE" !"dayz_scaleLight" !"dayz_bodyMonitor" !"dayz_maxAnimals" !"dayz_animalDistance" !"DAYZ_GUI_waiting" !"Dayz_freefall" !"dayz_temperaturmin" !"dayz_inside" !"dayz_sourceBleeding" !"dayz_selectGender" !"dayz_mylastPos" !"'dayz_anim'" !"You are running an incorrect version of DAYZ_CODE, please" !"dayz_canDelete" !"dayz_myLoad" !"dayz_flyMonitor" !"dayz_sunRise" !"DayZ_NewZeds" !"dayz_CurrentZombies" !"dayz_maxLocalZombies" !"dayz_spawnZombies" !"dayz_myPosition" !"dayz_maxGlobalZombies" !"\"dayz_anim\""!"dayz_HintMontior" !"dayz_fpsmonitor" !"dayz_buildingMonitor" !"dayz_cantseefov" !"dayz_safeDistPlr" !"dayz_cantseeDist" !"dayz_CBLBase" !"dayz_maxMaxModels" !"dayz_spawnArea"  !"dayz_CBLChances" !"dayz_lootSpawnBias" !"dayz_myCursorTarget" !"dayz_playerUID" !"dayz_temperaturmax" !"dayz_temperatur" !"dayz_hunger" !"dayz_lastMeal" !"DAYZ_GUI_display" !"dayz_thirst" !"dayz_lastDrink" !"dayz_surfaceType" !"dayz_meleeMagazineCheck" !"dayz_Magazines" !"Dayz_logonTown" !"Dayz_logonTime" !"Dayz_logonDate" !"dayz_Survived" !"dayz_zombieMusic" !"dayz_zombieSpeak" !"dayz_isSwimming" !"dayz_characterID" !"dayz_hasFire" !"dayz_hasLight" !"\z\addons\dayz_"
+//1 "dayz_" !dayz_spaceInterrupt !"dayZ_everyonesTents" !"dayZ_lastPlayerUpdate" !"dayz_baseTypes" !"dayz_temperaturnormal" !"dayz_playerName" !"dayz_heartBeat" !"dayz_monitorPeriod" !"dayzClickTime" !"dayz_spawnDelay" !"dayz_lootDelay" !"dayz_lootWait" !"dayz_maxCurrentZeds" !"dayz_inVehicle" !"dayz_statusArray" !"dayzGearSave" !"dayz_ZombieBuildings" !"dayz_LootBuildings" !"dayz_losChance" !"dayz_authed" !"dayz_clientPreload" !"dayz_loadScreenMsg" !"dayz_preloadFinished" !"dayz_localswarmSpawned" !"dayz_swarmSpawnZombies" !"dayz_Locations" !"dayz_locationsActive" !"dayz_Trash" !"dayz_lastSave" !"dayz_damageCounter" !"dayz_lowHumanity" !"dayz_canDisconnect" !"dayz_heartBeat" !"dayz_lastCheckBit" !"dayz_CLChances" !"dayz_CLBase" !"dayz_currentDay" !"dayz_panicCooldown" !"dayz_losCheck_attack" !"dayz_losCheck" !"dayz_monitorPeriod" !"DAYZ_woundHit_ok" !"dayz_surfaceNoise" !"DAYZ_woundHit" !"dayz_areaAffect" !"dayz_futurePos" !"Dayz_GUI_R" !"Dayz_GUI_G" !"Dayz_GUI_B" !"dayz_myBackpack" !"dayz_spawnWait" !"dayz_guiHumanity" !"dayz_lastHumanity" !"deathHandled" !"dayz_noPenalty" !"dayz_heavenCooldown" !"dayz_maxMaxWeaponHolders" !"dayz_forceSave" !"dayz_lastCheckSave" !"dayz_resetSelfActions" !"dayz_unsaved" !"dayz_combat" !"dayz_spawnCheck" !"dayz_DeathActioned" !"dayz_track_death_1" !"dayz_locationCheck" !"dayz_firstGroup" !"dayz_gui" !"dayz_medicalH" !"dayz_originalPlayer" !"dayz_disableRespawn" !"dayz_monitor1" !"dayz_animalCheck" !"dayz_slowCheck" !"dayz_musicH" !"dayz_myMagazines" !"dayz_myItems" !"dayz_myWeapons" !"DAYZ_disVisual" !"dayz_myBackpackMags" !"dayz_myBackpackWpns" !"DayZ_loadingScreen" !"DAYZ_disAudial" !"dayz_firedCooldown" !"dayz_versionNo" !"DAYZ: CLIENT IS RUNNING DAYZ_CODE" !"dayz_scaleLight" !"dayz_bodyMonitor" !"dayz_maxAnimals" !"dayz_animalDistance" !"DAYZ_GUI_waiting" !"Dayz_freefall" !"dayz_temperaturmin" !"dayz_inside" !"dayz_sourceBleeding" !"dayz_selectGender" !"dayz_mylastPos" !"'dayz_anim'" !"You are running an incorrect version of DAYZ_CODE, please" !"dayz_canDelete" !"dayz_myLoad" !"dayz_flyMonitor" !"dayz_sunRise" !"DayZ_NewZeds" !"dayz_CurrentZombies" !"dayz_maxLocalZombies" !"dayz_spawnZombies" !"dayz_myPosition" !"dayz_maxGlobalZombies" !"\"dayz_anim\""!"dayz_HintMontior" !"dayz_fpsmonitor" !"dayz_buildingMonitor" !"dayz_cantseefov" !"dayz_safeDistPlr" !"dayz_cantseeDist" !"dayz_CBLBase" !"dayz_maxMaxModels" !"dayz_spawnArea"  !"dayz_CBLChances" !"dayz_lootSpawnBias" !"dayz_myCursorTarget" !"dayz_playerUID" !"dayz_temperaturmax" !"dayz_temperatur" !"dayz_hunger" !"dayz_lastMeal" !"DAYZ_GUI_display" !"dayz_thirst" !"dayz_lastDrink" !"dayz_surfaceType" !"dayz_meleeMagazineCheck" !"dayz_Magazines" !"Dayz_logonTown" !"Dayz_logonTime" !"Dayz_logonDate" !"dayz_Survived" !"dayz_zombieMusic" !"dayz_zombieSpeak" !"dayz_isSwimming" !"dayz_characterID" !"dayz_hasFire" !"dayz_hasLight" !"z\\addons\\dayz_"

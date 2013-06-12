@@ -9,8 +9,8 @@
 1 "clear"
 1 "disable"
 1 "copy"
-1 "switch" !="\"switchmove\"" !="\"remExField\" = [,<NULL-object>,\"switchmove\",\"ActsPercMrunSlowWrflDf_FlipFlopPara\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"amovpercmstpsnonwnondnon_zevl\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"amovpercmstpslowwrfldnon_gear\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aswmpercmstpsnonwnondnon\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpslowwrfldnon_player_0s\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsnonwnondnon_player_idlesteady01\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsnonwnondnon_player_idlesteady04\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsnonwnondnon_player_idlesteady02\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsnonwnondnon_player_idlesteady03\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsraswpstdnon_player_idlesteady02\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsnonwnondnon_player_idlesteady03\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsnonwnondnon_player_idlesteady02\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsnonwnondnon_player_idlesteady01\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsraswpstdnon_player_idlesteady02\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsraswpstdnon_player_idlesteady01\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsraswpstdnon_player_idlesteady03\"]"
-1 "text"
+1 "switch" !"\"switchmove\"" 
+1 "text" !"\"titleText\""
 1 "init"
 1 "hide" !"hideObject"
 1 "group"
@@ -21,13 +21,13 @@
 5 "loadFile"
 //1 "say" //+4
 5 "call"
-1 "move" !="\"switchmove\"" !="\"playmove\"" !"moveIn" !"remove" !="\"remExField\" = [,<NULL-object>,\"switchmove\",\"ActsPercMrunSlowWrflDf_FlipFlopPara\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"amovpercmstpsnonwnondnon_zevl\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"amovpercmstpslowwrfldnon_gear\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aswmpercmstpsnonwnondnon\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpslowwrfldnon_player_0s\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsnonwnondnon_player_idlesteady01\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsnonwnondnon_player_idlesteady04\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsnonwnondnon_player_idlesteady02\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsnonwnondnon_player_idlesteady03\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpercmstpsraswpstdnon_player_idlesteady02\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsnonwnondnon_player_idlesteady03\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsnonwnondnon_player_idlesteady02\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsnonwnondnon_player_idlesteady01\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsraswpstdnon_player_idlesteady02\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsraswpstdnon_player_idlesteady01\"]" !"[<NULL-object>,<NULL-object>,\"switchmove\",\"aidlpknlmstpsraswpstdnon_player_idlesteady03\"]"
+1 "move" !"\"switchmove\"" !"\"playmove\""
 1 "chat"
 1 "fade"
 1 "action"
 1 "exec" !"execVM" !"execFSM" !"jipexec"
 5 "mission"
-1 "kb" !="FoodCanFrankBeans" !="\"FoodCanFrankBeans\"" !"kbTell" !"kbReact" !"\"FoodCanFrankBeans\""
+1 "kb" !="FoodCanFrankBeans" !="\"FoodCanFrankBeans\"" !"kbTell" !"kbReact" !"\"FoodCanFrankBeans\"" !"\"ItemBookBible\""
 1 "side"
 1 "show"
 1 "task" !"taskHint"
@@ -185,7 +185,7 @@
 5 "skipTime"
 5 "taskHint"
 5 "titleCut"
-5 "titleText"
+5 "titleText" !",\"titleText\","
 5 "getM"
 5 "getFSMvariable"
 5 "getG"
@@ -408,4 +408,5 @@
 5 world_sunrise
 5 world_surfacenoise
 5 zombie_
+
 
