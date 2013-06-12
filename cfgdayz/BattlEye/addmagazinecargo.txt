@@ -102,6 +102,8 @@
 5=VSS_vintorez
 5=PMC_AS50_TWS
 5=ItemMap_Debug
+5=EvMoney
+5=ksvk
 // Black list of illegal Ammo:
 5="TimeBomb"
 5="Mine"
@@ -114,3 +116,4 @@
 5=100Rnd_556x45_BetaCMag
 5=15Rnd_W1866_Pellet
 5=5Rnd_127x108_KSVK
+5=20Rnd_9x39_SP5_VSS
