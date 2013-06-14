@@ -1,21 +1,23 @@
 respawn = "BASE";
 respawndelay = 5;
-onLoadMission= "DayZ Test";
-OnLoadIntro = "Thank you for helping";
+onLoadMission= "DayZ Chernarus";
+OnLoadIntro = "Welcome to Chernarus";
 OnLoadIntroTime = False;
 OnLoadMissionTime = False;
 disabledAI = true;
-disableChannels[]={0,1,2,6};
+disableChannels[] = {0,1,2,6};
 enableItemsDropping = 0;
-onPauseScript = "\z\addons\dayz_code\compile\player_onPause.sqf";
+onPauseScript = "";
+briefing = 0;
+debriefing = 0;
 
-loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
+loadScreen = "\z\addons\dayz_code\gui\loadingscreen.paa";
 
 class Header
 {
- gameType = COOP;            //DM, Team, Coop, ...
- minPlayers = 1;             //min # of players the mission supports
- maxPlayers = 100;            //Max # of players the mission supports
+	gameType = COOP;			//DM, Team, Coop, ...
+	minPlayers = 1;				//Min # of players the mission supports
+	maxPlayers = 100;			//Max # of players the mission supports
 };
 
 aiKills = 1;
@@ -37,6 +39,7 @@ class RscText
 	colorBackground[] = {0, 0, 0, 0};
 	linespacing = 1;
 };
+
 class RscPicture
 {
 	access=0;
@@ -50,6 +53,7 @@ class RscPicture
 	lineSpacing=0;
 	text="";
 };
+
 class RscLoadingText : RscText
 {
 	style = 2;
@@ -60,6 +64,7 @@ class RscLoadingText : RscText
 	sizeEx = 0.03921;
 	colorText[] = {0.543,0.5742,0.4102,1.0};
 };
+
 class RscProgress
 {
 	x = 0.344;
@@ -70,6 +75,7 @@ class RscProgress
 	colorFrame[] = {0,0,0,0};
 	colorBar[] = {1,1,1,1};
 };
+
 class RscProgressNotFreeze
 {
 	idc = -1;
@@ -81,6 +87,7 @@ class RscProgressNotFreeze
 	h = 0.039216;
 	texture = "#(argb,8,8,3)color(0,0,0,0)";
 };
+
 //
 // the loading screen itself
 //
@@ -103,17 +110,6 @@ class DayZ_loadingScreen
 			colorText[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,1};
 		};
-		/*
-		class nicePic : RscPicture
-		{
-			style = 48 + 0x800; // ST_PICTURE + ST_KEEP_ASPECT_RATIO
-			x = safezoneX + safezoneW/2 - 0.25;
-			y = safezoneY + safezoneH/2 - 0.2;
-			w = 0.5;
-			h = 0.4;
-			text = "img\nicePic.paa";
-		};
-		*/
 	};
 	class controls
 	{
@@ -145,3 +141,41 @@ class DayZ_loadingScreen
 		};
 	};
 };
+
+// logo watermark
+class RscTitles {
+	class wm_disp {
+		idd = -1;
+		onLoad = "uiNamespace setVariable ['wm_disp', _this select 0]";
+		fadein = 0;
+		fadeout = 0;
+		duration = 10e10;
+		controlsBackground[] = {};
+		objects[] = {};
+		class controls {
+			class wm_text2 {
+				idc = 1;
+				x = safeZoneX+0.027;//safeZoneW*0.01;
+				y = safeZoneY+safeZoneH-0.16;
+				w = 0.151*safeZoneH;
+				h = 0.057*safeZoneH;
+				shadow = 2;
+				class Attributes
+				{
+					font = "EtelkaNarrowMediumPro";
+					color = "#24FFFFFF";
+					align = "left"; // put "center" here if you want some background
+					valign = "middle";
+					shadow = 2;
+				};
+				colorBackground[] = { 1, 0.3, 0, 0 };  // uncomment and increase 4th number to have a background
+				font = "EtelkaNarrowMediumPro";
+				size = 0.06*safeZoneH;
+				type = 13;
+				style = 0;
+				text="";
+			};
+		};
+	};
+};
+

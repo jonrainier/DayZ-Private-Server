@@ -5,7 +5,9 @@ class Mission
 	{
 		"chernarus",
 		"ca_modules_animals",
+		"dayz_anim",
 		"dayz_code",
+		"dayz_communityassets",
 		"dayz_weapons",
 		"dayz_equip",
 		"dayz_vehicles",
@@ -21,8 +23,8 @@ class Mission
 	randomSeed=11171215;
 	class Intel
 	{
-		briefingName="DayZ";
-		briefingDescription="DayZ Alpha";
+		briefingName="DayZ Mod";
+		briefingDescription="DayZ Mod (Alpha Version)";
 		startWeather=0.067362607;
 		forecastWeather=0.52341133;
 		year=2008;
