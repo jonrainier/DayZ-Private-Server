@@ -12,8 +12,9 @@
 1 allowDamage   !"_object allowDamage false;"  !"player allowDamage false;"  !"player allowDamage true;"
 1 allowDammage   !"this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';"
 1 attachObject !"lightAttachObject"
-1 attachTo !"_bolt attachTo [_hitObject,_val,_hitMemoryPt];" !"_flare attachTo [player,[0,0,0],\"granat2\"];" !"_fl attachto [_v,[0,0,0],\"destructionEffect2\"]"  !"_point attachTo [_unit,_modelPos,_wound];"
+1 attachTo !"_smoke = \"#particlesource\" createVehicleLocal _pos;\n_smoke attachto [_v,[0,0,0],\"destructionEffect1\"];" !"_bolt attachTo [_hitObject,_val,_hitMemoryPt];" !"_flare attachTo [player,[0,0,0],\"granat2\"];" !"_fl attachto [_v,[0,0,0],\"destructionEffect2\"]"  !"_point attachTo [_unit,_modelPos,_wound];"
 1 BIS_Effects_AirDestructionStage !"BIS_Effects_AirDestructionStage2 = compile preprocessFileLineNumbers"   !"%2]spawn BIS_Effects_AirDestructionStage2\",_int, _t];" !"BIS_Effects_AirDestructionStage2=compile preprocessFileLineNumbers"
+1 BIS_MPF_ServerPersistentCallsArray
 1 buttonSetAction   !"buttonSetAction [104,\"\"];"
 1 campaignConfigFile !"_pathConfig = [configfile,campaignconfigfile,missionconfigfile] select _t"
 1 clearMagazineCargo !"rclearMagazineCargocode"  !"rclearMagazineCargocode = compile PreprocessFile (BIS_PathMPscriptCommands + 'clearMagazineCargo.sqf')"  !"apon\",\"addWeaponCargo\",\"addWPCur\",\"animate\",\"callVar\",\"clearMagazineCargo\",\"clearWeaponCargo\",\"createDiaryRecord\",\"createMarkerL"  !"\"clearMagazineCargo\","  !"rclearMagazineCargo = 'clearMagazineCargo'"  !"clearMagazineCargoGlobal _firePlace;"
@@ -73,7 +74,7 @@
 1 gearSlotData !"_mag = gearSlotData _control;" !"_item = 	gearSlotData _control"  !"_item =  gearSlotData _control;"  !"_item = gearSlotData _control;"
 1 getFSMVariable   !"_lieDown = _dogHandle getFSMVariable \"_actionLieDown\";"
 1 getMagazineCargo !"_magazines = 	getMagazineCargo _obj;" !"_mag_arr = getMagazineCargo _backpack;"  !"iag_log str(getMagazineCargo unitBackpack _newUnit);" !"_magazines = (getMagazineCargo _object) select 1;"  !"_backpackMag = getMagazineCargo uni"  !"_backpackMag = getMagazineCargo unitBackpack player;"  !"getMagazineCargo dayz_myBackpack;"  !"dayz_myBackpackMags = getMagazineCargo dayz_myBackpack;" !"_mags = getMagazineCargo _firePlace"
-1 getPlayerUID   !"deathHandled = true;" !"PVDZ_plr_Discorem = getPlayerUID player;"  !"er)and(alive Player)and(player==player)};_uid=(getPlayerUID vehicle player);"  !"_playerUID = getPlayerUID player;"  !"_playerID = getPlayerUID player;"  !"yName==\"\")})then{AttackedByName=getPlayerUID _klr;};_weapon=weaponState _klr;_weapon=if(_weapon select 0==\"Throw\")then{_weapon s"  !"ame==\"\")})then{AttackedByName=getPlayerUID _klr;};_weapon=weaponState _klr;_weapon=if(_weapon select 0==\"Throw\")then{_weapon sel"
+1 getPlayerUID !"_victimUID = getPlayerUID _unit;" !"_sourceUID = getPlayerUID _source;"  !"deathHandled = true;" !"PVDZ_plr_Discorem = getPlayerUID player;"  !"er)and(alive Player)and(player==player)};_uid=(getPlayerUID vehicle player);"  !"_playerUID = getPlayerUID player;"  !"_playerID = getPlayerUID player;"  !"yName==\"\")})then{AttackedByName=getPlayerUID _klr;};_weapon=weaponState _klr;_weapon=if(_weapon select 0==\"Throw\")then{_weapon s"  !"ame==\"\")})then{AttackedByName=getPlayerUID _klr;};_weapon=weaponState _klr;_weapon=if(_weapon select 0==\"Throw\")then{_weapon sel"
 1 getTerrainHeightASL   !"_terrainHeight = getTerrainHeightASL [_curpos select 0, _curpos select 1];"
 1 hasWeapon  !"if (player hasWeapon \"ItemWatch\") then" !"if (isnil 'BIS_fnc_hasWeapon' || false) then {" !"if (player hasWeapon \"MeleeCrowbar\") then {"
 1 hideBody !"addPublicVariableEventHandler {hideBody (_this select 1)}" !"\"dayzHideBody\"" !="dayzHideBody = objNull"  !"hideBody _body;" !"PVDZ_obj_HideBody"  !"licVariableEventHandler{(_this select 1)call fnc_usec_damageVehicle};\"dayzHideBody\"addPublicVariableEventHandler{hideBody(_this"
@@ -117,7 +118,7 @@
 1 publicVariable !"publicVariableServer" !"addPublicVariableEventHandler" !"publicVariable \"BIS_" !"publicVariable \"PVDZ_" !"publicVariable \"dayzDiscoRem\";" !"publicVariable \"dayzHideBody\";" !"publicVariable \"dayzHitV\";" !"publicVariable \"dayzHumanity\";" !"publicVariable \"dayzLogin\";" !"publicVariable \"dayzLogin2\";" !"publicVariable \"dayzLoginRecord\";" !"publicVariable \"dayzPlayerSave\";" !"publicVariable \"dayzPublishObj\"" !"publicVariable \"dayzRoadFlare\";" !"publicVariable \"dayzSetFuel\";" !"publicVariable \"dayzUpdateVehicle\";" !"publicVariable \"remExFP\";" !"publicVariable \"usecBandage\";" !"publicVariable \"usecBleed\";" !"publicVariable \"usecEpi\";" !"publicVariable \"usecMorphine\";" !"publicVariable \"usecPainK\";"
 1 reload !"\"reload\"" !"I should probably reload it" !"preloadCamera" !"dayz_preloadFinished" !"PRELOAD_" !"player_reloadMag" !"BIS_CPP_Muzzle_ForceReload"  !"dayz_clientPreload"  !"dayz_clientPreload and !(isNull _agent)"  !"entPreload } do {"  !"reload player;"  !"dayz_clientPreload = true;"
 1 removeAllEventHandlers !"_this removeAllEventHandlers \"HandleDamage\";"
-1 removeAllWeapons !"rremoveAllWeaponscode"   !"removeAllWeapons _oldUn"  !"rremoveAllWeapons = 'removeAllWeapons'"  !"ion\",\"playActionnow\",\"playmove\",\"playmovenow\",\"playMusic\",\"playsound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrent"  !"ionnow\",\"playmove\",\"playmovenow\",\"playMusic\",\"playsound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrentTask\",\"setCur"  !"\"removeAllWeapons\","  !"removeAllWeapons _oldUnit;"  !"rremoveAllWeaponscode = compile PreprocessFile (BIS_PathMPscriptCommands + 'removeAllWeapons.sqf')"  !"sound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrentTask\",\"setCurrentTaskArrays\",\"setDate\",\"setDir\",\"setGroupID\",\"s"
+1 removeAllWeapons !"\n\n\n\nremoveallweapons _v;\n\nif (local _v) then {_expl=\"HelicopterExploSmall\"" !"rremoveAllWeaponscode"   !"removeAllWeapons _oldUn"  !"rremoveAllWeapons = 'removeAllWeapons'"  !"ion\",\"playActionnow\",\"playmove\",\"playmovenow\",\"playMusic\",\"playsound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrent"  !"ionnow\",\"playmove\",\"playmovenow\",\"playMusic\",\"playsound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrentTask\",\"setCur"  !"\"removeAllWeapons\","  !"removeAllWeapons _oldUnit;"  !"rremoveAllWeaponscode = compile PreprocessFile (BIS_PathMPscriptCommands + 'removeAllWeapons.sqf')"  !"sound\",\"removeAction\",\"removeAllWeapons\",\"setCaptive\",\"setCurrentTask\",\"setCurrentTaskArrays\",\"setDate\",\"setDir\",\"setGroupID\",\"s"
 1 removeEventHandler   !"player removeEventHandler [\"FiredNear\",eh_player_killed];"  !"player removeEventHandler[\"HandleDamage\",mydamage_eh1];" !"player removeEventHandler[\"HandleDamage\",mydamage_eh1]"
 1 removeMagazine !removeMagazines !"{_newUnit removeMagazine _x;} forEach  magazines _newUnit;" !"if (_hasMeds) then {\nplayer removeMagazine _med;\n};\n\nplayer removeAction s_player_antiobiotic;"   !"player removeMagazine \"WoodenArrow\";\n};\nplayer addMagazine [\"Quiver\"" !"if (_isMedic and !_started) then {\nplayer removeMagazine \"ItemBloodbag\";" !"for \"_x\" from 1 to _qty do {\nplayer removeMagazine _meat;\nplayer addMagazine _meatcooked;" !"player removeMagazine \"ItemMorphine\";\n\n_unit setVariable [\"hit_legs\",0];" !"player removeMagazine _item;" !"player removeMagazine \"ItemBandage\";" !"player removeMagazine _itemorignal;" !"player removeMagazine 'crowbar_swing';" !"player removeMagazine _magType;" !"player removeMagazine \"ItemPainkiller\";" !"player removeMagazine \"ItemHeatPack\";"
 1 removeMagazines !removeMagazinesTurret   !"player removeMagazines \"ItemWaterbottleUnfilled\";" !"{player removeMagazines _x} forEach [\"hatchet_swing\"" !"player removeMagazines _create;" !"removeMagazinesTurret" !"{player removeMagazines _x} forEach MeleeMagazines;"
@@ -138,7 +139,7 @@
 1 setFog   !"0 setFog _currentFog;"  !"timeUntilCompletion setFog _targetWeatherValue;"
 1 setFuel !"local_setFuel"  !"dayzSetFuel spawn local_setFuel;"  !"local_setFuel =    compile preprocessFileLineNumbers \""
 1 setGroupId !"\"setGroupID\"" !"'setGroupID'" !"'setGroupID.sqf'" !"rsetGroupIDcode" !"rsetGroupIDcode={diag_log(\"FACO RE(DEL)rsetGroupIDcode args:\"+str(_this));};"
-1 setHit !"_unit setVariable [_SVname, 0, true];\n_unit setHit [_selection, 0];\nif (!isServer) then {\nPVDZ_veh_Save" !"_unit setHit [_selection, _dam];" !"object_setHitServer"  !"object_setHit.sqf\""  !"ayer setHit[\"hands\",1];"  !"[player,\"legs\", (_fractures select 0)] call object_setHit;"  !"t setHit[\"legs\",0];"  !"player setHit[\"legs\",1];"
+1 setHit !"_unit setHit [_selection, _ret];\n_log = format[\"%1. setHit[%2,%3]%4\"" !"_unit setVariable [_SVname, 0, true];\n_unit setHit [_selection, 0];\nif (!isServer) then {\nPVDZ_veh_Save" !"_unit setHit [_selection, _dam];" !"object_setHitServer"  !"object_setHit.sqf\""  !"ayer setHit[\"hands\",1];"  !"[player,\"legs\", (_fractures select 0)] call object_setHit;"  !"t setHit[\"legs\",0];"  !"player setHit[\"legs\",1];"
 1 setLightAmbient   !"_lightArea setLightAmbient [0.2,0.01,0.01];"  !"_li setLightAmbient[0.8, 0.6, 0.2];"
 1 setLightBrightness   !"_lightArea setLightBrightness 0.2;"  !"_li setLightBrightness 0;"
 1 setMarkerBrush !"setMarkerBrushLocal"
@@ -150,8 +151,8 @@
 1 setMarkerTypeLocal
 1 setOvercast   !"0 setOvercast _currentOvercast;"
 1 setOwner
-1 setParticleCircle
-1 setParticleParams   !"then{_smoke=\"#particlesource\"createVehicleLocal _pos;_smoke attachto[_v,[0,0,0],\"destructionEffect1\"];_smoke setParticleParams[["  !"_smoke setParticleParams"  !"cleRandom[0.3,[1,1,0],[0,0,0],0,0.3,[0,0,0,0],0,0];_fl setParticleParams[[\""  !"_fl setParticleParams"  !"_source setParticleParams"  !"_smoke setParticleParams [[\""
+1 setParticleCircle !"_wave setparticlecircle [2,[0,16,0]];\n_wave setDropInterval 0.0015;"
+1 setParticleParams !"then{_smoke=\"#particlesource\"createVehicleLocal _pos;_smoke attachto[_v,[0,0,0],\"destructionEffect1\"];_smoke setParticleParams[["  !"_smoke setParticleParams"  !"cleRandom[0.3,[1,1,0],[0,0,0],0,0.3,[0,0,0,0],0,0];_fl setParticleParams[[\""  !"_fl setParticleParams"  !"_source setParticleParams"  !"_smoke setParticleParams [[\""
 1 setPlayable   !"setPlayable _newUnit;"  !"setPlayable dayz_originalPlayer;"
 1 setPos !"_item setPosATL _pos;\n};\n_item addMagazineCargoGlobal [_itemtodrop,1];" !"_obj setPosATL(_new);\n};" !"_object setPos [_position select 0,_position select 1,0];" !"_flare setPos (getPos _flare);" !"player setPosATL (getPosATL player);" !="_agent setpos _Pos;" !"_unit setPosATL (getPosATL _unit);" !"setPosition" !"_oldUnit setPosATL [_createSafePos select 0, _createSafePos select 1, 0];" !="player setPosATL _mylastPos" !"_agent setPosATL _position" !="_item setPosATL _iPos" !"(vehicle player) setpos _lastpos" !"BIS_fnc_sceneSetPosFormation" !"_bolt setPosATL _endPos" !"player setPosATL dayz_spawnPos;"  !"_setPos =    _worldspace select 1;"  !"_test = (_this select 0) setPos (position (_this select 0)); if (isnil \"_test\") then {_test"  !"t 0,_pos select 1,0];_Crater setdir(_dir+(180 * _i));_Crater setpos[_pos select 0,_pos select 1,0];_Crater setPos[_pos select 0,"  !"_object setPos _position;"  !"preloadCamera _setPos"  !"etPosATL _setPos;"  !"_Crater setPos [_pos sele"
 1 setPosition !="ctrlSetPosition"
@@ -163,7 +164,7 @@
 1 setText  !_setText  !ctrlSetText
 1 setUnitPos !"_agent setUnitPos "Middle";"  !"_agent setUnitPos \"Middle\";"
 1 setVehicleInit
-1 setVelocity   !"_item setvelocity [0,0,1];" !"player setVelocity [-(_vel select 0),  -(_vel select 1),  0];" !"_agent setvelocity [0, 0, 1];" !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player,"  !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player, ("
+1 setVelocity !"if (_velz>1) then {_v setvelocity [velocity _v select 0,velocity _v select 1,0]};" !"if (_velz>1) then {_v setvelocity [_xv/1.3,_yv/1.3,0]}" !"_item setvelocity [0,0,1];" !"player setVelocity [-(_vel select 0),  -(_vel select 1),  0];" !"_agent setvelocity [0, 0, 1];" !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player,"  !"player setVelocity [(velocity player select 0) + 1.5 * sin direction player, ("
 1 setWaypointType
 1 setWaypointVisible
 1 setWeaponReloadingTime
@@ -197,9 +198,6 @@
 1 _dummyveh
 1 "_lpajd addaction spawnveh1"
 1 _minimap
-1 "_smoke setParticleParams"   !"_smoke setParticleParams"  !"then{_smoke=\"#particlesource\"createVehicleLocal _pos;_smoke attachto[_v,[0,0,0],\"destructionEffect1\"];_smoke setParticleParams[["  !"_smoke setParticleParams [[\""
-1 "_v setVehicleInit format [\"[this, %1, %2,false,true]spawn BIS_Effects_Burn"
-1 "_velz=velocity _v select 2"   !"_velz=velocity _v select 2;"  !"cal _v)then{_velz=velocity _v select 2;if(_velz>1)then(_v setvelocity[velocity _v select 0,velocity _v select 1,0]);_expl=\"Helic"  !"=(speed _v);_velz=velocity _v select 2;if(_velz>1)then{_v setvelocity[_xv/1.3,_yv/1.3,0]}else{_v setvelocity[_xv/1.2,_yv/1.2,vel"
 1 "{_unt1 addweapon _x} forEach _w2p3n4;"
 1 "\"You\""
 1 actualunit

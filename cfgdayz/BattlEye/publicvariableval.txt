@@ -1,4 +1,5 @@
 //1 "" //+2
+1 _this
 1 "draw"
 1 "hint" !="hintC" !="hintS"
 1 "create"
@@ -87,8 +88,6 @@
 5 "count"
 5 "markerText"
 5 "BIS_fnc"
-5 "+" //!"e+"
-5 "\+" //!"e+"
 5 "_bis"
 //5 "trigger"
 5 "markerType"
@@ -106,7 +105,6 @@
 //5 "setTriggerStatements" //covered by 5 "setT"
 //5 "setTriggerText" //covered by 5 "setT"
 5 "promptRName.sqf"
-5 "%"
 5 ".sqf\"]" !="init.sqf\"]"
 5 "rpcCodeVarName"
 5 "rpcDirectCall"
@@ -334,10 +332,10 @@
 5 "createdialog"
 
 /////////////////////////// Illegal chars:
-5 "+"
+5 "+" !"e+00"
 5 ";"
 5 "{"
-5 "(" !"TELEPORT REVERT"
+5 "("
 5 "&"
 5 "%"
 5 "'"

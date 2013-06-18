@@ -1,4 +1,5 @@
 //1 "" //+2
+1 _this
 1 "draw"
 1 "hint" !="hintC" !="hintS"
 1 "create"
@@ -338,8 +339,6 @@
 5 "BIS_fnc_getFactions"
 5 "object_processHit"
 5 "object_getHit"
-//1 "" +5
-//1 "request" //+6
 5 "allowConnection"
 5 "BIS_Effects_Burn"
 5 "BIS_MPF_remoteExecutionServer"
