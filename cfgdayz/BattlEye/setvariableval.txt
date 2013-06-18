@@ -1,5 +1,4 @@
 //1 "" //+2
-1 _this
 1 "draw"
 1 "hint" !="hintC" !="hintS"
 1 "create"
@@ -103,7 +102,8 @@
 1 "count"
 5 "markerText"
 5 "BIS_fnc"
-5 "+" !"e+00"
+5 "+" //!"e+" //might cause some rare kicks for items with too high numbers 
+5 "\+" !"e+"
 5 "_bis"
 //5 "trigger"
 5 "markertype"
@@ -339,6 +339,8 @@
 5 "BIS_fnc_getFactions"
 5 "object_processHit"
 5 "object_getHit"
+//1 "" +5
+//1 "request" //+6
 5 "allowConnection"
 5 "BIS_Effects_Burn"
 5 "BIS_MPF_remoteExecutionServer"

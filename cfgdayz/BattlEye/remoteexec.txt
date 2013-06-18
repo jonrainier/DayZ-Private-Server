@@ -35,7 +35,7 @@
 5 enable !="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';"
 1 spawn !="spawn BIS_Effects_AirDestruction" !"spawn BIS_Effects_AirDestructionStage2" !"spawn BIS_Effects_Burn" !="[this] spawn BIS_Effects_AirDestruction"
 5 for
-1 this !="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';"  !="[this] spawn BIS_Effects_AirDestruction" !"spawn BIS_Effects_AirDestructionStage2" !"spawn BIS_Effects_Burn"
+1 this !="this enableSimulation false;this allowDammage false;this disableAI FSM;this disableAI ANIM;this disableAI MOVE;"  !="[this] spawn BIS_Effects_AirDestruction" !"spawn BIS_Effects_AirDestructionStage2" !"spawn BIS_Effects_Burn"
 1 format
 5 skip
 5 fail

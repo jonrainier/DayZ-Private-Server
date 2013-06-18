@@ -1,5 +1,4 @@
 // Blacklist of illegal target objects
-1 "" //NOTE: The only legit positions/attatchto distances are [0,0,0] and [0,1,0] anything else is a hack!
 5 Parachute
 5 AH6X_DZ
 5 AH6X_EP1
