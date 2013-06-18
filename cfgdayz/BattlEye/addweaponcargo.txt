@@ -89,6 +89,8 @@
 5=ItemMap_Debug
 5=EvMoney
 5=ksvk
+5=HandGrenade
+5=PMC_AS50_TWS_Large
 // Black list of illegal Ammo:
 5="TimeBomb"
 5="Mine"
@@ -103,3 +105,7 @@
 5=5Rnd_127x108_KSVK
 5=20Rnd_9x39_SP5_VSS
 5 "TWS"
+5=300Rnd_25mm_GAU12
+5=2000Rnd_23mm_AZP85
+5=10Rnd_9x39_SP5_VSS
+

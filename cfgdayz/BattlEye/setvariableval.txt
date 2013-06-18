@@ -102,8 +102,7 @@
 1 "count"
 5 "markerText"
 5 "BIS_fnc"
-5 "+" //!"e+" //might cause some rare kicks for items with too high numbers 
-5 "\+" !"e+"
+5 "+" !"e+00"
 5 "_bis"
 //5 "trigger"
 5 "markertype"
