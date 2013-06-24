@@ -4,7 +4,7 @@
 
 5 "NORRN_" !="NORRN_LoadVcl" !="NORRN_unconscious" !="NORRN_unit_dragged"
 
-1="USEC_BloodQty"
+//1="USEC_BloodQty"
 //1="USEC_infected"
 1="USEC_injured"
 //1="USEC_inPain"
@@ -87,7 +87,7 @@
 1="lastUpdate" // sometimes networked, sometimes not ???
 //1="looted"
 1="meatHarvested"
-1="medForceUpdate" // sometimes networked, sometimes not ???
+//1="medForceUpdate" // sometimes networked, sometimes not ???
 1="messing"
 1="needUpdate"
 1="ObjectID"
@@ -98,8 +98,8 @@
 //1="startcombattimer"
 1="state"
 //1="targets"
-1="temperature"
-1="unconsciousTime"
+//1="temperature"
+//1="unconsciousTime"
 1="updatePlayer"
 1="zombieKills"
 //1="zombieSpawn"
