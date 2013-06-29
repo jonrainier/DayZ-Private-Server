@@ -394,5 +394,11 @@
 5 "runinitscript"
 5 "createdialog"
 
-1 _this
-
+1 this
+1 dayz
+1 BattleFieldClearance
+1 HighCommandSubordinate
+1 FirstAidSystem
+1 AlternativeInjurySimulation
+1 FunctionsManager
+1 +e00

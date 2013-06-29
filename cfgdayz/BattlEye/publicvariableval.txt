@@ -408,5 +408,11 @@
 5 world_sunrise
 5 world_surfacenoise
 5 zombie_
-
-1 _this
+1 this
+1 dayz
+1 BattleFieldClearance
+1 HighCommandSubordinate
+1 FirstAidSystem
+1 AlternativeInjurySimulation
+1 FunctionsManager
+1 +e00

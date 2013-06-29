@@ -108,6 +108,7 @@
 5=PMC_AS50_TWS_Large
 //5=DMR // was in 1.7.6
 5=BAF_AS50_scoped_Large
+5=EvMap
 // Black list of illegal Ammo:
 5="TimeBomb"
 5="Mine"

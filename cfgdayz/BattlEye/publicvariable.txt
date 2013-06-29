@@ -1,4 +1,5 @@
 5 !="remExField" !="remExFP" !="drn_AskServerDynamicWeatherEventArgs" !="BIS_effects_gepv" !"PVDZ_"
+5 PVDZ_ !=PVDZ_drg_RaDrag !=PVDZ_drg_RaLW !=PVDZ_drg_RLact !=PVDZ_hlt_Bandage !=PVDZ_hlt_Bleed !=PVDZ_hlt_Epi !=PVDZ_hlt_Morphine !=PVDZ_hlt_PainK !=PVDZ_hlt_Transfuse !=PVDZ_obj_Delete !=PVDZ_obj_Fire !=PVDZ_obj_GutBody !=PVDZ_obj_HideBody !=PVDZ_obj_Publish !=PVDZ_obj_RoadFlare !=PVDZ_plr_Death !=PVDZ_plr_Discorem !=PVDZ_plr_Humanity !=PVDZ_plr_Login1 !=PVDZ_plr_Login2 !=PVDZ_plr_LoginRecord !=PVDZ_plr_Save !=PVDZ_sec_atp !=PVDZ_veh_Save !=PVDZ_veh_SetFuel !=PVDZ_veh_SF !=PVDZ_veh_SH
 
 ////////////////////////// From server only: Broadcast PV without EH (no code executed on change)
 5="drn_var_DynamicWeather_rain"  
@@ -24,6 +25,7 @@
 1="PVDZ_veh_SetFuel"
 1="PVDZ_veh_SH"
 1="PVDZ_veh_SF"
+1=PVDZ_plr_Discorem  // crap
 
 ////////////////////////// From server only: Broadcast PV with EH
 5="dayzInfectedCamps"
@@ -50,4 +52,5 @@
 ////////////////////////// BIS libs
 //1="remExField"
 //1="remExFP"
+
 
