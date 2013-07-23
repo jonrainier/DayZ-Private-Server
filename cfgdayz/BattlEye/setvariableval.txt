@@ -102,7 +102,6 @@
 1 "count"
 5 "markerText"
 5 "BIS_fnc"
-5 "+" !"e+00" 
 5 "_bis"
 //5 "trigger"
 5 "markertype"
@@ -121,7 +120,6 @@
 //5 "setTriggerText" //covered by 5 "setT"
 5 "remotecmd"
 5 "promptRName.sqf"
-5 "%"
 5 ".sqf\"]" !="init.sqf\"]"
 5 "rpcCodeVarName"
 5 "rpcDirectCall"
@@ -402,3 +400,13 @@
 1 AlternativeInjurySimulation
 1 FunctionsManager
 1 +e00
+
+
+5 "+" !"e+00"
+1 ";"
+1 "{"
+1 "("
+1 "&"
+1 "%"
+1 "'"
+1 123 !0123 !1123 !2123 !3123 !4123 !5123 !6123 !7123 !8123 !9123 !1230 !1231 !1232 !1233 !1234 !1235 !1236 !1237 !1238 !1239 !:123 !123: !.123 !"[123" !"123]" !"= 123"

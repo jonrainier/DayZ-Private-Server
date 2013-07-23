@@ -73,7 +73,7 @@
 1="bodyName"
 1="characterID"
 1="claimed"
-1="combattimeout"
+//1="combattimeout"
 1="deathType"
 1="fadeFire"
 1="firedDamage"

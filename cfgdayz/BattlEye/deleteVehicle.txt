@@ -1,2 +1,6 @@
-1 ""
-5 Land_CncBlock_D
+1 "" !"WeaponHolder" !"z_" !"zZombie_Base" !"WoodenArrowF"
+1 "WeaponHolder_" !"WeaponHolder_PartWheel" !"WeaponHolder_ItemTent" !"WeaponHolder_PartGlass" !"WeaponHolder_ItemCrowbar" !"WeaponHolder_ItemHatchet" !"WeaponHolder_ItemFuelcan" !"WeaponHolder_PartVRotor" !"WeaponHolder_PartEngine" !"WeaponHolder_ItemJerrycan" !"WeaponHolder_PartGeneric"
+1 "z_" !"z_suit2" !"z_new_worker3" !"z_worker2" !"z_teacher" !"z_villager1" !"z_villager2" !"z_hunter" !"z_villager3"
+
+//Will remove later once everything is filtered out
+5 "Land_CncBlock_D"

@@ -37,13 +37,13 @@
 ////////////////////////// Unicast PV ->Server
 //1="PVDZ_sec_atp"
 //1="PVDZ_plr_Save"
-//1="PVDZ_veh_Save"
+1="PVDZ_veh_Save"
 1="PVDZ_obj_Delete"
 1="PVDZ_plr_Death"
 1="PVDZ_plr_LoginRecord"
 1="PVDZ_obj_Publish"
-//1="PVDZ_plr_Login1"
-//1="PVDZ_plr_Login2"
+1="PVDZ_plr_Login1"
+1="PVDZ_plr_Login2"
 
 ////////////////////////// Unicast PV Client<-
 5="dayzPlayerLogin2"
