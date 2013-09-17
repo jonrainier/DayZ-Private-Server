@@ -7,14 +7,14 @@ echo.
 echo.
 echo.
 echo Executing spawn script...
-.\MySQL\bin\mysql.exe --user=dayz --password=dayz --host=127.0.0.1 --port=3306 --database=hivemind --execute="call pMain()"
+.\MySQL\bin\mysql.exe --user=dayz --password=dayz --host=127.0.0.1 --port=3306 --database=hivemind --execute="call pMain(1)"
 ping 127.0.0.1 -n 5 >NUL
 .\MySQL\cecho {0A}	OK.{07}
 echo.
 echo.
 echo.
 echo Starting server...
-start .\Expansion\beta\arma2oaserver.exe -mod=Expansion\beta;Expansion\beta\expansion;ca;@hive;@dayz -name=cfgdayz -config=cfgdayz\server.cfg -cfg=cfgdayz\arma2.cfg -profiles=cfgdayz
+start .\Expansion\beta\arma2oaserver.exe -mod=Expansion\beta;Expansion\beta\expansion;ca;@hive;@dayz -name=cfgdayz -config=cfgdayz\server.cfg -cfg=cfgdayz\basic.cfg -profiles=cfgdayz
 .\MySQL\cecho {0A}	OK.{07} 
 echo.
 echo.
