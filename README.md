@@ -1,4 +1,4 @@
-![OpenDayZ Logo](http://dl.dropbox.com/u/28915256/Open%20DayZ%20Community.png)<br />
+![OpenDayZ Logo](http://i.imgur.com/2Q0V5KA.png)<br />
 
 ##Requirements
 * Minimum of 1024MB RAM (1GB)
