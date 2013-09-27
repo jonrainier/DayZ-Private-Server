@@ -45,6 +45,6 @@ Configuring time can be great if you want to play DayZ without the hassle of nig
     Hour = 8
     
 ##Community
-Join the community! Help make OpenDayZ better by visiting our website, convieniently located [here](http://opendayz.net) where you can suggest new ideas and help out other community members.
+Join the community! Remember to visit [OpenDayZ](http://opendayz.net) where you can suggest new ideas and help out other community members.
 ###Author
-Created by Pwnoz0r, GitHub readme by RazorFlint
+DayZ-Private-Server Created by Pwnoz0r, GitHub readme by RazorFlint
