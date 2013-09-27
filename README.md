@@ -1,4 +1,4 @@
-![OpenDayZ Logo](http://i.imgur.com/2Q0V5KA.png)<br />
+![OpenDayZ Logo](http://i.imgur.com/PY7FjoM.png)<br />
 
 ##Requirements
 * Minimum of 1024MB RAM (1GB)
