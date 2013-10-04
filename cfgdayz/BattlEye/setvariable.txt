@@ -1,16 +1,16 @@
-5 !"USEC_" !"NORRN_" !"hit_" !="agentObjectCamps" !="agentObjectSwarm" !="banditKills" !="bodyName" !="characterID" !="claimed" !="combattimeout" !="deathType" !="fadeFire" !="firedDamage" !="firedHit" !="freeTarget" !="headShots" !="humanity" !="humanKills" !="lastPos" !="LastTransfusion" !="lastUpdate" !="looted" !="meatHarvested" !="medForceUpdate" !="messing" !="needUpdate" !="ObjectID" !="ObjectUID" !="owner" !="posForceUpdate" !="selectSex"  !="state" !="targets" !="temperature" !="unconsciousTime" !="updatePlayer" !="zombieKills" !="zombieSpawn"
-
-5 "USEC_" !="USEC_BloodQty" !="USEC_infected" !="USEC_injured" !="USEC_inPain" !="USEC_isCardiac" !="USEC_isDead" !="USEC_lowBlood"
-
+5 !"USEC_" !"NORRN_" !"hit_" !=actionSet !=agentObjectCamps !=armed !=banditKills !=BIS_noCoreConversations !=characterID !=claimed !=combattimeout !=deathType !=doLoiter !=firedDamage !=firedHit !=freeTarget !=headShots !=hitRegistered !=humanity !=humanKills !=lastPos !=looted !=meatHarvested !=medForceUpdate !=messing !=myDest !=owner !=posForceUpdate !=remotetargets !=temperature !=unconsciousTime !=updatePlayer !=zombieKills !=zombieSpawn
+5 "USEC_" !=USEC_BloodQty !=USEC_infected !=USEC_injured !=USEC_inPain !=USEC_isCardiac !=USEC_isDead !=USEC_lowBlood !=USEC_Sepsis
 5 "NORRN_" !="NORRN_LoadVcl" !="NORRN_unconscious" !="NORRN_unit_dragged"
 
-1="USEC_BloodQty"
-//1="USEC_infected"
+//1="USEC_BloodQty"
+1="USEC_infected"
 1="USEC_injured"
 //1="USEC_inPain"
 //1="USEC_isCardiac"
 1="USEC_isDead"
 //1="USEC_lowBlood"
+1=USEC_Sepsis
+
 
 //1="NORRN_LoadVcl"
 //1="NORRN_unconscious"
@@ -67,41 +67,37 @@
 //1="hit_wheel_2_4_steering"
 //1="hit_wheel_2_damper"
 
-1="agentObjectCamps"
-1="agentObjectSwarm"
-1="banditKills"
-1="bodyName"
-1="characterID"
-1="claimed"
-//1="combattimeout"
-1="deathType"
-1="fadeFire"
-1="firedDamage"
-1="firedHit"
-1="freeTarget"
-1="headShots"
-1="humanity"
-1="humanKills"
-1="lastPos" // sometimes networked, sometimes not ???
-1="LastTransfusion"
-1="lastUpdate" // sometimes networked, sometimes not ???
-//1="looted"
-1="meatHarvested"
-1="medForceUpdate" // sometimes networked, sometimes not ???
-//1="messing"
-1="needUpdate"
-1="ObjectID"
-1="ObjectUID"
-1="owner"
-//1="posForceUpdate"
-1="selectSex"
-1="state"
-//1="targets"
-1="temperature"
-1="unconsciousTime"
-1="updatePlayer"
-1="zombieKills"
-//1="zombieSpawn"
+1=actionSet
+1=agentObjectCamps
+1=armed
+1=banditKills
+1=BIS_noCoreConversations
+1=characterID
+1=claimed
+//1=combattimeout
+1=deathType
+1=doLoiter
+1=firedDamage
+1=firedHit
+1=freeTarget
+1=headShots
+1=hitRegistered
+1=humanity
+1=humanKills
+1=lastPos
+//1=looted
+1=meatHarvested
+//1=medForceUpdate
+//1=messing
+1=myDest
+//1=owner
+//1=posForceUpdate
+1=remotetargets
+//1=temperature
+//1=unconsciousTime
+1=updatePlayer
+1=zombieKills
+1=zombieSpawn
 
 /////////////////////////// Illegal chars:
 5 "+"
