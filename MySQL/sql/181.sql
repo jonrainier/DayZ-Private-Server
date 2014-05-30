@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50612
+Source Server         : DayZ-Localhost
+Source Server Version : 50529
 Source Host           : localhost:3306
-Source Database       : dayz1803
+Source Database       : hivemind
 
 Target Server Type    : MYSQL
-Target Server Version : 50612
+Target Server Version : 50529
 File Encoding         : 65001
 
-Date: 2014-04-08 19:47:45
+Date: 2014-05-29 22:51:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `character_data` (
   `HeadshotsZ` int(11) NOT NULL DEFAULT '0',
   `distanceFoot` int(11) NOT NULL DEFAULT '0',
   `duration` int(11) NOT NULL DEFAULT '0',
-  `currentState` varchar(100) NOT NULL DEFAULT '[]',
+  `currentState` varchar(1000) NOT NULL DEFAULT '[[],[]]',
   `KillsH` int(11) NOT NULL DEFAULT '0',
   `Model` varchar(50) NOT NULL DEFAULT '"Survivor2_DZ"',
   `KillsB` int(11) NOT NULL DEFAULT '0',
@@ -49,7 +49,7 @@ CREATE TABLE `character_data` (
   KEY `Alive_PlayerID` (`Alive`,`LastLogin`,`PlayerID`),
   KEY `PlayerUID` (`PlayerUID`),
   KEY `Alive_PlayerUID` (`Alive`,`LastLogin`,`PlayerUID`)
-) ENGINE=InnoDB AUTO_INCREMENT=907 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of character_data
@@ -78,7 +78,7 @@ CREATE TABLE `character_dead` (
   `HeadshotsZ` int(11) NOT NULL DEFAULT '0',
   `distanceFoot` int(11) NOT NULL DEFAULT '0',
   `duration` int(11) NOT NULL DEFAULT '0',
-  `currentState` varchar(100) NOT NULL DEFAULT '[]',
+  `currentState` varchar(1000) NOT NULL DEFAULT '[[],[]]',
   `KillsH` int(11) NOT NULL DEFAULT '0',
   `Model` varchar(50) NOT NULL DEFAULT '"Survivor2_DZ"',
   `KillsB` int(11) NOT NULL DEFAULT '0',
@@ -169,6 +169,8 @@ INSERT INTO `object_classes` VALUES ('HMMWV', '0.21', '2', '0', 'car');
 INSERT INTO `object_classes` VALUES ('MH6J_DZ', '0.48', '1', '0.05000', 'helicopter');
 INSERT INTO `object_classes` VALUES ('StashSmall', '0', '0', '0', 'StashSmall');
 INSERT INTO `object_classes` VALUES ('StashMedium', '0', '0', '0', 'StashMedium');
+INSERT INTO `object_classes` VALUES ('Pickup_PK_INS', '0.10', '1', '0.05000', 'car');
+INSERT INTO `object_classes` VALUES ('Offroad_DSHKM_INS', '0.20', '1', '0.05000', 'car');
 
 -- ----------------------------
 -- Table structure for `object_data`
@@ -191,7 +193,7 @@ CREATE TABLE `object_data` (
   UNIQUE KEY `CheckUID` (`ObjectUID`,`Instance`),
   KEY `ObjectUID` (`ObjectUID`),
   KEY `Instance` (`Damage`,`Instance`)
-) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of object_data
@@ -304,6 +306,10 @@ INSERT INTO `object_spawns` VALUES ('82722474', 'BAF_Offroad_W', '[71,[3708.5,59
 INSERT INTO `object_spawns` VALUES ('80289092', 'BAF_Offroad_W', '[322,[7201.5181,3034.3232,0]]', '[[[],[]],[[\"HandGrenade_West\",\"SmokeShell\",\"SmokeShellRed\",\"SmokeShellYellow\",\"SmokeShellGreen\",\"ItemWaterbottle\",\"30Rnd_556x45_Stanag\",\"20Rnd_762x51_DMR\",\"ItemTent\"],[10,1,1,1,1,1,20,10,1]],[[],[]]]', '[[\"glass1\",1],[\"glass2\",1],[\"glass3\",1],[\"motor\",0.8],[\"palivo\",0.8],[\"wheel_1_1_steering\",1],[\"wheel_1_2_steering\",1],[\"wheel_2_1_steering\",1],[\"wheel_2_2_steering\",1],[\"sklo predni P\",1],[\"sklo predni L\",1],[\"karoserie\",1],[\"wheel_1_4_steering\",1],[\"wheel_2_4_steering\",1],[\"wheel_1_3_steering\",1],[\"wheel_2_3_steering\",1],[\"glass4\",1]]', '', null);
 INSERT INTO `object_spawns` VALUES ('53278043', 'MH6J_DZ', '[122,[10137.868,12049.376,-6.1035156e-005]]', '[[[],[]],[[\"1Rnd_Smoke_M203\", \"7Rnd_45ACP_1911\", \"30Rnd_556x45_StanagSD\", \"200Rnd_556x45_M249\", \"FoodCanPasta\", \"15Rnd_W1866_Slug\", \"5x_22_LR_17_HMR\", \"15Rnd_9x19_M9SD\", \"17Rnd_9x19_glock17\", \"100Rnd_762x51_M240\", \"6Rnd_45ACP\", \"8Rnd_9x18_Makarov\"],[2,1,1,1,1,1,1,1,1,1,1,1]],[[\"DZ_Backpack_EP1\"],[1]]]', '[[\"motor\",1],[\"elektronika\",1],[\"mala vrtule\",1],[\"velka vrtule\",1]]', '', null);
 INSERT INTO `object_spawns` VALUES ('25522943', 'HMMWV_DZ', '[0,[13441.056,12003.912,4.5776367e-005]]', '[[[\"AK_47_M\"],[1]],[[\"PartWoodPile\", \"ItemBandage\", \"HandGrenade_west\", \"6Rnd_45ACP\", \"ItemEpinephrine\", \"8Rnd_B_Beneli_74Slug\", \"HandChemBlue\", \"8Rnd_B_Beneli_Pellets\", \"PartEngine\", \"17Rnd_9x19_glock17\", \"ItemTent\"],[1,2,1,1,1,1,1,1,1,1,1]],[[\"DZ_CivilBackpack_EP1\"],[1]]]', '[[\"palivo\",1],[\"motor\",1],[\"karoserie\",1],[\"wheel_1_1_steering\",1],[\"wheel_1_2_steering\",1],[\"wheel_2_1_steering\",1],[\"wheel_2_2_steering\",1]]', '', null);
+INSERT INTO `object_spawns` VALUES ('466210436', 'Pickup_PK_INS', '[12,[4662.13,10436,-3]]', '[[[],[]],[[\"HandGrenade_West\",\"ItemWaterbottle\",\"30Rnd_556x45_Stanag\"],[5,1,6]],[[],[]]]', '[[\"glass1\",1],[\"glass2\",1],[\"glass3\",1],[\"motor\",0.8],[\"palivo\",0.8],[\"wheel_1_1_steering\",1],[\"wheel_1_2_steering\",1],[\"wheel_2_1_steering\",1],[\"wheel_2_2_steering\",1],[\"karoserie\",1],[\"glass4\",1]]', '', null);
+INSERT INTO `object_spawns` VALUES ('70067717', 'Pickup_PK_INS', '[-24,[7006.14,7717.57,-6]]', '[[[],[]],[[\"HandGrenade_West\",\"ItemWaterbottle\",\"30Rnd_556x45_Stanag\"],[5,1,6]],[[],[]]]', '[[\"glass1\",1],[\"glass2\",1],[\"glass3\",1],[\"motor\",0.8],[\"palivo\",0.8],[\"wheel_1_1_steering\",1],[\"wheel_1_2_steering\",1],[\"wheel_2_1_steering\",1],[\"wheel_2_2_steering\",1],[\"karoserie\",1],[\"glass4\",1]]', '', null);
+INSERT INTO `object_spawns` VALUES ('53378656', 'Offroad_DSHKM_INS', '[363,[5337.62,8656.55,0]]', '[[[],[]],[[],[]],[[],[]]]', '[[\"glass1\",1],[\"glass2\",1],[\"glass3\",1],[\"motor\",0.8],[\"palivo\",0.8],[\"wheel_1_1_steering\",1],[\"wheel_1_2_steering\",1],[\"wheel_2_1_steering\",1],[\"wheel_2_2_steering\",1],[\"karoserie\",1],[\"glass4\",1]]', '', null);
+INSERT INTO `object_spawns` VALUES ('46259675', 'Offroad_DSHKM_INS', '[-169,[4625.61,9675.62,0]]', '[[[],[]],[[],[]],[[],[]]]', '[[\"glass1\",1],[\"glass2\",1],[\"glass3\",1],[\"motor\",0.8],[\"palivo\",0.8],[\"wheel_1_1_steering\",1],[\"wheel_1_2_steering\",1],[\"wheel_2_1_steering\",1],[\"wheel_2_2_steering\",1],[\"karoserie\",1],[\"glass4\",1]]', '', null);
 
 -- ----------------------------
 -- Table structure for `player_data`
@@ -346,88 +352,88 @@ CREATE TABLE `player_login` (
 DROP PROCEDURE IF EXISTS `pCleanup`;
 DELIMITER ;;
 CREATE DEFINER=`dayz`@`localhost` PROCEDURE `pCleanup`()
-BEGIN
-
+BEGIN 
 #starts outofbounds cleanup
-	CALL pCleanupOOB();
-	
-#remove dead players from data table
-	DELETE 
-		FROM character_data 
-		WHERE Alive=0;	
-	
-#remove vehicles with 100% damage
-	DELETE
-		FROM object_data 
-		WHERE Damage = '1';					
-
+        CALL pCleanupOOB();
+ 
+#move dead players to character_dead
+        Insert
+                INTO character_dead
+                SELECT *
+                FROM character_data
+                        WHERE Alive=0;
+ 
 #remove unused vehicles older then 14 days
-	DELETE
-		FROM object_data
-		WHERE DATE(last_updated) < CURDATE() - INTERVAL 14 DAY
-			AND Classname != 'dummy'
-			AND Classname != 'Hedgehog_DZ'
-			AND Classname != 'Wire_cat1'
-			AND Classname != 'Sandbag1_DZ'
-			AND Classname != 'BearTrap_DZ'
-			AND Classname != 'StashSmall'
-			AND Classname != 'StashMedium';
-
+        DELETE
+                FROM object_data
+                WHERE DATE(last_updated) < CURDATE() - INTERVAL 14 DAY
+                        AND Classname != 'dummy'
+                        AND Classname != 'Hedgehog_DZ'
+                        AND Classname != 'Wire_cat1'
+                        AND Classname != 'Sandbag1_DZ'
+                        AND Classname != 'TrapBear'
+                        AND Classname != 'StashSmall'
+                        AND Classname != 'StashMedium';
+                       
 #Remove camonets whose owner has been dead for 1 day
-DELETE 
-	FROM object_data
-	USING object_data, character_data
-	WHERE (object_data.Classname = 'CamoNet_DZ')
-		AND object_data.CharacterID = character_data.CharacterID
-		AND character_data.Alive = 0
-		AND DATE(character_data.last_updated) < CURDATE() - INTERVAL 1 Day;
-		
+DELETE
+        FROM object_data
+        USING object_data, character_dead
+        WHERE (object_data.Classname = 'CamoNet_DZ')
+                AND object_data.CharacterID = character_dead.CharacterID
+                AND character_dead.Alive = 0
+                AND DATE(character_dead.last_updated) < CURDATE() - INTERVAL 1 Day;                    
+ 
 #remove tents/stashs whose owner has been dead for four days
-	DELETE
-		FROM object_data
-		USING object_data, character_data
-		WHERE (object_data.Classname = 'TentStorage' or object_data.Classname = 'StashSmall' or object_data.Classname = 'StashMedium')
-			AND object_data.CharacterID = character_data.CharacterID
-			AND character_data.Alive = 0
-			AND DATE(character_data.last_updated) < CURDATE() - INTERVAL 4 DAY;
-
+        DELETE
+                FROM object_data
+                USING object_data, character_dead
+                WHERE (object_data.Classname = 'TentStorage' or object_data.Classname = 'StashSmall' or object_data.Classname = 'StashMedium')
+                        AND object_data.CharacterID = character_dead.CharacterID
+                        AND character_dead.Alive = 0
+                        AND DATE(character_dead.last_updated) < CURDATE() - INTERVAL 4 DAY;
+ 
 #remove empty tents older than seven days
-	DELETE
-		FROM object_data
-		WHERE (Classname = 'TentStorage' or Classname = 'StashSmall' or Classname = 'StashMedium')
-			AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
-			AND Inventory = '[[[],[]],[[],[]],[[],[]]]';
-	
-	DELETE
-		FROM object_data
-		WHERE (Classname = 'TentStorage' or Classname = 'StashSmall' or Classname = 'StashMedium')
-			AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
-			AND Inventory = '[]';		
-
+        DELETE
+                FROM object_data
+                WHERE (Classname = 'TentStorage' or Classname = 'StashSmall' or Classname = 'StashMedium')
+                        AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
+                        AND Inventory = '[[[],[]],[[],[]],[[],[]]]';
+       
+        DELETE
+                FROM object_data
+                WHERE (Classname = 'TentStorage' or Classname = 'StashSmall' or Classname = 'StashMedium')
+                        AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
+                        AND Inventory = '[]';          
+ 
 #remove barbed wire older than two days
-	DELETE
-		FROM object_data
-		WHERE Classname = 'Wire_cat1'
-			AND DATE(last_updated) < CURDATE() - INTERVAL 2 DAY;
-			
+        DELETE
+                FROM object_data
+                WHERE Classname = 'Wire_cat1'
+                        AND DATE(last_updated) < CURDATE() - INTERVAL 2 DAY;
+                       
 #remove Tank Traps older than fifteen days
-	DELETE
-		FROM object_data
-		WHERE Classname = 'Hedgehog_DZ'
-			AND DATE(last_updated) < CURDATE() - INTERVAL 15 DAY;
-
+        DELETE
+                FROM object_data
+                WHERE Classname = 'Hedgehog_DZ'
+                        AND DATE(last_updated) < CURDATE() - INTERVAL 15 DAY;
+ 
 #remove Sandbags older than twenty days
-	DELETE
-		FROM object_data
-		WHERE Classname = 'Sandbag1_DZ'
-			AND DATE(last_updated) < CURDATE() - INTERVAL 20 DAY;
-
+        DELETE
+                FROM object_data
+                WHERE Classname = 'Sandbag1_DZ'
+                        AND DATE(last_updated) < CURDATE() - INTERVAL 20 DAY;
+ 
 #remove Bear Traps older than five days
-	DELETE
-		FROM object_data
-		WHERE Classname = 'BearTrap_DZ'
-			AND DATE(last_updated) < CURDATE() - INTERVAL 5 DAY;
-
+        DELETE
+                FROM object_data
+                WHERE Classname = 'BearTrap_DZ'
+                        AND DATE(last_updated) < CURDATE() - INTERVAL 5 DAY;   
+                       
+#remove dead players from data table
+        DELETE
+                FROM character_data
+                WHERE Alive=0;                                         
 END
 ;;
 DELIMITER ;
@@ -521,11 +527,21 @@ BEGIN
 			INTO iNumVehExisting
 			FROM Object_DATA 
 			WHERE Instance = sInstance
-			AND Classname != '-'						#exclude dummys
-			AND Classname != 'Hedgehog_DZ'			#exclude hedgehog
-			AND Classname != 'Wire_cat1'				#exclude wirecat
-			AND Classname != 'Sandbag1_DZ'			#exclude Sanbag
-			AND Classname != 'BearTrap_DZ'			#exclude trap
+			AND Classname != '-'			#exclude dummys
+			AND Classname != 'Hedgehog_DZ'		#exclude hedgehog
+			AND Classname != 'Wire_cat1'		#exclude wirecat
+			AND Classname != 'Sandbag1_DZ'		#exclude Sanbag
+			AND Classname != 'BearTrap_DZ'		#exclude BearTrap_DZ
+			AND Classname != 'TrapBearTrapFlare'	#exclude TrapBearTrapFlare
+			AND Classname != 'TrapBearTrapSmoke'	#exclude TrapBearTrapSmoke
+			AND Classname != 'Trap_Cans'		#exclude Trap_Cans
+			AND Classname != 'TrapTripwireGrenade'	#exclude TrapTripwireGrenade
+			AND Classname != 'TrapTripwireFlare'	#exclude TrapTripwireFlare
+			AND Classname != 'TrapTripwireSmoke'	#exclude TrapTripwireSmoke
+			AND Classname != 'CamoNet_DZ'		#exclude CamoNet_DZ
+			AND Classname != 'StashSmall'		#exclude StashSmall
+			AND Classname != 'StashMedium'		#exclude StashMedium
+			AND Classname != 'DomeTentStorage'	#exclude DomeTentStorage
 			AND Classname != 'TentStorage';		#exclude TentStorage
 
 		WHILE (iNumVehExisting < iVehSpawnMax) DO		#loop until maximum amount of vehicles is reached
@@ -558,13 +574,22 @@ BEGIN
 						INTO iNumVehExisting 
 						FROM Object_DATA 
 						WHERE Instance = sInstance
-							AND Classname != '-'						#exclude dummys
-							AND Classname != 'Hedgehog_DZ'			#exclude hedgehog
-							AND Classname != 'Wire_cat1'				#exclude wirecat
-							AND Classname != 'Sandbag1_DZ'			#exclude Sanbag
-							AND Classname != 'BearTrap_DZ'			#exclude trap
-							AND Classname != 'TentStorage';		#exclude TentStorage
-		
+						AND Classname != '-'			#exclude dummys
+						AND Classname != 'Hedgehog_DZ'		#exclude hedgehog
+						AND Classname != 'Wire_cat1'		#exclude wirecat
+						AND Classname != 'Sandbag1_DZ'		#exclude Sanbag
+						AND Classname != 'BearTrap_DZ'		#exclude BearTrap_DZ
+						AND Classname != 'TrapBearTrapFlare'	#exclude TrapBearTrapFlare
+						AND Classname != 'TrapBearTrapSmoke'	#exclude TrapBearTrapSmoke
+						AND Classname != 'Trap_Cans'		#exclude Trap_Cans
+						AND Classname != 'TrapTripwireGrenade'	#exclude TrapTripwireGrenade
+						AND Classname != 'TrapTripwireFlare'	#exclude TrapTripwireFlare
+						AND Classname != 'TrapTripwireSmoke'	#exclude TrapTripwireSmoke
+						AND Classname != 'CamoNet_DZ'		#exclude CamoNet_DZ
+						AND Classname != 'StashSmall'		#exclude StashSmall
+						AND Classname != 'StashMedium'		#exclude StashMedium
+						AND Classname != 'DomeTentStorage'	#exclude DomeTentStorage
+						AND Classname != 'TentStorage';		#exclude TentStorage		
 					#update number of same class already spawned
 					SELECT COUNT(*) 
 						INTO iNumClassExisting 

@@ -1,116 +1,48 @@
-5 !"USEC_" !"NORRN_" !"hit_" !=actionSet !=agentObjectCamps !=armed !=banditKills !=BIS_noCoreConversations !=characterID !=claimed !=combattimeout !=deathType !=doLoiter !=firedDamage !=firedHit !=freeTarget !=headShots !=hitRegistered !=humanity !=humanKills !=lastPos !=looted !=meatHarvested !=medForceUpdate !=messing !=myDest !=owner !=posForceUpdate !=remotetargets !=temperature !=unconsciousTime !=updatePlayer !=zombieKills !=zombieSpawn
-5 "USEC_" !=USEC_BloodQty !=USEC_infected !=USEC_injured !=USEC_inPain !=USEC_isCardiac !=USEC_isDead !=USEC_lowBlood !=USEC_Sepsis
-5 "NORRN_" !="NORRN_LoadVcl" !="NORRN_unconscious" !="NORRN_unit_dragged"
+//new
+ 1 !^(USEC_|NORRN_|BIS_|hit_) !=(totaldmg|actionSet|agentObjectCamps|armed|banditKills|characterID|claimed|combattimeout|deathType|doLoiter|firedDamage) !=(firedHit|freeTarget|headShots|hitRegistered|humanity|humanKills|lastPos|looted|meatHarvested|medForceUpdate|messing|myDest) !=(owner|posForceUpdate|remotetargets|temperature|unconsciousTime|updatePlayer|zombieKills|zombieSpawn)
+ 1 ^USEC_!=USEC_(BloodQty|infected|injured|inPain|isCardiac|isDead|lowBlood|Sepsis)
+ 1 ^NORRN_ !=NORRN_(LoadVcl|unconscious|unit_dragged)
+ 1 ^bis_ !=bis_greeted(by(evil|languages|people|times)|languages|people|times) !=BIS_noCoreConversations
+// "hit_arms" is a 1.8.0.3 dayz mod bug -- should be hit_hands
+ 1 ^hit_ !=hit_(Pelvis|aimpoint|lelbow|relbow|RightFoot|LeftFoot|neck|pilot|hands) !=hit_(hands|legs) !=hit_arms !="hit_(elektronika|engine|fueltank|glass[1-6]|karoserie|(mala|velka) vrtule|motor|munice|netrup|palivo)" !="hit_(pravy (predni|zadni) tlumic|[lp] svetlo|sklo predni [lp]|svetlo l|wheel_[12]_[1-4]_steering|wheel_[12]_damper)" !=hit_telo !="hit_\?"
+1=hit_(Pelvis|aimpoint|lelbow|relbow|RightFoot|LeftFoot|neck|pilot) // Bleeding Limbs (optional)
+1=hit_(hands|legs) // Breaking Limbs (optional)
+////////////////////////// Damageable vehicle parts (optional):
+//1="hit_(elektronika|engine|fueltank|glass[1-6]|karoserie|(mala|velka) vrtule|motor|munice|netrup|palivo)"
+//1="hit_(pravy (predni|zadni) tlumic|[lp] svetlo|sklo predni [lp]|svetlo l|wheel_[12]_[1-4]_steering|wheel_[12]_damper)"
+//1=hit_telo // ancient plane AN2
 
-//1="USEC_BloodQty"
-1="USEC_infected"
-1="USEC_injured"
-//1="USEC_inPain"
-//1="USEC_isCardiac"
-1="USEC_isDead"
-//1="USEC_lowBlood"
-1=USEC_Sepsis
-
-
-//1="NORRN_LoadVcl"
-//1="NORRN_unconscious"
-//1="NORRN_unit_dragged"
-
-
-////////////////////////// Bleeding Limbs:
-1="hit_Pelvis"
-1="hit_aimpoint"
-1="hit_lelbow"
-1="hit_relbow"
-1="hit_RightFoot"
-1="hit_LeftFoot"
-1="hit_neck"
-1="hit_pilot"
-
-////////////////////////// Breaking Limbs:
-1="hit_hands"
-1="hit_legs"
-
-////////////////////////// Damageable vehicle parts:
-//1="hit_elektronika"
-//1="hit_engine"
-//1="hit_fueltank"
-//1="hit_glass1"
-//1="hit_glass2"
-//1="hit_glass3"
-//1="hit_glass4"
-//1="hit_glass5"
-//1="hit_glass6"
-//1="hit_karoserie"
-//1="hit_l svetlo"
-//1="hit_mala vrtule"
-//1="hit_motor"
-//1="hit_munice"
-//1="hit_netrup"
-//1="hit_palivo"
-//1="hit_pravy predni tlumic"
-//1="hit_pravy zadni tlumic"
-//1="hit_p svetlo"
-//1="hit_sklo predni l"
-//1="hit_sklo predni p"
-//1="hit_svetlo l"
-//1="hit_telo" // ancient plane AN2
-//1="hit_velka vrtule"
-//1="hit_wheel_1_1_steering"
-//1="hit_wheel_1_2_steering"
-//1="hit_wheel_1_3_steering"
-//1="hit_wheel_1_4_steering"
-//1="hit_wheel_1_damper"
-//1="hit_wheel_2_1_steering"
-//1="hit_wheel_2_2_steering"
-//1="hit_wheel_2_3_steering"
-//1="hit_wheel_2_4_steering"
-//1="hit_wheel_2_damper"
-
-1=actionSet
-1=agentObjectCamps
-1=armed
-1=banditKills
-1=BIS_noCoreConversations
+1 USEC_
 1=characterID
-1=claimed
+//1=actionSet
+//1=agentObjectCamps
+//1=armed
+//1=banditKills
+//1=claimed
 //1=combattimeout
-1=deathType
-1=doLoiter
-1=firedDamage
-1=firedHit
-1=freeTarget
-1=headShots
-1=hitRegistered
-1=humanity
-1=humanKills
-1=lastPos
-//1=looted
-1=meatHarvested
-//1=medForceUpdate
-//1=messing
-1=myDest
+//1=deathType
+//1=doLoiter
+//1=firedDamage
+//1=firedHit
+//1=freeTarget
+//1=headShots
+//1=hitRegistered
+//1=humanity
+//1=humanKills
+//1=lastPos
+//1=meatHarvested
 //1=owner
-//1=posForceUpdate
-1=remotetargets
-//1=temperature
 //1=unconsciousTime
-1=updatePlayer
-1=zombieKills
-1=zombieSpawn
+//1=updatePlayer
+//1=zombieKills
+//// 1=looted
+// 1=medForceUpdate
+// 1=messing
+// 1=myDest // very verbose
+// 1=posForceUpdate
+// 1=remotetargets // very verbose
+// 1=temperature
+// 1=zombieSpawn // very verbose
 
 /////////////////////////// Illegal chars:
-5 "+"
-5 ";"
-5 ","
-5 "{"
-5 "("
-5 "["
-5 "|"
-5 "&"
-5 "="
-5 ":"
-5 "!"
-5 "%"
-5 "\""
-5 "'"
+ 1 "[+;,{(|&=:!%[]"

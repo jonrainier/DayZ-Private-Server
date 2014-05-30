@@ -1,106 +1,30 @@
-1 "" !"Parachute" !"_DZ" !"DZ_" !"z_" !"WeaponHolder" !"Cow" !"Box" !"Smoke" !"Chem" !"40mm" !="CZ_VestPouch_EP1" !="R_M136_AT" !="SeaGull" !="SmallSecondary" !="StashSmall" !="TentStorage" !="HelicopterExploSmall" !=HelicopterExploBig" !="Wire_cat1" !="JackDaniels" !="TinCan" !="SodaCan" !="RoadFlare" !="WoodenArrowF" !="zZombie_Base" !="WildBoar" !="Rabbit" !="Sheep" !="Goat" !="Hen"
-5 "SeaGull" //set to its own line so we know which kick we have here with out looking in the logs
-5 "Chem" !="ChemGreen" !="ChemRed" !="ChemBlue"
-1 "Smoke" !"40mm" !="SmokeShell" !="SmokeShellRed" !="SmokeShellGreen"
-1 "Cow" !="Cow01" !="Cow02" !="Cow03" !="Cow04"
-1 "z_" !"CZ_" !"DZ_" !="z_villager1" !="z_new_villager2" !="z_villager2" !="z_new_villager3" !="z_villager3" !="z_new_villager4" !="z_worker1" !="z_new_worker2" !="z_worker2" !="z_new_worker3" !="z_worker3" !="z_new_worker4" !="z_teacher" !="z_hunter" !="z_suit1" !="z_suit2" !="z_soldier" !="z_soldier_pilot" !="z_soldier_heavy" !="z_policeman" !="z_doctor" !="z_priest"
-1 "WeaponHolder" !="WeaponHolder" !=WeaponHolder_ItemCamoNet !=WeaponHolder_ItemCrowbar !=WeaponHolder_ItemFuelcan !=WeaponHolder_ItemHatchet !=WeaponHolder_ItemJerrycan !=WeaponHolder_ItemTent !=WeaponHolder_MeleeBaseBallBat !=WeaponHolder_MeleeBaseBallBatNails !=WeaponHolder_MeleeBatBarbed !=WeaponHolder_MeleeMachete !=WeaponHolder_PartEngine !=WeaponHolder_PartFueltank !=WeaponHolder_PartGeneric !=WeaponHolder_PartGlass !=WeaponHolder_PartVRotor !=WeaponHolder_PartWheel
-1 "DZ_" !="DZ_British_ACU" !="DZ_Czech_Vest_Puch" !="DZ_TK_Assault_Pack_EP1" !="DZ_Patrol_Pack_EP1" !="DZ_Assault_Pack_EP1" !="DZ_ALICE_Pack_EP1" !="DZ_CivilBackpack_EP1" !="DZ_Backpack_EP1"
-1 "_DZ" !="Land_Fire_DZ" !="SurvivorW2_DZ" !="Camo1_DZ" !="Survivor2_DZ" !="Survivor1_DZ" !="Bandit1_DZ" !="Survivor3_DZ" !="Sniper1_DZ" !"BanditW1_DZ"
-5 "Parachute" !="ParachuteWest" 
-5 "Box" !="MedBox0" !="MedBox1" !="AmmoBoxSmall_556" !="AmmoBoxSmall_762" !="ItemMatchbox" !="ItemToolbox" !=equip_pvc_box !=FoodBox0 !=FoodBox1 !=FoodBox2 
-1 "40mm" !="G_40mm_HE" !="G_40mm_Smoke" !="F_40mm_White" !="F_40mm_Green"
+//new
+ 1 !(^DZ_|^z_|^WeaponHolder|Box|^Smoke|^Chem|^._40mm|_DZ$|^Trap) !=(SeaGull|SmallSecondary|HelicopterExplo(Small|Big)|CZ_VestPouch_EP1|R_M136_AT|Stash(Small|Medium)|(|Dome)TentStorage|Wire_cat1) !=(JackDaniels|(Tin|Soda)Can|RoadFlare|WoodenArrowF|zZombie_Base|Land_Fire_DZ|ParachuteWest|Grenade(_|HandTimed)(West|East)) !=(CMflareAmmo|Pipebomb) !=(WildBoar|Rabbit|Sheep|Goat|Hen|Cow0[1234])
+ 1 SeaGull //set to its own line so we know which kick we have here with out looking in the logs
+1 ^DZ_ !=DZ_(British_ACU|Czech_Vest_Puch|(TK_Assault_Pack|Patrol_Pack|Assault_Pack|ALICE_Pack|CivilBackpack|Backpack)_EP1)
+1 ^z_ !=z_((|new_)villager[1234]|(|new_)worker[1234]|teacher|hunter|suit[12]|soldier(|_pilot|_heavy)|policeman|doctor|priest)
+1 ^WeaponHolder !=WeaponHolder !=WeaponHolder_(Item(CamoNet|Crowbar|Fuelcan|Hatchet|Jerrycan|Tent)|Melee(BaseBallBat(|Nails)|BatBarbed|Machete)) !=WeaponHolder_Part(Engine|Fueltank|Generic|Glass|VRotor|Wheel)
+1 Box !=(MedBox[01]|AmmoBoxSmall_(556|762)|Item(Match|Tool)box|equip_pvc_box|FoodBox[012])
+1 ^Smoke !=SmokeShell(|Red|Green|Yellow)
+1 ^Chem !=Chem(Green|Red|Blue)
+1 ^._40mm !=(G_40mm_HE|G_40mm_Smoke|F_40mm_White|F_40mm_Green)
+1 _DZ$ !=(BanditW?1|Camo1|Sniper1|Soldier1|Survivor([123]|W2))_DZ !=(Land_Fire|Sandbag1|Hedgehog|BearTrap|CamoNet|GrenadeHandTimedWest)_DZ
+1 ^Trap Trap(_Cans|Tripwire(Flare|Grenade|Smoke)|BearTrap(Smoke|Flare))
+//5=Soldier1_DZ // soldier skin may be allowed on private hives
+1=(SmallSecondary|HelicopterExplo(Small|Big)) // log explosions (optional)
+//1=(MedBox[01]|AmmoBoxSmall_(556|762)|FoodBox[012]) // log box (optional)
+1=WeaponHolder_(Item(Fuel|Jerry)can|Part(Engine|Fueltank|Generic|Glass|VRotor|Wheel)) // log vehicle parts (optional)
+//1=(BanditW?1|Camo1|Sniper1|Soldier1|Survivor([123]|W2))_DZ // log character creation (optional)
+1=(PipeBomb|Grenade(_|HandTimed)(West|East)) // log grenades (optional)
 
-// log explosions (optional)
-//1=SmallSecondary
-//1=HelicopterExploSmall
-//1=HelicopterExploBig
-
-// log box (optional)
-//1=MedBox0
-//1=MedBox1
-//1=AmmoBoxSmall_556
-//1=AmmoBoxSmall_762
-//1=ItemMatchbox
-//1=ItemToolbox
-//1=FoodBox0
-//1=FoodBox1
-//1=FoodBox2 
-
-// log vehicle parts (optional)
-//1=WeaponHolder_ItemFuelcan
-//1=WeaponHolder_ItemJerrycan
-//1=WeaponHolder_PartEngine
-//1=WeaponHolder_PartFueltank
-//1=WeaponHolder_PartGeneric
-//1=WeaponHolder_PartGlass
-//1=WeaponHolder_PartVRotor
-//1=WeaponHolder_PartWheel
-
-// log character creation (optional)
-//1=Bandit1_DZ 
-//1=BanditW1_DZ
-//1=Camo1_DZ 
-//1=Sniper1_DZ 
-//1=Survivor1_DZ 
-//1=Survivor2_DZ 
-//1=Survivor3_DZ 
-//1=SurvivorW2_DZ 
-
+//will remove everything below later once we are kicking for everything but whats filtered
+ 1 (AAV|T90|M1A2_TUSK_MG|AV8B2|Mine|ARTY_|SADARM_|LASER_|WP_|_MLRS|_81|_82|_105|_120|_122|_227|_AA|_AP|_80|_57|_85|_100|_125|_30)
+ 1 (_ied|_CRV7|_MEEWS|_SMAW|_GRAD|_SABOT|_SH|KORD|DSHKM|MK19|AGS|Nest_|R_PG|R_OG|B_|_YakB|cock|BBarracks|_LHD_|_acr|MASH_|Fort_)
+ 1 (BasicWeapons|SpecialWeapons|_uav)
+ 1 _AT !=R_M136_AT
 
 //not in dayz 1.7.7.1
 //Set to 1 to log only for the sake of people using older dayz versions, will set to 5 or remove at a later time.
-1 "R_M136_AT"
-1 "CZ_VestPouch_EP1"
+1 R_M136_AT
+1 CZ_VestPouch_EP1
 
-//will remove everything below later once we are kicking for everything but whats filtered
-5 "AAV"
-5 "T90"
-5 "M1A2_TUSK_MG"
-5 "AV8B2"
-5 "Mine"
-5 "ARTY_"
-5 "SADARM_"
-5 "LASER_"
-5 "WP_"
-5 "_MLRS"
-5 "_81"
-5 "_82"
-5 "_105"
-5 "_120"
-5 "_122"
-5 "_227"
-5 "_AA"
-5 "_AT" !="R_M136_AT"
-5 "_AP"
-5 "_80"
-5 "_57"
-5 "_85"
-5 "_100"
-5 "_125"
-5 "_30"
-5 "_ied"
-5 "_CRV7"
-5 "_MEEWS"
-5 "_SMAW"
-5 "_GRAD"
-5 "_SABOT"
-5 "_SH"
-5 "KORD"
-5 "DSHKM"
-5 "MK19"
-5 "AGS"
-5 "Nest_"
-5 "R_PG"
-5 "R_OG"
-5 "B_"
-5 "_YakB"
-5 "cock"
-5 "BBarracks"
-5 "_LHD_
-5 "_acr"
-5 "MASH_"
-5 "Fort_"
-5 "BasicWeapons"
-5 "SpecialWeapons"
-5 "_uav"

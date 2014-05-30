@@ -1,54 +1,11 @@
-// Blacklist of illegal target objects
-1 "" //NOTE: The only legit positions/attatchto distances are [0,0,0] and [0,1,0] anything else is a hack!
-5 Parachute
-5 AH6X_DZ
-5 AH6X_EP1
-5 AN2_DZ
-5 ATV_CZ_EP1
-5 ATV_US_EP1
-5 BAF_Offroad_D
-5 BAF_Offroad_W
-5 car_hatchback
-5 car_sedan
-5 datsun1_civil_1_open
-5 datsun1_civil_3_open
-5 Fishing_Boat
-5 hilux1_civil_1_open
-5 hilux1_civil_2_covered
-5 hilux1_civil_3_open
-5 hilux1_civil_3_open_EP1
-5 HMMWV
-5 Ikarus
-5 Lada1_TK_CIV_EP1
-5 Lada2
-5 LandRover_CZ_EP1
-5 LandRover_TK_CIV_EP1
-5 M1030
-5 MH6J_DZ
-5 MH6J_EP1
-5 Mi17_DZ
-5 Old_bike_TK_CIV_EP1
-5 Old_bike_TK_INS_EP1
-5 PBX
-5 S1203_TK_CIV_EP1
-5 Skoda
-5 Smallboat_1
-5 Smallboat_2
-5 SUV_TK_CIV_EP1
-5 SUV_TK_EP1
-5 tractor
-5 TT650_Civ
-5 TT650_Ins
-5 TT650_TK_CIV_EP1
-5 TT650_TK_EP1
-5 UAZ_CDF
-5 UAZ_INS
-5 UAZ_RU
-5 UAZ_Unarmed_TK_CIV_EP1
-5 UAZ_Unarmed_TK_EP1
-5 UAZ_Unarmed_UN_EP1
-5 UH1H_DZ
-5 UralCivil
-5 V3S_Civ
-5 Volha_2_TK_CIV_EP1
-5 VolhaLimo_TK_CIV_EP1
+//new
+1 !WoodenArrowF !Shot
+//5 !"(0,0,0|0,1,0)"  // won't work for now. BE attachto filter controls only the first object class, not the whole log line 
+// Blacklist of illegal target objects:
+ 1=(Parachute|AH6X_DZ|AH6X_EP1|AN2_DZ|ATV_CZ_EP1|ATV_US_EP1|BAF_Offroad_D|BAF_Offroad_W|car_hatchback)
+ 1=(car_sedan)|datsun1_civil_1_open|datsun1_civil_3_open|Fishing_Boat|hilux1_civil_1_open|hilux1_civil_2_covered)
+ 1=(hilux1_civil_3_open|hilux1_civil_3_open_EP1|HMMWV|Ikarus|Lada1_TK_CIV_EP1|Lada2|LandRover_CZ_EP1|LandRover_TK_CIV_EP1)
+ 1=(M1030|MH6J_DZ|MH6J_EP1|Mi17_DZ|Old_bike_TK_CIV_EP1|Old_bike_TK_INS_EP1|PBX|S1203_TK_CIV_EP1|Skoda|Smallboat_1)
+ 1=(Smallboat_2|SUV_TK_CIV_EP1|SUV_TK_EP1|tractor|TT650_Civ|TT650_Ins|TT650_TK_CIV_EP1|TT650_TK_EP1|UAZ_CDF|UAZ_INS)
+ 1=(UAZ_RU|UAZ_Unarmed_TK_CIV_EP1|UAZ_Unarmed_TK_EP1|UAZ_Unarmed_UN_EP1|UH1H_DZ|UralCivil|V3S_Civ|Volha_2_TK_CIV_EP1)
+ 1=(VolhaLimo_TK_CIV_EP1)

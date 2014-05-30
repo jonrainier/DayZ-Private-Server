@@ -1,3 +1,4 @@
-5 "" !"SurvivorW2_DZ"  !"Survivor1_DZ" !"Survivor2_DZ" !"Survivor3_DZ" !"Sniper1_DZ" !"Camo1_DZ" !"BanditW1_DZ" !"Bandit1_DZ" !"SurvivorW2_DZ" !"Soldier1_DZ"
-// Default here is soldier skin allowed. Uncomment the following if soldier skin is disabled
-//5 "Soldier1_DZ"
+//new
+//1 ""
+1 !(BanditW?1|Camo1|Soldier1|Sniper1|Survivor([123]|W2))_DZ 
+//5 Soldier1_DZ // Default here is soldier skin allowed. Uncomment the following if soldier skin is disabled
