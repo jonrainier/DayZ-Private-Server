@@ -18,6 +18,7 @@ dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidd
 dayz_enableRules = true; //Enables a nice little news/rules feed on player login (make sure to keep the lists quick).
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
 dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
+dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 
 dayz_serversideloot = false;
 dayz_previousID = 0;
@@ -54,46 +55,7 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";	
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
-
-[] spawn {
-	while {true} do {
-		waitUntil {((isNil "BIS_Effects_Rifle") OR {(count(toArray(str(BIS_Effects_Rifle)))!=7)})};
-		diag_log "Res3tting B!S effects...";
-		/* BIS_Effects_* fixes from Dwarden */
-		BIS_Effects_EH_Killed = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\killed.sqf";
-		BIS_Effects_AirDestruction = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\AirDestruction.sqf";
-		BIS_Effects_AirDestructionStage2 = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\AirDestructionStage2.sqf";
-		BIS_Effects_Secondaries=compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\secondaries.sqf";
-		
-		BIS_Effects_globalEvent = {
-			BIS_effects_gepv = _this;
-			publicVariable "BIS_effects_gepv";
-			_this call BIS_Effects_startEvent;
-		};
-
-		BIS_Effects_startEvent = {
-			switch (_this select 0) do {
-				case "AirDestruction": {
-						[_this select 1] spawn BIS_Effects_AirDestruction;
-				};
-				case "AirDestructionStage2": {
-						[_this select 1, _this select 2, _this select 3] spawn BIS_Effects_AirDestructionStage2;
-				};
-				case "Burn": {
-						[_this select 1, _this select 2, _this select 3, false, true] spawn BIS_Effects_Burn;
-				};
-			};
-		};
-
-		"BIS_effects_gepv" addPublicVariableEventHandler {
-			(_this select 1) call BIS_Effects_startEvent;
-		};
-
-		BIS_Effects_EH_Fired = {false};
-		BIS_Effects_Rifle = {false};
-		sleep 1;
-	};
-};
+#include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
 if ((!isServer) && (isNull player) ) then
 {
@@ -111,18 +73,19 @@ if (isServer) then {
 	_serverMonitor = [] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 	
 	if (dayz_POIs) then {	
-		[] execVM "poi\DevilsFarm.sqf";
-		[] execVM "poi\NEA.sqf";
-		[] execVM "poi\C130Crash.sqf";
-		[] execVM "poi\ChernoBuildings.sqf";
-		[] execVM "poi\DeadForest.sqf";
-		[] execVM "poi\KomyshovoRoadblock.sqf";
-		[] execVM "poi\MilitaryAirpoort.sqf";
-		[] execVM "poi\ZelenogorskBuildings.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\DevilsFarm.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\NEA.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\C130Crash.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\ChernoBuildings.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\DeadForest.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\KomyshovoRoadblock.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\MilitaryAirpoort.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\ZelenogorskBuildings.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Twains.sqf";
 	};
 	
 	if (dayz_infectiousWaterholes) then {
-		[] execVM "infectiousWaterholes\init.sqf";
+		[] execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf";
 	};
 	
 	

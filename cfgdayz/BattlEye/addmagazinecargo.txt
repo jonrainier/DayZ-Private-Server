@@ -1,30 +1,37 @@
 //new
- 1 !(^item|^part|^[0-9]+rnd_|^food|^dz_|^melee|^blueprint|^equip|swing$|hand) !=(Attachment_(ACG|AIM|CAMO|GL|Kobra|Pso|Silencer)|Fish(Cooked|Raw)(SeaBass|Trout|Tuna)|G3(6A_camo|6C|6C_camo|6K_camo|7a)) !=(M4A1(|_Aim|_Aim_camo|_AIM_SD_camo|_HWS_GL|_HWS_GL_camo)|Skin(_Camo1_DZ|_Sniper1_DZ|_Soldier1_DZ|_Survivor2_DZ|Base)) !=(AK(_47_M|_74|S_74_kobra|S_74_U)|SVD(|_CAMO)_DZ) !=(10x_303|5x_22_LR_17_HMR|AngelCookies|Colt1911|Crossbow_DZ|glock17_EP1|huntingrifle|LeeEnfield|Mk_48_DZ|NVGoggles) !=(PipeBomb|Quiver|Remington870_lamp|revolver_EP1|RPK_74|TrapBear|UZI_EP1|Winchester1866|MR43|Trash(JackDaniels|TinCan)) !=(WoodenArrowF?|AmmoBoxSmall_(556|762)|BAF_(AS50_scoped|L85A2_RIS_Holo)|Binocular(|_Vector)|Bizon(|_silenced)|DMR(|_DZ)) !=(Flare(Green|White)_M203|FN_FAL(|_ANPVS4)|M1(014|07_DZ|4_EP1|6A2|6A2GL|6A4_ACG)|M2(4|40_DZ|49_DZ)|M4(0A3|A3_CCO_EP1)) !=(M9(|SD)|Makarov(|SD)|MedBox[01]|MP5(A5|SD)|Sa58(P_EP1|V_CCO_EP1|V_EP1|V_RCO_EP1)|SmokeShell(|Green|Red|Yellow)|PipeBomb)
- 1 ^Item !=Item(1mpile|AntibacterialWipe|Antibiotic|Bandage|Bloodbag|BookBible|CamoNet|Cards|Compass|coni|Crowbar|DomeTent|Epinephrine) !=Item(Etool|FishingPole|Flashlight(|Red)|Fuelcan|GPS|Hatchet|HeatPack|Knife|Machete|Map|Matchbox|Morphine) !=Item(Painkiller|Sandbag|SepsisBandage|Shovel|TankTrap|Tent|Toolbox|TrapBearTrap(Flare|Smoke)|Watch|Wire|CamoNet|Crowbar) !=Item(DomeTent|TrapTripwire(Cans|Flare|Grenade|Smoke)|Trash(Razor|Toiletpaper)|Waterbottle(|Boiled|Unfilled)|Fuelcan|Hatchet) !=Item(Jerrycan|Tent|Soda(|Clays|Coke|Drwaste|GrapeDrink|Lemonade|Lvg|Mdew|Mtngreen|Mzly|Pepsi|R4z0r|Rabbit|RocketFuel|Smasht)) !=Item((Fuel|Jerry)can)Empty !=ItemSoda(|Clays|Coke|Drwaste|GrapeDrink|Lemonade|Lvg|Mdew|Mtngreen|Mzly|Pepsi|R4z0r|RocketFuel|Smasht|Rabbit)Empty
- 1 ^Part !=Part(WoodLumber|WoodPile|Engine|Fueltank|Generic|Glass|VRotor|Wheel)
- 1 ^[0-9]+Rnd_ !=(100Rnd_(762x51_M240|762x54_PK)|200Rnd_(556x45_M249|762x51_M240)) !=10Rnd_(127x99_m107|762x54_SVD) !=20Rnd_(762x51_DMR|762x51_FNFAL) !=30Rnd_(545x39_AK|556x45_G36(|SD)|556x45_Stanag(|SD)|762x39_AK47|762x39_SA58|9x19_MP5(|SD)|9x19_UZI(|_SD)) !=(15Rnd_(9x19_M9(|SD)|W1866_Slug)|17Rnd_9x19_glock17|1Rnd_(HE|Smoke)_M203|2Rnd_shotgun_74(Pellets|Slug) !=(5Rnd_(127x99_as50|762x51_M24)|64Rnd_9x19(|_SD)_Bizon|6Rnd_45ACP|75Rnd_545x39_RPK|7Rnd_45ACP_1911) !=8Rnd_(9x18_Makarov(|SD)|B_(Beneli|Saiga12)_(74Slug|Pellets)
- 1 ^Food !FoodCan !=Food(Box[012]|CakeCremeCakeClean|Chips(Chocolate|Mysticales|Sulahoops)|MRE|Nutmix|Pistachio) !=Food(|bacon|beef|chicken|goat|meat|mutton|rabbit|Steak)(Cooked|Raw) !=FoodChips(Chocolate|Mysticales|Sulahoops)Empty
- 1 ^FoodCan !=FoodCan(Badguy|BakedBeans|Beef|Boneboy|Corn|Curgon|Demon|Derpy|dy(Anders|Chubby|Legacys|Mintception)|Fraggleos|FrankBeans) !=FoodCan(Griff|Herpy|LongSprats|Orlok|Pasta|Potatoes|Powell|Rus(Corn|Milk|Peas|Pork|Stew|Unlabeled)|Sardines|Tylers|Unlabeled) !=FoodCan(Badguy|Beef|Boneboy|Corn|Curgon|Demon|Derpy|Fraggleos|Griff|Herpy|LongSprats|Orlok|Potatoes|Powell)Empty !=FoodCan(Rus(Corn|Milk|Peas|Pork|Stew|Unlabeled)|Unlabeled|Tylers)Empty
- 1 ^DZ_ !DZ_((ALICE|Assault|Patrol|TK_Assault)_Pack_EP1|Backpack_EP1|British_ACU|CivilBackpack_EP1|Czech_Vest_Puch)
- 1 ^Melee !=Melee(Baseball(|Bat(|Barbed|Nails))|Crowbar|FishingPole|Flashlight(|Red)|Hatchet|Machete|_Swing)
- 1 ^Blueprint !=Blueprint_(Bandage(|_Packaged)|BaseBallBatBarbed|NailedBaseballBat|SepsisBandage(|_Packaged)) !=Blueprint_Trap(BearFlare|BearSmoke|_Cans|TripwireFlare|TripwireGrenade|TripwireSmoke)
- 1 ^equip !=equip_(1inch_metal_pipe|2inch_metal_pipe|aa_battery|brick|cable_tie|comfreyleafs|crate|d_battery|duct_tape|empty_barrel) !=equip_(floppywire|gauze|gauzepackaged|hose|hose_clamp|laser|metal_sheet|nails|needle|note|paint|paper_sheet|pvc_box|rag) !=equip_(rail_screws|rope|scrapelectronics|string|weapon_rails|wood_pallet)
- 1 swing$ !=(BatBarbed|BatNails|Bat|crowbar|Fishing|hatchet|Machete|Melee)_swing
- 1 hand !=Hand(Chem(Blue|Green|Red)|Grenade_(east|west)|RoadFlare) !=GrenadeHandTimed(East|West) 
+5  !(^item|^food|^[0-9]+rnd_|^part|^Attachment_|^dz_|^melee|^blueprint|^equip|swing$|hand|blood) !=(Fish(Cooked|Raw)(SeaBass|Trout|Tuna)|G3(6A_camo|6C|6C_camo|6K_camo|7a)) !=(M4A1(|_Aim|_Aim_camo|_AIM_SD_camo|_HWS_GL|_HWS_GL_camo)|Skin(_Camo1_DZ|_Sniper1_DZ|_Soldier1_DZ|_Survivor2_DZ|Base)) !=(AK(_47_M|_74|S_74_kobra|S_74_U)|SVD(|_CAMO)_DZ|_107_GL_Kobra|_107_GL_PSO|AK_74_GL) !=BAF_(AS50_scoped|L85A2_RIS_(Holo|Holo_GL|ACOG_GL|SUSAT(|_GL))) !=(10x_303|5x_22_LR_17_HMR|AngelCookies|Colt1911|Crossbow(_DZ|_CCO|_Stock)|glock17_EP1|huntingrifle|LeeEnfield|Mk_48_DZ|NVGoggles) !=(PipeBomb|Quiver|Remington870_lamp|revolver_EP1|RPK_74|TrapBear|UZI_EP1|Winchester1866|MR43|Trash(JackDaniels|TinCan)) !=(WoodenArrowF?|AmmoBoxSmall_(556|762)|Binocular(|_Vector)|Bizon(|_silenced)|DMR(|_DZ)|transfusionKit) !=(Flare(Green|White)_M203|FN_FAL(|_ANPVS4)|M1(014|07_DZ|4_EP1|6A2|6A2GL|6A4_ACG)|M2(4|40_DZ|49_DZ)|M4(0A3|A3_CCO_EP1)) !=(M9(|SD)|Makarov(|SD)|MedBox[01]|MP5(A5|SD)|Sa58(P_EP1|V_CCO_EP1|V_EP1|V_RCO_EP1)|SmokeShell(|Green|Red|Yellow)|PipeBomb)
+5  ^Attachment_ !=Attachment_(Crossbow_CCO|M14_SniperScope|M16A2(|GL)|M16A4(|_ACG(|_GL)|_GL)|M16_ACG|M4A1_Aim|M4A1_Aim_camo) !=Attachment_(M4A1_AIM_SD_camo|m8_carbineGL|M9Silencer|MakarovSilencer|MP5A5_Silencer|Sa58V_EP1_Aim|SA58_ACG) !=Attachment_(SCAR_H_CQC_CCO_Silencer|SCAR_L_CQC_EGLM_Holo)
+5  ^Item !=Item(1mpile|AntibacterialWipe|Antibiotic|Bandage|Bloodbag|BookBible|CamoNet|Cards|Compass|coni|Crowbar|DomeTent|Epinephrine) !=Item(Etool|FishingPole|Flashlight(|Red)|Fuelcan|GPS|Hatchet(|Broken)|HeatPack|Jerrycan|Machete|Map|Map_Debug) !=Item(Painkiller|Sandbag|SepsisBandage|Shovel|TankTrap|Tent|Toolbox|TrapBearTrap(Flare|Smoke)|Watch|Wire|CamoNet|Crowbar) !=Item(Brews|KosmosSmokes(|Open)|Sherbet|TrashPaper(|Music)|Waterbottle(|Dmg|Infected|Boiled|Unfilled)|Morphine|Trap_Cans) !=Item(DomeTent|TrapTripwire(Cans|Flare|Grenade|Smoke)|Trash(Razor|Toiletpaper)|Fuelcan|Hatchet) !=Item(Jerrycan|Tent|Soda(|Clays|Coke|Drwaste|GrapeDrink|Lemonade|Lvg|Mdew|Mtngreen|Mzly|Pepsi|R4z0r|Rabbit|RocketFuel|Smasht)) !=Item((Fuel|Jerry)can|Flashlight)Empty !=ItemSoda(|Clays|Coke|Drwaste|GrapeDrink|Lemonade|Lvg|Mdew|Mtngreen|Mzly|Pepsi|R4z0r|RocketFuel|Smasht|Rabbit)Empty !=Item(CarBomb|_Connector_[ILT]|Knife[1-5]|[1-5]Matchbox|Matchbox(|Empty)|Knife(|Blunt))
+5  ^Part !=Part(WoodLumber|WoodPile|Engine|Fueltank|Generic|Glass|VRotor|Wheel)
+5  ^[0-9]+Rnd_ !=(100Rnd_(762x51_M240|762x54_PK)|200Rnd_(556x45_M249|762x51_M240)) !=10Rnd_(127x99_m107|762x54_SVD) !=20Rnd_(762x51_DMR|762x51_FNFAL|556x45_Stanag) !=30Rnd_(545x39_AK|556x45_G36(|SD)|556x45_Stanag(|SD)|762x39_AK47|762x39_SA58|9x19_MP5(|SD)|9x19_UZI(|_SD)) !=(15Rnd_(9x19_M9(|SD)|W1866_Slug)|17Rnd_9x19_glock17|1Rnd_(HE|Smoke)_M203|2Rnd_shotgun_74(Pellets|Slug)) !=(5Rnd_(127x99_as50|762x51_M24)|64Rnd_9x19(|_SD)_Bizon|6Rnd_45ACP|75Rnd_545x39_RPK|7Rnd_45ACP_1911) !=8Rnd_(9x18_Makarov(|SD)|B_(Beneli|Saiga12)_(74Slug|Pellets))
+5  ^Food !FoodCan !=Food(Box[012]|CakeCremeCakeClean|Chips(Chocolate|Mysticales|Sulahoops)|MRE|Nutmix|Pistachio) !=Food(|bacon|beef|chicken|goat|meat|mutton|rabbit|Steak)(Cooked|Raw) !=FoodChips(Chocolate|Mysticales|Sulahoops)Empty
+5  ^FoodCan !=FoodCan(Badguy|BakedBeans|Beef|Boneboy|Corn|Curgon|Demon|Derpy|dy(Anders|Chubby|Legacys|Mintception)|Fraggleos|FrankBeans) !=FoodCan(Griff|Herpy|LongSprats|Orlok|Pasta|Potatoes|Powell|Rus(Corn|Milk|Peas|Pork|Stew|Unlabeled)|Sardines|Tylers|Unlabeled) !=FoodCan(Badguy|Beef|Boneboy|Corn|Curgon|Demon|Derpy|Fraggleos|Griff|Herpy|LongSprats|Orlok|Potatoes|Powell)Empty !=FoodCan(Rus(Corn|Milk|Peas|Pork|Stew|Unlabeled)|Unlabeled|Tylers)Empty
+5  ^DZ_ !DZ_((ALICE|Assault|Patrol|TK_Assault)_Pack_EP1|Backpack_EP1|British_ACU|CivilBackpack_EP1|Czech_Vest_Puch)
+5  ^Melee !=Melee(Baseball(|Bat(|Barbed|Nails))|Crowbar|FishingPole|Flashlight(|Red)|Hatchet|Machete|_Swing)
+5  ^Blueprint !=Blueprint_(Bandage(|_Packaged)|BaseBallBatBarbed|NailedBaseballBat|SepsisBandage(|_Packaged)|crate|Crossbow_Kit|PatrolPack) !=Blueprint_woodensplint !=Blueprint_Trap(BearTrap(Flare|Smoke)|_Cans|TripwireFlare|TripwireGrenade|TripwireSmoke)
+5  ^equip !=equip_(1inch_metal_pipe|2inch_metal_pipe|aa_battery|brick|cable_tie|comfreyleafs|crate|d_battery|duct_tape|empty_barrel) !=equip_(floppywire|gauze|gauzepackaged|hose|hose_clamp|laser|metal_sheet|nails|needle|note|paint|paper_sheet|pvc_box|rag) !=equip_(rail_screws|rope|scrapelectronics|string|weapon_rails|wood_pallet|Crossbow_Kit|feathers|woodensplint|herb_box) !=equip_(garlic_bulb|hobo_fishing_kit|metal_sheet_rusted|slugsinacan|tent_poles|tin_powder)
+5  swing$ !=(BatBarbed|BatNails|Bat|crowbar|Fishing|hatchet|Machete|Melee)_swing
+5  hand !=Hand(Chem(Blue|Green|Red)|Grenade_(east|west)|RoadFlare) !=GrenadeHandTimed(East|West)  
+5  blood !=(whole|)bloodBag(ABNEG|ABPOS|ANEG|APOS|BNEG|BPOS|ONEG|OPOS) !=bloodTester !=emptyBloodBag !=ItemBloodbag
 // Blacklist of illegal weapons (not present in DayZ mod):
- 1=(AK_(107_GL_kobra|107_GL_pso|107_kobra|107_pso|47_S|74_GL|74_GL_kobra)|AKS_(74|74_GOSHAWK|74_NSPU|74_pso|74_UN_kobra|GOLD))
- 1=BAF_(AS50_TWS|ied_v[1234]|L110A1_Aim|L7A2_GPMG|L85A2_RIS_(ACOG|CWS)|L85A2_UGL_(ACOG|Holo|SUSAT)|L86A2_ACOG|LRR_scoped(|_W))
- 1=(A10|IR_Strobe_Marker|IRStrobe|ItemRadio|ksvk|Laserbatteries|Laserdesignator|m107|M136|m16(a4|A4_ACG_GL|A4_GL)|M32_EP1|M60A4_EP1)
- 1=(G36(_C_SD_eotech|a)|M24(_des_EP1|0|0_scoped_EP1|9|9_EP1|9_m145_EP1)|M4(A1_RCO_GL|A3_RCO_GL_EP1|SPR)|m8_carbineGL|MG36)
- 1=(MetisLauncher|Mk_48(|_DES_EP1)|Pecheneg|PK|revolver_gold_EP1|RPG7V|Sa61_EP1|Saiga12K|PMC_(AS50_scoped|ied_v[1234]_muzzle))
- 1=(SCAR_H_(CQC_CCO|LNG_Sniper|LNG_Sniper_SD|STD_EGLM_Spect)|SCAR_L_CQC(|_EGLM_Holo)|UZI_SD_EP1|VSS_vintorez|PMC_AS50_TWS)
- 1=(Map_Debug|EvMoney|HandGrenade|PMC_AS50_TWS_Large)
+5=(AK_(107_kobra|107_pso|47_S|74_GL_kobra)|AKS_(74|74_GOSHAWK|74_NSPU|74_pso|74_UN_kobra|GOLD))
+5=BAF_(AS50_TWS|ied_v[1234]|L110A1_Aim|L7A2_GPMG|L85A2_RIS_(ACOG|CWS)|L85A2_UGL_(ACOG|Holo|SUSAT)|L86A2_ACOG|LRR_scoped(|_W))
+5=(A10|IR_Strobe_Marker|IRStrobe|ItemRadio|ksvk|Laserbatteries|Laserdesignator|m107|M136|M32_EP1|M60A4_EP1)
+5=(G36(_C_SD_eotech|a)|M24(_des_EP1|0|0_scoped_EP1|9|9_EP1|9_m145_EP1)|M4(A1_RCO_GL|A3_RCO_GL_EP1|SPR)|m8_carbineGL|MG36)
+5=(MetisLauncher|Mk_48(|_DES_EP1)|Pecheneg|PK|revolver_gold_EP1|RPG7V|Sa61_EP1|Saiga12K|PMC_(AS50_scoped|ied_v[1234]_muzzle))
+5=(SCAR_H_(CQC_CCO|LNG_Sniper|LNG_Sniper_SD|STD_EGLM_Spect)|SCAR_L_CQC(|_EGLM_Holo)|UZI_SD_EP1|VSS_vintorez|PMC_AS50_TWS)
+5=(Map_Debug|EvMoney|HandGrenade|PMC_AS50_TWS_Large|30Rnd_545x39_AKSD)
 // Black list of illegal Ammo:
- 1=(Chukar|HandGrenade_Stone|MineE?|R_SMAW_HEAA|R_SMAW_HEDP|TimeBomb|100Rnd_556x45_(BetaCMag|M249)|10Rnd_9x39_SP5_VSS)
- 1=(15Rnd_W1866_Pellet|2000Rnd_23mm_AZP85|20Rnd_(556x45_Stanag|9x39_SP5_VSS)|300Rnd_25mm_GAU12|5Rnd_127x108_KSVK)
- 1 TWS
-// log only
-1 ((Fuel|Jerry)can|Wheel)
+5=(Chukar|HandGrenade_Stone|MineE?|R_SMAW_HEAA|R_SMAW_HEDP|TimeBomb|100Rnd_556x45_(BetaCMag|M249)|10Rnd_9x39_SP5_VSS)
+5=(15Rnd_W1866_Pellet|2000Rnd_23mm_AZP85|20Rnd_(556x45_Stanag|9x39_SP5_VSS)|300Rnd_25mm_GAU12|5Rnd_127x108_KSVK)
+5 TWS
+
+//5=AK_107_GL_Kobra // new in 1.8.1
+//5=AK_107_GL_PSO // new in 1.8.1
+//5=AK_74_GL // new in 1.8.1
+//5=BAF_L85A2_RIS_ACOG_GL // new in 1.8.1
+//5=BAF_L85A2_RIS_Holo_GL // new in 1.8.1
+//5=BAF_L85A2_RIS_SUSAT_GL // new in 1.8.1
 //5=Bizon			// new in 1.7.8
 //5=M4A1_Aim_camo	// new in 1.7.8
 //5=BAF_AS50_scoped // temporary enabled during 1.7.6.1 -> 1.7.7

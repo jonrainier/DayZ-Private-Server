@@ -1,6 +1,6 @@
 //new
- 1 !(^DZ_|^z_|^WeaponHolder|Box|^Smoke|^Chem|^._40mm|_DZ$|^Trap) !=(SeaGull|SmallSecondary|HelicopterExplo(Small|Big)|CZ_VestPouch_EP1|R_M136_AT|Stash(Small|Medium)|(|Dome)TentStorage|Wire_cat1) !=(JackDaniels|(Tin|Soda)Can|RoadFlare|WoodenArrowF|zZombie_Base|Land_Fire_DZ|ParachuteWest|Grenade(_|HandTimed)(West|East)) !=(CMflareAmmo|Pipebomb) !=(WildBoar|Rabbit|Sheep|Goat|Hen|Cow0[1234])
- 1 SeaGull //set to its own line so we know which kick we have here with out looking in the logs
+5 !(^DZ_|^z_|^WeaponHolder|Box|^Smoke|^Chem|^._40mm|_DZ$|^Trap) !=(SeaGull|SmallSecondary|HelicopterExplo(Small|Big)|Stash(Small|Medium)(|[1-4])|(|Dome)TentStorage(|[0-4])) !=(CZ_VestPouch_EP1|R_M136_AT|Wire_cat1) !=(JackDaniels|(Tin|Soda)Can|RoadFlare|WoodenArrowF|zZombie_Base|Land_Fire_DZ|ParachuteWest|Grenade(_|HandTimed)(West|East)) !=(CMflareAmmo|Pipebomb) !=(WildBoar|Rabbit|Sheep|Goat|Hen|Cow0[1234]) !=Blood_Trail_DZ
+5 SeaGull //set to its own line so we know which kick we have here with out looking in the logs
 1 ^DZ_ !=DZ_(British_ACU|Czech_Vest_Puch|(TK_Assault_Pack|Patrol_Pack|Assault_Pack|ALICE_Pack|CivilBackpack|Backpack)_EP1)
 1 ^z_ !=z_((|new_)villager[1234]|(|new_)worker[1234]|teacher|hunter|suit[12]|soldier(|_pilot|_heavy)|policeman|doctor|priest)
 1 ^WeaponHolder !=WeaponHolder !=WeaponHolder_(Item(CamoNet|Crowbar|Fuelcan|Hatchet|Jerrycan|Tent)|Melee(BaseBallBat(|Nails)|BatBarbed|Machete)) !=WeaponHolder_Part(Engine|Fueltank|Generic|Glass|VRotor|Wheel)
@@ -8,7 +8,7 @@
 1 ^Smoke !=SmokeShell(|Red|Green|Yellow)
 1 ^Chem !=Chem(Green|Red|Blue)
 1 ^._40mm !=(G_40mm_HE|G_40mm_Smoke|F_40mm_White|F_40mm_Green)
-1 _DZ$ !=(BanditW?1|Camo1|Sniper1|Soldier1|Survivor([123]|W2))_DZ !=(Land_Fire|Sandbag1|Hedgehog|BearTrap|CamoNet|GrenadeHandTimedWest)_DZ
+1 _DZ$ !=(BanditW?1|Camo1|Sniper1|Soldier1|Survivor([123]|W2)|Blood_Trail)_DZ !=(Land_Fire|Sandbag1|Hedgehog|BearTrap|CamoNet|GrenadeHandTimedWest)_DZ
 1 ^Trap Trap(_Cans|Tripwire(Flare|Grenade|Smoke)|BearTrap(Smoke|Flare))
 //5=Soldier1_DZ // soldier skin may be allowed on private hives
 1=(SmallSecondary|HelicopterExplo(Small|Big)) // log explosions (optional)
@@ -18,10 +18,10 @@
 1=(PipeBomb|Grenade(_|HandTimed)(West|East)) // log grenades (optional)
 
 //will remove everything below later once we are kicking for everything but whats filtered
- 1 (AAV|T90|M1A2_TUSK_MG|AV8B2|Mine|ARTY_|SADARM_|LASER_|WP_|_MLRS|_81|_82|_105|_120|_122|_227|_AA|_AP|_80|_57|_85|_100|_125|_30)
- 1 (_ied|_CRV7|_MEEWS|_SMAW|_GRAD|_SABOT|_SH|KORD|DSHKM|MK19|AGS|Nest_|R_PG|R_OG|B_|_YakB|cock|BBarracks|_LHD_|_acr|MASH_|Fort_)
- 1 (BasicWeapons|SpecialWeapons|_uav)
- 1 _AT !=R_M136_AT
+5 (AAV|T90|M1A2_TUSK_MG|AV8B2|Mine|ARTY_|SADARM_|LASER_|WP_|_MLRS|_81|_82|_105|_120|_122|_227|_AA|_AP|_80|_57|_85|_100|_125|_30)
+5 (_ied|_CRV7|_MEEWS|_SMAW|_GRAD|_SABOT|_SH|KORD|DSHKM|MK19|AGS|Nest_|R_PG|R_OG|B_|_YakB|cock|BBarracks|_LHD_|_acr|MASH_|Fort_)
+5 (BasicWeapons|SpecialWeapons|_uav)
+5 _AT !=R_M136_AT
 
 //not in dayz 1.7.7.1
 //Set to 1 to log only for the sake of people using older dayz versions, will set to 5 or remove at a later time.
