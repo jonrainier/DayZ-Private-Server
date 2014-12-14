@@ -1,5 +1,5 @@
 //new
-5 "[+;{(&%]" !"e\+00"
+ 1 "[+;{(&%]" !"e\+00"
 1 "(init|set|add|action|all|attach|ATL|ASL|eye|call|isNil|spawn|exec|cam|group|unit|clear|create|menu|ctrl|display|text|hint|drop)"
 1 "(entit|exit|able|find|format|fuel|damage|join|mission|frame|move|team|terminate|throw)"
 

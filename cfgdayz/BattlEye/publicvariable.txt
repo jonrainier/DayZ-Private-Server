@@ -1,5 +1,5 @@
 //new
-5 !=(remExField|remExFP) !=(PVCDZ_obj_GutBody|drn_AskServerDynamicWeatherEventArgs|BIS_effects_gepv|dayzLoad|achievement|dayzFlies) !=PVDZ_(drg_(RaDrag|RaLW|RLact)|getTickTime|hlt_Bleed|obj_(Delete|Publish|RoadFlare|Destroy)|objgather_Delete|veh_S(ave|F)) !=PVDZ_(plr_(Death|Discorem|Login[12]|LoginRecord|Save)|Server(_changeOwner|_Simulation|StoreVar)|receiveVar|sec_atp|send)
+ 1 !=(remExField|remExFP) !=(PVCDZ_obj_GutBody|drn_AskServerDynamicWeatherEventArgs|BIS_effects_gepv|dayzLoad|achievement|dayzFlies) !=PVDZ_(drg_(RaDrag|RaLW|RLact)|getTickTime|hlt_Bleed|obj_(Delete|Publish|RoadFlare|Destroy)|objgather_Delete|veh_S(ave|F)) !=PVDZ_(plr_(Death|Discorem|Login[12]|LoginRecord|Save)|Server(_changeOwner|_Simulation|StoreVar)|receiveVar|sec_atp) !=PVDZ_(send(|Unconscious))
 
 ////////////////////////// Broadcast PV with EH
 1=PVDZ_drg_RaDrag
@@ -19,7 +19,7 @@
 //1=PVDZ_plr_Login2
 1=PVDZ_plr_LoginRecord
 //1=PVDZ_plr_Save
-//1=PVDZ_sec_atp
+1=PVDZ_sec_atp
 1=PVDZ_send
 1=PVDZ_Server_changeOwner
 //1=PVDZ_Server_Simulation // very verbose
