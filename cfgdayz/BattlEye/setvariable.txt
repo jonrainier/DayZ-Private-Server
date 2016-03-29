@@ -1,10 +1,10 @@
 //new
- 1 '..*' !^(USEC_|NORRN_|BIS_|hit_) !=(totaldmg|actionSet|agentObjectCamps|armed|banditKills|characterID|claimed|combattimeout|deathType|doLoiter|firedDamage) !=(firedHit|freeTarget|headShots|hitRegistered|humanity|humanKills|lastPos|looted|meatHarvested|medForceUpdate|messing|myDest) !=(owner|posForceUpdate|remotetargets|temperature|unconsciousTime|updatePlayer|zombieKills|zombieSpawn) !=(blood(taken|_type)|rh_factor) !^$
- 1 ^USEC_!=USEC_(BloodQty|infected|injured|inPain|isCardiac|isDead|lowBlood|Sepsis)
- 1 ^NORRN_ !=NORRN_(LoadVcl|unconscious|unit_dragged)
- 1 ^bis_ !=bis_greeted(by(evil|languages|people|times)|languages|people|times) !=BIS_noCoreConversations
+5  '..*' !^(USEC_|NORRN_|BIS_|hit_) !=(totaldmg|actionSet|agentObjectCamps|armed|banditKills|characterID|claimed|combattimeout|deathType|doLoiter|firedDamage) !=(firedHit|freeTarget|headShots|hitRegistered|humanity|humanKills|lastPos|looted|meatHarvested|medForceUpdate|messing|myDest) !=(owner|posForceUpdate|remotetargets|temperature|unconsciousTime|updatePlayer|zombieKills|zombieSpawn) !=(blood(taken|_type)|rh_factor) !^$
+5  ^USEC_!=USEC_(BloodQty|infected|injured|inPain|isCardiac|isDead|lowBlood|Sepsis)
+5  ^NORRN_ !=NORRN_(LoadVcl|unconscious|unit_dragged)
+5  ^bis_ !=bis_greeted(by(evil|languages|people|times)|languages|people|times) !=BIS_noCoreConversations
 // "hit_arms" is a 1.8.0.3 dayz mod bug -- should be hit_hands
- 1 ^hit_ !=hit_(Pelvis|aimpoint|lelbow|relbow|RightFoot|LeftFoot|neck|pilot|hands) !=hit_(hands|legs) !=hit_arms !="hit_(elektronika|engine|fueltank|glass[1-6]|karoserie|(mala|velka) vrtule|motor|munice|netrup|palivo)" !="hit_(pravy (predni|zadni) tlumic|[lp] svetlo|sklo predni [lp]|svetlo l|wheel_[12]_[1-4]_steering|wheel_[12]_damper)" !=hit_telo !="hit_\?"
+5  ^hit_ !=hit_(Pelvis|aimpoint|lelbow|relbow|RightFoot|LeftFoot|neck|pilot|hands) !=hit_(hands|legs) !=hit_arms !="hit_(elektronika|engine|fueltank|glass[1-6]|karoserie|(mala|velka) vrtule|motor|munice|netrup|palivo)" !="hit_(pravy (predni|zadni) tlumic|[lp] svetlo|sklo predni [lp]|svetlo l|wheel_[12]_[1-4]_steering|wheel_[12]_damper)" !=hit_telo !="hit_\?"
 1=hit_(Pelvis|aimpoint|lelbow|relbow|RightFoot|LeftFoot|neck|pilot) // Bleeding Limbs (optional)
 1=hit_(hands|legs) // Breaking Limbs (optional)
 ////////////////////////// Damageable vehicle parts (optional):
@@ -45,4 +45,4 @@
 // 1=zombieSpawn // very verbose
 
 /////////////////////////// Illegal chars:
- 1 "[+;,{(|&=:!%[]"
+5  "[+;,{(|&=:!%[]"

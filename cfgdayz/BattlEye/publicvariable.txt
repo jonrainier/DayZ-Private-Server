@@ -1,13 +1,14 @@
 //new
- 1 !=(remExField|remExFP) !=(PVCDZ_obj_GutBody|drn_AskServerDynamicWeatherEventArgs|BIS_effects_gepv|dayzLoad|achievement|dayzFlies) !=PVDZ_(drg_(RaDrag|RaLW|RLact)|getTickTime|hlt_Bleed|obj_(Delete|Publish|RoadFlare|Destroy)|objgather_Delete|veh_S(ave|F)) !=PVDZ_(plr_(Death|Discorem|Login[12]|LoginRecord|Save)|Server(_changeOwner|_Simulation|StoreVar)|receiveVar|sec_atp) !=PVDZ_(send(|Unconscious))
+5  !=(remExField|remExFP) !=(PVCDZ_obj_GutBody|drn_AskServerDynamicWeatherEventArgs|BIS_effects_gepv|dayzLoad|achievement|dayzFlies) !=PVDZ_(drg_(RaDrag|RaLW|RLact)|getTickTime|hlt_Bleed|obj_(Delete|Publish|RoadFlare|Destroy|Fire)|objgather_Delete|veh_S(ave|F)) !=PVDZ_(plr_(Death|Discorem|Login[12]|LoginRecord|Save)|Server(_changeOwner|_Simulation|StoreVar)|receiveVar|sec_atp) !=PVDZ_playerMedicalSync !=PVDZ_(send(|Unconscious)) !=BIS_MPF_logic !=PVDZ_Server_LogIt !=PVDZ_obj_Fire !=PVDZ_Server_process(Code|SetAccessCode)
 
 ////////////////////////// Broadcast PV with EH
 1=PVDZ_drg_RaDrag
 //1=PVDZ_drg_RaLW
 //1=PVDZ_drg_RLact
 1=PVDZ_hlt_Bleed
-//1=PVDZ_obj_Fire // not in 178?
+//1=PVDZ_obj_Fire //not in 178??
 //1=PVDZ_obj_RoadFlare
+1=BIS_effects_gepv
 
 ////////////////////////// Unicast PV ->Server
 1=PVDZ_obj_Destroy
@@ -31,3 +32,6 @@
 ////////////////////////// BIS libs
 //1=remExField
 //1=remExFP
+
+// kick for this
+5=BIS_MPF_logic
