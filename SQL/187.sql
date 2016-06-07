@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Server version:               5.7.11-log - MySQL Community Server (GPL)
 -- Server OS:                    Win64
--- HeidiSQL Version:             9.3.0.5053
+-- HeidiSQL Version:             9.3.0.5086
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -54,7 +54,11 @@ CREATE TABLE IF NOT EXISTS `character_data` (
   KEY `Alive_PlayerUID` (`Alive`,`LastLogin`,`PlayerUID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.character_data: ~0 rows (approximately)
+DELETE FROM `character_data`;
+/*!40000 ALTER TABLE `character_data` DISABLE KEYS */;
+/*!40000 ALTER TABLE `character_data` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.character_dead
 CREATE TABLE IF NOT EXISTS `character_dead` (
   `CharacterID` int(11) NOT NULL AUTO_INCREMENT,
@@ -88,7 +92,11 @@ CREATE TABLE IF NOT EXISTS `character_dead` (
   KEY `Alive_PlayerUID` (`Alive`,`LastLogin`,`PlayerUID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.character_dead: ~0 rows (approximately)
+DELETE FROM `character_dead`;
+/*!40000 ALTER TABLE `character_dead` DISABLE KEYS */;
+/*!40000 ALTER TABLE `character_dead` ENABLE KEYS */;
+
 -- Dumping structure for function hivemind.countVehicles
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `countVehicles`(`inst` int) RETURNS int(11)
@@ -165,7 +173,20 @@ CREATE TABLE IF NOT EXISTS `event_scheduler` (
   `LastRun` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.event_scheduler: ~8 rows (approximately)
+DELETE FROM `event_scheduler`;
+/*!40000 ALTER TABLE `event_scheduler` DISABLE KEYS */;
+INSERT INTO `event_scheduler` (`System`, `LastRun`) VALUES
+	('3hRespawns', NULL),
+	('pCleanup', NULL),
+	('pCleanupBase', NULL),
+	('pMain', NULL),
+	('3hRespawns', NULL),
+	('pCleanup', NULL),
+	('pCleanupBase', NULL),
+	('pMain', NULL);
+/*!40000 ALTER TABLE `event_scheduler` ENABLE KEYS */;
+
 -- Dumping structure for function hivemind.generateUID
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `generateUID`(`inst` int) RETURNS bigint(20)
@@ -218,7 +239,71 @@ CREATE TABLE IF NOT EXISTS `object_classes` (
   PRIMARY KEY (`Classname`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.object_classes: 59 rows
+DELETE FROM `object_classes`;
+/*!40000 ALTER TABLE `object_classes` DISABLE KEYS */;
+INSERT INTO `object_classes` (`Classname`, `Chance`, `MaxNum`, `Damage`, `Type`) VALUES
+	('ATV_CZ_EP1', '0.70', 6, '0.05000', 'atv'),
+	('car_hatchback', '0.73', 3, '0.05000', 'car'),
+	('datsun1_civil_3_open', '0.75', 3, '0.05000', 'car'),
+	('Fishing_Boat', '0.61', 1, '0.05000', 'largeboat'),
+	('S1203_TK_CIV_EP1', '0.69', 1, '0.05000', 'bus'),
+	('tractor', '0.7', 1, '0.05000', 'farmvehicle'),
+	('BAF_Offroad_D', '0.54', 1, '0.05000', 'car'),
+	('UAZ_Unarmed_TK_EP1', '0.7', 2, '0.05000', 'car'),
+	('UH1H_DZ', '0.59', 1, '0.05000', 'helicopter'),
+	('UralCivil2', '0.67', 1, '0.05000', 'truck'),
+	('V3S_Civ', '0.66', 1, '0.05000', 'truck'),
+	('Volha_2_TK_CIV_EP1', '0.71', 2, '0.05000', 'car'),
+	('Ikarus', '0.59', 1, '0.05000', 'bus'),
+	('ATV_US_EP1', '0.70', 5, '0.05000', 'atv'),
+	('BAF_Offroad_W', '0.54', 1, '0.05000', 'car'),
+	('car_sedan', '0.59', 1, '0.05000', 'car'),
+	('hilux1_civil_1_open', '0.59', 1, '0.05000', 'car'),
+	('hilux1_civil_2_covered', '0.59', 1, '0.05000', 'car'),
+	('hilux1_civil_3_open', '0.59', 1, '0.05000', 'car'),
+	('Ikarus_TK_CIV_EP1', '0.59', 1, '0.05000', 'bus'),
+	('LandRover_TK_CIV_EP1', '0.59', 1, '0.05000', 'car'),
+	('MH6J_EP1', '0.32', 1, '0.05000', 'helicopter'),
+	('Old_bike_TK_CIV_EP1', '0.64', 4, '0.05000', 'bike'),
+	('Old_bike_TK_INS_EP1', '0.64', 4, '0.05000', 'bike'),
+	('PBX', '0.59', 1, '0.05000', 'smallboat'),
+	('Skoda', '0.68', 4, '0.05000', 'car'),
+	('SkodaBlue', '0.68', 2, '0.05000', 'car'),
+	('SkodaGreen', '0.68', 1, '0.05000', 'car'),
+	('Smallboat_1', '0.59', 2, '0.05000', 'mediumboat'),
+	('Smallboat_2', '0.59', 2, '0.05000', 'mediumboat'),
+	('SUV_DZ', '0.59', 1, '0.05000', 'car'),
+	('TentStorage', '0.59', 0, '0.05000', 'tent'),
+	('TT650_Ins', '0.72', 2, '0.05000', 'motorcycle'),
+	('TT650_TK_CIV_EP1', '0.72', 1, '0.05000', 'motorcycle'),
+	('TT650_TK_EP1', '0.72', 1, '0.05000', 'motorcycle'),
+	('UAZ_INS', '0.59', 2, '0.05000', 'car'),
+	('UAZ_RU', '0.59', 1, '0.05000', 'car'),
+	('UAZ_Unarmed_TK_CIV_EP1', '0.59', 3, '0.05000', 'car'),
+	('UAZ_Unarmed_UN_EP1', '0.59', 1, '0.05000', 'car'),
+	('UralCivil', '0.59', 1, '0.05000', 'truck'),
+	('Mi17_DZ', '0.49', 1, '0.05000', 'helicopter'),
+	('AN2_DZ', '1', 2, '0.05000', 'plane'),
+	('Hedgehog_DZ', '0', 0, '0', 'Hedgehog'),
+	('Wire_cat1', '0', 0, '0', 'wire'),
+	('Sandbag1_DZ', '0', 0, '0', 'Sandbag'),
+	('AH6X_DZ', '0.48', 1, '0.05000', 'helicopter'),
+	('datsun1_civil_1_open', '0.59', 2, '0.05000', 'car'),
+	('Lada1_TK_CIV_EP1', '0.59', 3, '0.05000', 'car'),
+	('M1030', '0.58', 2, '0.05000', 'motorcycle'),
+	('SUV_TK_EP1', '0.39', 1, '0.05000', 'car'),
+	('VolhaLimo_TK_CIV_EP1', '0.49', 1, '0.05000', 'car'),
+	('Lada2', '0.59', 2, '0', 'car'),
+	('hilux1_civil_3_open_EP1', '0.59', 3, '0', 'car'),
+	('LandRover_CZ_EP1', '0.59', 3, '0', 'car'),
+	('HMMWV_DZ', '0.21', 2, '0', 'car'),
+	('MH6J_DZ', '0.48', 1, '0.05000', 'helicopter'),
+	('StashSmall', '0', 0, '0', 'StashSmall'),
+	('StashMedium', '0', 0, '0', 'StashMedium'),
+	('Pickup_PK_INS', '0.10', 1, '0.42500', 'car');
+/*!40000 ALTER TABLE `object_classes` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.object_data
 CREATE TABLE IF NOT EXISTS `object_data` (
   `ObjectID` int(11) NOT NULL AUTO_INCREMENT,
@@ -239,7 +324,11 @@ CREATE TABLE IF NOT EXISTS `object_data` (
   KEY `Instance` (`Damage`,`Instance`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.object_data: ~0 rows (approximately)
+DELETE FROM `object_data`;
+/*!40000 ALTER TABLE `object_data` DISABLE KEYS */;
+/*!40000 ALTER TABLE `object_data` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.object_spawns
 CREATE TABLE IF NOT EXISTS `object_spawns` (
   `ObjectUID` bigint(20) NOT NULL DEFAULT '0',
@@ -252,7 +341,106 @@ CREATE TABLE IF NOT EXISTS `object_spawns` (
   PRIMARY KEY (`ObjectUID`,`MapID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.object_spawns: 94 rows
+DELETE FROM `object_spawns`;
+/*!40000 ALTER TABLE `object_spawns` DISABLE KEYS */;
+INSERT INTO `object_spawns` (`ObjectUID`, `Classname`, `Worldspace`, `Inventory`, `Hitpoints`, `MapID`, `Last_changed`) VALUES
+	(30728533, 'UAZ_Unarmed_TK_EP1', '[0,[12140.168, 12622.802,0]]', '[[[], []], [["20Rnd_762x51_DMR"], [5]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(26883451, 'UAZ_Unarmed_TK_CIV_EP1', '[0,[6279.4966, 7810.3691,0]]', '[[[], []], [["20Rnd_762x51_DMR"], [5]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(42231659, 'UAZ_Unarmed_UN_EP1', '[45,[6865.2432,2481.6943,0]]', '[[[], []], [["30Rnd_556x45_StanagSD"], [5]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(30507947, 'UAZ_RU', '[157,[3693.0386, 5969.1489,0]]', '[[[], []], [["HandGrenade_west"], [2]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(25844760, 'UAZ_Unarmed_TK_CIV_EP1', '[20,[13264.081,12167.432,0]]', '[[[], []], [["20Rnd_762x51_DMR"], [5]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(37699964, 'UAZ_Unarmed_TK_CIV_EP1', '[223,[4817.6572, 2556.5034,0]]', '[[[], []], [["20Rnd_762x51_DMR"], [5]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(10965544, 'UAZ_Unarmed_TK_EP1', '[337,[8120.3057,9305.4912,0]]', '[[[], []], [["20Rnd_762x51_DMR"], [5]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(41727833, 'ATV_US_EP1', '[337,[3312.2793,11270.755,0]]', '[[[], []], [["ItemTent", "Item5Matchbox"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(75742533, 'ATV_US_EP1', '[50,[3684.0366, 5999.0117,0]]', '[[[], []], [["ItemTent", "Item5Matchbox"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(53529173, 'ATV_CZ_EP1', '[202,[11464.035, 11381.071,0]]', '[[[], []], [["Skin_Camo1_DZ", "ItemCompass"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(40418266, 'ATV_US_EP1', '[253,[11459.299,11386.546,0]]', '[[[], []], [["ItemTent", "Item5Matchbox"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(41503818, 'ATV_CZ_EP1', '[335,[8856.8359,2893.7903,0]]', '[[[], []], [["Skin_Camo1_DZ", "ItemCompass"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(86264294, 'SkodaBlue', '[353,[12869.565,4450.4077,0]]', '[[[], []], [["ItemWatch", "ItemKnife"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(6810018, 'Skoda', '[223,[6288.416, 7834.3521,0]]', '[[["Binocular"], [1]], [[], []], [["CZ_VestPouch_EP1"], [1]]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(75257214, 'SkodaGreen', '[306,[8125.7075,3166.3708,0]]', '[[[], []], [["Item5Matchbox", "ItemMap"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(55856021, 'ATV_US_EP1', '[284,[8854.9082,2891.5762,0]]', '[[[], []], [["ItemTent", "Item5Matchbox"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(53508464, 'TT650_Ins', '[291,[11945.78,9099.3633,0]]', '[[[], []], [["ItemJerrycan"], [1]], [[], []]]', '[["motor",1]]', '', NULL),
+	(99974261, 'TT650_TK_EP1', '[151,[6592.686,2906.8245,0]]', '[[[], []], [["PartGeneric"], [1]], [[], []]]', '[["motor",1]]', '', NULL),
+	(39345918, 'TT650_TK_CIV_EP1', '[372,[8762.8516, 11727.877,0]]', '[[[], []], [["PartWheel"], [1]], [[], []]]', '[["motor",1]]', '', NULL),
+	(96806808, 'TT650_TK_CIV_EP1', '[52,[8713.4893, 7103.0518,0]]', '[[[], []], [["PartWheel"], [1]], [[], []]]', '[["motor",1]]', '', NULL),
+	(65996290, 'Old_bike_TK_CIV_EP1', '[50,[8040.6777, 7086.5356,0]]', '[]', '[]', '', NULL),
+	(39561031, 'Old_bike_TK_CIV_EP1', '[316,[7943.5068,6988.1763,0]]', '[]', '[]', '', NULL),
+	(99816288, 'Old_bike_TK_INS_EP1', '[201,[8070.6958, 3358.7793,0]]', '[]', '[]', '', NULL),
+	(80398351, 'Old_bike_TK_INS_EP1', '[179,[3474.3989, 2562.4915,0]]', '[]', '[]', '', NULL),
+	(2542893, 'Old_bike_TK_INS_EP1', '[236,[1773.9318,2351.6221,0]]', '[]', '[]', '', NULL),
+	(71519415, 'Old_bike_TK_CIV_EP1', '[236,[3699.9189,2474.2119,0]]', '[]', '[]', '', NULL),
+	(49968400, 'Old_bike_TK_CIV_EP1', '[73,[8350.0947, 2480.542,0]]', '[]', '[]', '', NULL),
+	(35283758, 'Old_bike_TK_INS_EP1', '[35,[8345.7227, 2482.6855,0]]', '[]', '[]', '', NULL),
+	(26513596, 'Old_bike_TK_CIV_EP1', '[23,[3203.0916, 3988.6379,0]]', '[]', '[]', '', NULL),
+	(26716708, 'Old_bike_TK_INS_EP1', '[191,[2782.7134,5285.5342,0]]', '[]', '[]', '', NULL),
+	(54042757, 'Old_bike_TK_INS_EP1', '[155,[8680.75,2445.5315,0]]', '[]', '[]', '', NULL),
+	(90063662, 'Old_bike_TK_CIV_EP1', '[155,[12158.999,3468.7563,0]]', '[]', '[]', '', NULL),
+	(88190045, 'Old_bike_TK_INS_EP1', '[250,[11984.01,3835.9231,0]]', '[]', '[]', '', NULL),
+	(70759242, 'Old_bike_TK_CIV_EP1', '[255,[10153.068,2219.3547,0]]', '[]', '[]', '', NULL),
+	(89226080, 'UH1H_DZ2', '[60,[11279.154,4296.0205,0]]', '[[[], []], [["ItemSodaMtngreen","ItemSodaMtngreenEmpty"], [1, 2]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(33852678, 'UH1H_DZ', '[133,[4211.8789,10735.168,0]]', '[[[], []], [["ItemSodaPeppsy"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(1585150, 'UH1H_DZ', '[52,[6874.0503,11432.864,0]]', '[[[], []], [["ItemSodaPeppsy"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(6367723, 'UH1H_DZ', '[58,[10571.7,2220.3101,0.0015564]]', '[[[], []], [["ItemSodaPeppsy"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(27083167, 'UH1H_DZ', '[359,[6377.8799,2757.8899,-0.048767101]]', '[[[], []], [["ItemSodaPeppsy"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(16312671, 'hilux1_civil_3_open', '[344,[2045.3989,7267.4165,0]]', '[[[], []], [["PartFueltank", "PartWheel"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(313856, 'hilux1_civil_3_open', '[133,[8310.9902, 3348.3579,0]]', '[[[], []], [["PartFueltank", "PartWheel"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(52631272, 'hilux1_civil_3_open', '[124,[11309.963, 6646.3989,0]]', '[[[], []], [["PartFueltank", "PartWheel"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(62214795, 'hilux1_civil_3_open', '[6,[11240.744, 5370.6128,0]]', '[[[], []], [["PartFueltank", "PartWheel"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(53180164, 'Ikarus_TK_CIV_EP1', '[230,[3762.5764,8736.1709,0]]', '[[[], []], [["ItemWatch", "ItemSodaPeppsy"], [1, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(79256439, 'Ikarus', '[279,[10628.433,8037.8188,0]]', '[[[], []], [["PartWheel", "ItemSodaPeppsy"], [1, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(36741707, 'Ikarus', '[245,[4580.3203,4515.9282,0]]', '[[[], []], [["PartWheel", "ItemSodaPeppsy"], [1, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(45939219, 'Ikarus_TK_CIV_EP1', '[333,[6040.0923,7806.5439,0]]', '[[[], []], [["ItemWatch", "ItemSodaPeppsy"], [1, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(19470979, 'Ikarus', '[76,[10314.745, 2147.5374,0]]', '[[[], []], [["PartWheel", "ItemSodaPeppsy"], [1, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(59537240, 'Ikarus_TK_CIV_EP1', '[59,[6705.8887, 2991.9358,0]]', '[[[], []], [["ItemWatch", "ItemSodaPeppsy"], [1, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(39273268, 'Tractor', '[195,[9681.8213,8947.2354,0]]', '[[[], []], [["ItemWire", "ItemJerrycan"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(17754622, 'Tractor', '[262,[3825.1318,8941.4873,0]]', '[[[], []], [["ItemWire", "ItemJerrycan"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(70953310, 'Tractor', '[19,[11246.52, 7534.7954,0]]', '[[[], []], [["ItemWire", "ItemJerrycan"], [1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(1502689, 'S1203_TK_CIV_EP1', '[19,[11066.828,7915.2275,0]]', '[[["Makarov"], [1]], [["FoodCanBakedBeans"], [3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(94653519, 'S1203_TK_CIV_EP1', '[352,[12058.555,3577.8667,0]]', '[[["Makarov"], [1]], [["FoodCanBakedBeans"], [3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(68759530, 'S1203_TK_CIV_EP1', '[218,[11940.854, 8872.8389,0]]', '[[["Makarov"], [1]], [["FoodCanBakedBeans"], [3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(59837095, 'S1203_TK_CIV_EP1', '[346,[13386.471,6604.0098,0]]', '[[["Makarov"], [1]], [["FoodCanBakedBeans"], [3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(92906892, 'V3S_Civ', '[178,[13276.482, 6098.4463,0]]', '[[["MR43"], [1]], [["PartEngine"], [1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(85023176, 'UralCivil', '[338,[1890.9952,12417.333,0]]', '[[[], []], [["PartWheel", "ItemToolbox", "ItemTankTrap"], [1, 1, 1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(46395206, 'car_hatchback', '[226,[1975.1283, 9150.0195,0]]', '[[["LeeEnfield"], [1]], [["5x_22_LR_17_HMR"], [3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(76906508, 'car_hatchback', '[315,[7429.4849,5157.8682,0]]', '[[["LeeEnfield"], [1]], [["5x_22_LR_17_HMR"], [3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(45346927, 'Fishing_Boat', '[315,[8317.2676,2348.6055,0]]', '[]', '[["motor",1]]', '', NULL),
+	(96015113, 'Fishing_Boat', '[315,[13222.181,10015.431,0]]', '[]', '[["motor",1]]', '', NULL),
+	(44034787, 'PBX', '[55,[13454.882, 13731.796,0]]', '[[[], []], [["ItemFlashlightRed"], [1]], [["DZ_Backpack_EP1"], [1]]]', '[["motor",1]]', '', NULL),
+	(32128600, 'Smallboat_1', '[245,[14417.589,12886.104,0]]', '[]', '[["motor",1]]', '', NULL),
+	(28538641, 'Smallboat_1', '[268,[13098.13, 8250.8828,0]]', '[]', '[["motor",1]]', '', NULL),
+	(46307410, 'Volha_2_TK_CIV_EP1', '[205,[9731.1514,8937.7998,0]]', '[[[], []], [["ItemSodaPeppsy", "FoodCanFrankBeans"], [3, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(45921132, 'Volha_1_TK_CIV_EP1', '[337,[9715.0352,6522.8286,0]]', '[[[], []], [["ItemSodaPeppsy", "FoodCanBakedBeans"], [3, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(90683431, 'Volha_1_TK_CIV_EP1', '[241,[2614.0862,5079.6357,0]]', '[[[], []], [["ItemSodaPeppsy", "FoodCanBakedBeans"], [3, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(15653764, 'Volha_2_TK_CIV_EP1', '[18,[10827.634, 2701.5688,0]]', '[[[], []], [["ItemSodaPeppsy", "FoodCanFrankBeans"], [3, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(6218531, 'Volha_1_TK_CIV_EP1', '[222,[5165.7231,2375.7642,0]]', '[[[], []], [["ItemSodaPeppsy", "FoodCanBakedBeans"], [3, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(84131366, 'Volha_2_TK_CIV_EP1', '[207,[1740.8503,3622.6938,0]]', '[[[], []], [["ItemSodaPeppsy", "FoodCanFrankBeans"], [3, 3]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(2001240, 'SUV_DZ', '[266,[9157.8408, 11019.819,0]]', '[[[], []], [["Pipebomb"], [1]], [[], []]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(57612106, 'car_sedan', '[222,[12360.468, 10817.882,0]]', '[[[], []], [["ItemFlashlight", "ItemMap"], [1, 1]], [["DZ_ALICE_Pack_EP1"], [1]]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(82056815, 'UH1H_DZ', '[310,[6365.7402,7795.3501,-0.048767101]]', '[[[], []], [["ItemSodaPeppsy"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(37447759, 'UH1H_DZ', '[14,[13308.511,3227.0215,0]]', '[[[], []], [["ItemSodaPeppsy"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(41068355, 'UH1H_DZ', '[265,[7695.0356,3991.2056,0]]', '[[[], []], [["ItemSodaPeppsy"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(92998502, 'UH1H_DZ', '[22,[12009.904,12636.732,0]]', '[[[], []], [["ItemSodaPeppsy"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(41787450, 'AH6X_DZ', '[2,[12010.7,12637.2,0]]', '[[["Binocular"],[1]],[["TrashJackDaniels","FoodCanFrankBeans"],[1,1]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["glass4",1],["glass5",1],["NEtrup",1.1998],["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1],["munice",1.07084],["sklo predni P",1.04818],["sklo predni L",1.11816],["glass6",1.0402]]', '', NULL),
+	(29941745, 'AH6X_DZ', '[113,[6880.2007,11454.291,0]]', '[[["Binocular"],[1]],[["TrashJackDaniels","FoodCanFrankBeans"],[1,1]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["glass4",1],["glass5",1],["NEtrup",1.1998],["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1],["munice",1.07084],["sklo predni P",1.04818],["sklo predni L",1.11816],["glass6",1.0402]]', '', NULL),
+	(24346379, 'Mi17_DZ', '[156,[7660.271,3982.0063,0]]', '[[[],[]],[["ItemSodaMtngreen"],[2]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["glass4",1],["glass5",1],["NEtrup",1.1998],["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1],["munice",1.07084],["sklo predni P",1.04818],["sklo predni L",1.11816],["glass6",1.0402]]', '', NULL),
+	(31906663, 'Mi17_DZ', '[-188,[7220.6538,9116.3428,0]]', '[[[],[]],[["ItemSodaMtngreen"],[2]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["glass4",1],["glass5",1],["NEtrup",1.1998],["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1],["munice",1.07084],["sklo predni P",1.04818],["sklo predni L",1.11816],["glass6",1.0402]]', '', NULL),
+	(86494184, 'Mi17_DZ', '[4,[13584.044,3199.9648,0]]', '[[[],[]],[["ItemSodaMtngreen"],[2]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["glass4",1],["glass5",1],["NEtrup",1.1998],["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1],["munice",1.07084],["sklo predni P",1.04818],["sklo predni L",1.11816],["glass6",1.0402]]', '', NULL),
+	(36750931, 'AN2_DZ', '[252,[4530.52,10785.1,0]]', '[]', '[]', '', NULL),
+	(24272110, 'BAF_Offroad_D', '[162,[3702.04,6044.3101,0]]', '[[[],[]],[["HandGrenade_West","SmokeShell","SmokeShellRed","SmokeShellYellow","SmokeShellGreen","ItemWaterbottle","30Rnd_556x45_Stanag","20Rnd_762x51_DMR","ItemTent"],[10,1,1,1,1,1,20,10,1]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["sklo predni P",1],["sklo predni L",1],["karoserie",1],["wheel_1_4_steering",1],["wheel_2_4_steering",1],["wheel_1_3_steering",1],["wheel_2_3_steering",1],["glass4",1]]', '', NULL),
+	(11107760, 'BAF_Offroad_D', '[141,[11953.279,9107.3896,0]]', '[[[],[]],[["HandGrenade_West","SmokeShell","SmokeShellRed","SmokeShellYellow","SmokeShellGreen","ItemWaterbottle","30Rnd_556x45_Stanag","20Rnd_762x51_DMR","ItemTent"],[10,1,1,1,1,1,20,10,1]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["sklo predni P",1],["sklo predni L",1],["karoserie",1],["wheel_1_4_steering",1],["wheel_2_4_steering",1],["wheel_1_3_steering",1],["wheel_2_3_steering",1],["glass4",1]]', '', NULL),
+	(82722474, 'BAF_Offroad_W', '[71,[3708.5,5999.4199,0]]', '[[[],[]],[["HandGrenade_West","SmokeShell","SmokeShellRed","SmokeShellYellow","SmokeShellGreen","ItemWaterbottle","30Rnd_556x45_Stanag","20Rnd_762x51_DMR","ItemTent"],[10,1,1,1,1,1,20,10,1]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["sklo predni P",1],["sklo predni L",1],["karoserie",1],["wheel_1_4_steering",1],["wheel_2_4_steering",1],["wheel_1_3_steering",1],["wheel_2_3_steering",1],["glass4",1]]', '', NULL),
+	(80289092, 'BAF_Offroad_W', '[322,[7201.5181,3034.3232,0]]', '[[[],[]],[["HandGrenade_West","SmokeShell","SmokeShellRed","SmokeShellYellow","SmokeShellGreen","ItemWaterbottle","30Rnd_556x45_Stanag","20Rnd_762x51_DMR","ItemTent"],[10,1,1,1,1,1,20,10,1]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["sklo predni P",1],["sklo predni L",1],["karoserie",1],["wheel_1_4_steering",1],["wheel_2_4_steering",1],["wheel_1_3_steering",1],["wheel_2_3_steering",1],["glass4",1]]', '', NULL),
+	(53278043, 'MH6J_DZ', '[122,[10137.868,12049.376,-6.1035156e-005]]', '[[[],[]],[["1Rnd_Smoke_M203", "7Rnd_45ACP_1911", "30Rnd_556x45_StanagSD", "200Rnd_556x45_M249", "FoodCanPasta", "15Rnd_W1866_Slug", "5x_22_LR_17_HMR", "15Rnd_9x19_M9SD", "17Rnd_9x19_glock17", "100Rnd_762x51_M240", "6Rnd_45ACP", "8Rnd_9x18_Makarov"],[2,1,1,1,1,1,1,1,1,1,1,1]],[["DZ_Backpack_EP1"],[1]]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(25522943, 'HMMWV_DZ', '[0,[13441.056,12003.912,4.5776367e-005]]', '[[["AK_47_M"],[1]],[["PartWoodPile", "ItemBandage", "HandGrenade_west", "6Rnd_45ACP", "ItemEpinephrine", "8Rnd_B_Beneli_74Slug", "HandChemBlue", "8Rnd_B_Beneli_Pellets", "PartEngine", "17Rnd_9x19_glock17", "ItemTent"],[1,2,1,1,1,1,1,1,1,1,1]],[["DZ_CivilBackpack_EP1"],[1]]]', '[["palivo",1],["motor",1],["karoserie",1],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1]]', '', NULL),
+	(32124125, 'AN2_DZ', '[32,[12492,12515,0]]', '[]', '[]', '', NULL),
+	(12466104, 'Pickup_PK_INS', '[12,[4662.13,10436,-3]]', '[[[],[]],[["HandGrenade_West","ItemWaterbottle","30Rnd_556x45_Stanag"],[5,1,6]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["karoserie",1],["glass4",1]]', '', NULL),
+	(12700771, 'Pickup_PK_INS', '[-24,[7006.14,7717.57,-6]]', '[[[],[]],[["HandGrenade_West","ItemWaterbottle","30Rnd_556x45_Stanag"],[5,1,6]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["karoserie",1],["glass4",1]]', '', NULL),
+	(36533865, 'Offroad_DSHKM_INS', '[363,[5337.62,8656.55,0]]', '[[[],[]],[[],[]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["karoserie",1],["glass4",1]]', '', NULL),
+	(16462967, 'Offroad_DSHKM_INS', '[-169,[4625.61,9675.62,0]]', '[[[],[]],[[],[]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["karoserie",1],["glass4",1]]', '', NULL);
+/*!40000 ALTER TABLE `object_spawns` ENABLE KEYS */;
+
 -- Dumping structure for procedure hivemind.pCleanup
 DELIMITER //
 CREATE DEFINER=`dayz`@`localhost` PROCEDURE `pCleanup`()
@@ -557,7 +745,11 @@ CREATE TABLE IF NOT EXISTS `player_data` (
   KEY `playerUID` (`playerUID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.player_data: ~0 rows (approximately)
+DELETE FROM `player_data`;
+/*!40000 ALTER TABLE `player_data` DISABLE KEYS */;
+/*!40000 ALTER TABLE `player_data` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.player_login
 CREATE TABLE IF NOT EXISTS `player_login` (
   `LoginID` int(11) NOT NULL AUTO_INCREMENT,
@@ -568,7 +760,11 @@ CREATE TABLE IF NOT EXISTS `player_login` (
   PRIMARY KEY (`LoginID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.player_login: ~0 rows (approximately)
+DELETE FROM `player_login`;
+/*!40000 ALTER TABLE `player_login` DISABLE KEYS */;
+/*!40000 ALTER TABLE `player_login` ENABLE KEYS */;
+
 -- Dumping structure for procedure hivemind.pMain
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pMain`(IN `i` INT)
@@ -843,7 +1039,21 @@ CREATE TABLE IF NOT EXISTS `vehicle_groups` (
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='0 Helicopters\r\n1 Military cars (Landrover W, Landrover D, HMMWV)\r\n2 Armed cars\r\n3 Bikes\r\n4 Trucks\r\n5 Buses\r\n6 Civilian cars\r\n7 Civilian cars high end\r\n8 Civilian cars low end\r\n9 AN-2\r\n10 UH-1H';
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.vehicle_groups: 9 rows
+DELETE FROM `vehicle_groups`;
+/*!40000 ALTER TABLE `vehicle_groups` DISABLE KEYS */;
+INSERT INTO `vehicle_groups` (`ID`, `MaxNum`) VALUES
+	(0, 4),
+	(1, 3),
+	(2, 2),
+	(3, 8),
+	(4, 2),
+	(5, 2),
+	(6, 15),
+	(9, 1),
+	(10, 2);
+/*!40000 ALTER TABLE `vehicle_groups` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.vehicle_hitpoints
 CREATE TABLE IF NOT EXISTS `vehicle_hitpoints` (
   `ID` int(11) NOT NULL,
@@ -853,7 +1063,66 @@ CREATE TABLE IF NOT EXISTS `vehicle_hitpoints` (
   PRIMARY KEY (`ID`,`PartName`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.vehicle_hitpoints: 54 rows
+DELETE FROM `vehicle_hitpoints`;
+/*!40000 ALTER TABLE `vehicle_hitpoints` DISABLE KEYS */;
+INSERT INTO `vehicle_hitpoints` (`ID`, `PartName`, `MinDamage`, `MaxDamage`) VALUES
+	(1, 'palivo', 0.6000000000, 0.8000000000),
+	(1, 'motor', 0.6000000000, 0.8000000000),
+	(1, 'karoserie', 0.6000000000, 1.0000000000),
+	(1, 'wheel_1_1_steering', 0.6000000000, 1.0000000000),
+	(1, 'wheel_1_2_steering', 0.6000000000, 1.0000000000),
+	(1, 'wheel_2_1_steering', 0.6000000000, 1.0000000000),
+	(1, 'wheel_2_2_steering', 0.6000000000, 1.0000000000),
+	(2, 'motor', 0.6000000000, 0.8000000000),
+	(3, 'motor', 0.6000000000, 0.8000000000),
+	(3, 'elektronika', 0.6000000000, 1.0000000000),
+	(3, 'mala vrtule', 0.6000000000, 1.0000000000),
+	(3, 'velka vrtule', 0.6000000000, 1.0000000000),
+	(4, 'glass1', 0.6000000000, 1.0000000000),
+	(4, 'glass2', 0.6000000000, 1.0000000000),
+	(4, 'glass3', 0.6000000000, 1.0000000000),
+	(4, 'glass4', 0.6000000000, 1.0000000000),
+	(4, 'glass5', 0.6000000000, 1.0000000000),
+	(4, 'NEtrup', 0.6000000000, 1.0000000000),
+	(4, 'motor', 0.6000000000, 0.8000000000),
+	(4, 'elektronika', 0.6000000000, 1.0000000000),
+	(4, 'mala vrtule', 0.6000000000, 1.0000000000),
+	(4, 'velka vrtule', 0.6000000000, 1.0000000000),
+	(4, 'munice', 0.6000000000, 1.0000000000),
+	(4, 'sklo predni P', 0.6000000000, 1.0000000000),
+	(4, 'sklo predni L', 0.6000000000, 1.0000000000),
+	(4, 'glass6', 0.6000000000, 1.0000000000),
+	(5, 'glass1', 0.6000000000, 1.0000000000),
+	(5, 'glass2', 0.6000000000, 1.0000000000),
+	(5, 'glass3', 0.6000000000, 1.0000000000),
+	(5, 'motor', 0.6000000000, 0.8000000000),
+	(5, 'palivo', 0.6000000000, 0.8000000000),
+	(5, 'wheel_1_1_steering', 0.6000000000, 1.0000000000),
+	(5, 'wheel_1_2_steering', 0.6000000000, 1.0000000000),
+	(5, 'wheel_2_1_steering', 0.6000000000, 1.0000000000),
+	(5, 'wheel_2_2_steering', 0.6000000000, 1.0000000000),
+	(5, 'sklo predni P', 0.6000000000, 1.0000000000),
+	(5, 'sklo predni L', 0.6000000000, 1.0000000000),
+	(5, 'karoserie', 0.6000000000, 1.0000000000),
+	(5, 'wheel_1_4_steering', 0.6000000000, 1.0000000000),
+	(5, 'wheel_2_4_steering', 0.6000000000, 1.0000000000),
+	(5, 'wheel_1_3_steering', 0.6000000000, 1.0000000000),
+	(5, 'wheel_2_3_steering', 0.6000000000, 1.0000000000),
+	(5, 'glass4', 0.6000000000, 1.0000000000),
+	(6, 'glass1', 0.6000000000, 1.0000000000),
+	(6, 'glass2', 0.6000000000, 1.0000000000),
+	(6, 'glass3', 0.6000000000, 1.0000000000),
+	(6, 'motor', 0.6000000000, 0.8000000000),
+	(6, 'palivo', 0.6000000000, 0.8000000000),
+	(6, 'wheel_1_1_steering', 0.6000000000, 1.0000000000),
+	(6, 'wheel_1_2_steering', 0.6000000000, 1.0000000000),
+	(6, 'wheel_2_1_steering', 0.6000000000, 1.0000000000),
+	(6, 'wheel_2_2_steering', 0.6000000000, 1.0000000000),
+	(6, 'karoserie', 0.6000000000, 1.0000000000),
+	(6, 'glass4', 0.6000000000, 1.0000000000);
+/*!40000 ALTER TABLE `vehicle_hitpoints` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.vehicle_inventory
 CREATE TABLE IF NOT EXISTS `vehicle_inventory` (
   `ID` int(11) NOT NULL,
@@ -866,7 +1135,26 @@ CREATE TABLE IF NOT EXISTS `vehicle_inventory` (
   KEY `ObjectUID` (`ID`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.vehicle_inventory: 14 rows
+DELETE FROM `vehicle_inventory`;
+/*!40000 ALTER TABLE `vehicle_inventory` DISABLE KEYS */;
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES
+	(30728533, 'Magazine', '20Rnd_762x51_DMR', 2, 4, 1.0000000000),
+	(30728533, 'Weapon', 'DMR_DZ', 1, 1, 0.0500000000),
+	(26883451, 'Magazine', '20Rnd_762x51_DMR', 1, 3, 1.0000000000),
+	(26883451, 'Magazine', '5x_22_LR_17_HMR', 2, 5, 1.0000000000),
+	(26883451, 'Weapon', 'huntingrifle', 1, 1, 0.8000000000),
+	(42231659, 'Magazine', '30Rnd_556x45_StanagSD', 2, 5, 1.0000000000),
+	(42231659, 'Weapon', 'M4A1_Aim_SD_Camo', 1, 1, 0.2000000000),
+	(30507947, 'Magazine', 'HandGrenade_west', 1, 2, 0.5000000000),
+	(30507947, 'Magazine', '30Rnd_545x39_AK', 2, 4, 1.0000000000),
+	(30507947, 'Weapon', 'AK_74', 1, 1, 0.5000000000),
+	(25844760, 'Magazine', '20Rnd_762x51_DMR', 1, 3, 1.0000000000),
+	(25844760, 'Weapon', 'MeleeMachete', 1, 1, 0.9000000000),
+	(25844760, 'Weapon', 'LeeEnfield', 1, 1, 0.7000000000),
+	(25844760, 'Magazine', '10x_303', 1, 3, 1.0000000000);
+/*!40000 ALTER TABLE `vehicle_inventory` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.vehicle_locations
 CREATE TABLE IF NOT EXISTS `vehicle_locations` (
   `ID` int(11) NOT NULL,
@@ -874,7 +1162,156 @@ CREATE TABLE IF NOT EXISTS `vehicle_locations` (
   PRIMARY KEY (`ID`,`Worldspace`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='0 ATV\r\n1 Motorcycle\r\n2 Huey\r\n4 Mi-17\r\n3 Little bird\r\n5 AN-2\r\n6 Bike\r\n7 Military car (Landrover, HMMWV, Camo UAZs, Armed pickups)\r\n10 Civilian car (including SUV)\r\n11 Bus\r\n12 Tractor\r\n13 Truck\r\n14 Boat';
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.vehicle_locations: 144 rows
+DELETE FROM `vehicle_locations`;
+/*!40000 ALTER TABLE `vehicle_locations` DISABLE KEYS */;
+INSERT INTO `vehicle_locations` (`ID`, `Worldspace`) VALUES
+	(0, '[126,[6556.34,5621.66,0]]'),
+	(0, '[166,[8316.43,7497.42,0]]'),
+	(0, '[202,[11464.035, 11381.071,0]]'),
+	(0, '[253,[11459.299,11386.546,0]]'),
+	(0, '[284,[8854.9082,2891.5762,0]]'),
+	(0, '[300,[9047.57,4480.17,0]]'),
+	(0, '[335,[8856.8359,2893.7903,0]]'),
+	(0, '[337,[3312.2793,11270.755,0]]'),
+	(0, '[50,[3684.0366, 5999.0117,0]]'),
+	(1, '[151,[6592.686,2906.8245,0]]'),
+	(1, '[213,[9515.67,7222.07,0]]'),
+	(1, '[291,[11945.78,9099.3633,0]]'),
+	(1, '[372,[8762.8516, 11727.877,0]]'),
+	(1, '[52,[8713.4893, 7103.0518,0]]'),
+	(2, '[0,[9837.5,3860.2,0]]'),
+	(2, '[133,[4211.8789,10735.168,0]]'),
+	(2, '[156,[7660.271,3982.0063,0]]'),
+	(2, '[172,[7220.6538,9116.3428,0]]'),
+	(2, '[181,[10153.5,12026.8,0]]'),
+	(2, '[2,[12010.7,12637.2,0]]'),
+	(2, '[240,[4871.19,10176.2,0]]'),
+	(2, '[241,[4811.56,9603.77,0]]'),
+	(2, '[310,[6365.7402,7795.3501,0]]'),
+	(2, '[37,[6366.01,2774.14,0]]'),
+	(2, '[60,[11279.154,4296.0205,0]]'),
+	(2, '[62,[13307,3231.95,0]]'),
+	(2, '[67,[10587.8,2188.25,0]]'),
+	(2, '[72,[6886.53,11437.1,0]]'),
+	(2, '[75,[13614.3,3170.86,0]]'),
+	(2, '[80,[6887.07,11436.8,0]]'),
+	(3, '[0,[9837.5,3860.2,0]]'),
+	(3, '[133,[4211.8789,10735.168,0]]'),
+	(3, '[156,[7660.271,3982.0063,0]]'),
+	(3, '[172,[7220.6538,9116.3428,0]]'),
+	(3, '[181,[10153.5,12026.8,0]]'),
+	(3, '[2,[12010.7,12637.2,0]]'),
+	(3, '[240,[4871.19,10176.2,0]]'),
+	(3, '[241,[4811.56,9603.77,0]]'),
+	(3, '[258,[7209.86,6984.74,0]]'),
+	(3, '[278,[11162.7,2509.88,0]]'),
+	(3, '[310,[6365.7402,7795.3501,0]]'),
+	(3, '[37,[6366.01,2774.14,0]]'),
+	(3, '[60,[11279.154,4296.0205,0]]'),
+	(3, '[62,[13307,3231.95,0]]'),
+	(3, '[67,[10587.8,2188.25,0]]'),
+	(3, '[72,[6886.53,11437.1,0]]'),
+	(3, '[75,[13614.3,3170.86,0]]'),
+	(3, '[80,[6887.07,11436.8,0]]'),
+	(4, '[0,[9837.5,3860.2,0]]'),
+	(4, '[133,[4211.8789,10735.168,0]]'),
+	(4, '[156,[7660.271,3982.0063,0]]'),
+	(4, '[172,[7220.6538,9116.3428,0]]'),
+	(4, '[181,[10153.5,12026.8,0]]'),
+	(4, '[241,[4811.56,9603.77,0]]'),
+	(4, '[310,[6365.7402,7795.3501,0]]'),
+	(4, '[37,[6366.01,2774.14,0]]'),
+	(4, '[62,[13307,3231.95,0]]'),
+	(4, '[67,[10587.8,2188.25,0]]'),
+	(4, '[72,[6886.53,11437.1,0]]'),
+	(4, '[75,[13614.3,3170.86,0]]'),
+	(4, '[80,[6887.07,11436.8,0]]'),
+	(5, '[240,[4586.84,10684.6,0]]'),
+	(5, '[252,[4530.52,10785.1,0]]'),
+	(5, '[32,[12492,12515,0]]'),
+	(6, '[140,[12681.2,9467.42,0]]'),
+	(6, '[155,[12158.999,3468.7563,0]]'),
+	(6, '[155,[8680.75,2445.5315,0]]'),
+	(6, '[179,[3474.3989, 2562.4915,0]]'),
+	(6, '[191,[2782.7134,5285.5342,0]]'),
+	(6, '[201,[8070.6958, 3358.7793,0]]'),
+	(6, '[23,[3203.0916, 3988.6379,0]]'),
+	(6, '[236,[1773.9318,2351.6221,0]]'),
+	(6, '[236,[3699.9189,2474.2119,0]]'),
+	(6, '[250,[11984.01,3835.9231,0]]'),
+	(6, '[255,[10153.068,2219.3547,0]]'),
+	(6, '[316,[7943.5068,6988.1763,0]]'),
+	(6, '[322,[3097.96,7812.64,0]]'),
+	(6, '[35,[8345.7227, 2482.6855,0]]'),
+	(6, '[50,[8040.6777, 7086.5356,0]]'),
+	(6, '[73,[8350.0947, 2480.542,0]]'),
+	(7, '[12,[4662.13,10436,0]]'),
+	(7, '[141,[11953.279,9107.3896,0]]'),
+	(7, '[157,[12235.8,9729.92,0]]'),
+	(7, '[157,[3693.0386, 5969.1489,0]]'),
+	(7, '[183,[4752.58,2535.77,0]]'),
+	(7, '[191,[4625.61,9675.62,0]]'),
+	(7, '[203,[3696.23,6013.07,0]]'),
+	(7, '[216,[4765.67,10260.7,0]]'),
+	(7, '[249,[11823.4,12691.1,0]]'),
+	(7, '[272,[6303.11,7833.36,0]]'),
+	(7, '[317,[3770.08,10237,0]]'),
+	(7, '[337,[6344.92,7772.4,0]]'),
+	(7, '[39,[12143.2,12611.2,0]]'),
+	(7, '[58,[3702.54,10182.1,0]]'),
+	(10, '[0,[6279.4966, 7810.3691,0]]'),
+	(10, '[106,[5265.94,5492.29,0]]'),
+	(10, '[116,[13343.8,12919,0]]'),
+	(10, '[124,[11309.963, 6646.3989,0]]'),
+	(10, '[133,[8310.9902, 3348.3579,0]]'),
+	(10, '[137,[2159.68,7907.71,0]]'),
+	(10, '[160,[11940.6,8868.87,0]]'),
+	(10, '[19,[10828.8,2703.23,0]]'),
+	(10, '[19,[11066.828,7915.2275,0]]'),
+	(10, '[194,[9727.78,8932.72,0]]'),
+	(10, '[207,[1740.8503,3622.6938,0]]'),
+	(10, '[222,[5165.7231,2375.7642,0]]'),
+	(10, '[223,[4817.6572, 2556.5034,0]]'),
+	(10, '[223,[6288.416, 7834.3521,0]]'),
+	(10, '[226,[1975.1283, 9150.0195,0]]'),
+	(10, '[228,[12355.3,10821.6,0]]'),
+	(10, '[229,[6914.04,2487.6,0]]'),
+	(10, '[241,[2614.0862,5079.6357,0]]'),
+	(10, '[266,[9157.8408,11019.819,0]]'),
+	(10, '[274,[11604.3,10636.8,0]]'),
+	(10, '[291,[8125.36,3167.17,0]]'),
+	(10, '[298,[9076.47,8016.35,0]]'),
+	(10, '[316,[7427.61,5155.17,0]]'),
+	(10, '[324,[13388,6603.21,0]]'),
+	(10, '[336,[7006.14,7717.57,0]]'),
+	(10, '[337,[8120.3057,9305.4912,0]]'),
+	(10, '[337,[9715.0352,6522.8286,0]]'),
+	(10, '[339,[11243.3,5376.82,0]]'),
+	(10, '[344,[2045.3989,7267.4165,0]]'),
+	(10, '[352,[12058.555,3577.8667,0]]'),
+	(10, '[353,[12869.565,4450.4077,0]]'),
+	(10, '[363,[5337.62,8656.55,0]]'),
+	(11, '[230,[3762.5764,8736.1709,0]]'),
+	(11, '[245,[4580.3203,4515.9282,0]]'),
+	(11, '[279,[10628.433,8037.8188,0]]'),
+	(11, '[333,[6040.0923,7806.5439,0]]'),
+	(11, '[59,[6705.8887, 2991.9358,0]]'),
+	(11, '[76,[10314.745, 2147.5374,0]]'),
+	(12, '[19,[11246.52, 7534.7954,0]]'),
+	(12, '[195,[9681.8213,8947.2354,0]]'),
+	(12, '[220,[3083.52,9202.18,0]]'),
+	(12, '[262,[3825.1318,8941.4873,0]]'),
+	(12, '[95,[1690.58,5095.92,0]]'),
+	(13, '[178,[13276.482, 6098.4463,0]]'),
+	(13, '[338,[1890.9952,12417.333,0]]'),
+	(14, '[245,[14417.589,12886.104,0]]'),
+	(14, '[268,[13098.13, 8250.8828,0]]'),
+	(14, '[315,[13222.181,10015.431,0]]'),
+	(14, '[315,[8317.2676,2348.6055,0]]'),
+	(14, '[55,[13454.882, 13731.796,0]]');
+/*!40000 ALTER TABLE `vehicle_locations` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.vehicle_spawns
 CREATE TABLE IF NOT EXISTS `vehicle_spawns` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -896,7 +1333,50 @@ CREATE TABLE IF NOT EXISTS `vehicle_spawns` (
   UNIQUE KEY `Classname` (`Classname`) USING HASH
 ) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.vehicle_spawns: 38 rows
+DELETE FROM `vehicle_spawns`;
+/*!40000 ALTER TABLE `vehicle_spawns` DISABLE KEYS */;
+INSERT INTO `vehicle_spawns` (`ID`, `Classname`, `Chance`, `MaxNum`, `Location`, `Inventory`, `Hitpoints`, `MinDamage`, `MaxDamage`, `MinFuel`, `MaxFuel`, `MaxWeapons`, `MaxMagazines`, `MaxBackpacks`, `CleanupTime`) VALUES
+	(1, 'UAZ_Unarmed_TK_EP1', 0.7, 2, 7, NULL, 1, 0.2, 0.8, 0, 0.8, 1, 3, 0, 300),
+	(2, 'UAZ_Unarmed_UN_EP1', 0.59, 2, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 1, 0, 0, 300),
+	(3, 'UAZ_RU', 0.59, 1, 7, NULL, 1, 0.2, 0.8, 0, 0.8, 1, 2, 0, 300),
+	(4, 'UAZ_Unarmed_TK_CIV_EP1', 0.59, 3, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(5, 'SkodaBlue', 0.68, 2, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(6, 'Skoda', 0.68, 2, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(7, 'SkodaGreen', 0.68, 2, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(8, 'ATV_US_EP1', 0.7, 6, 0, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 120),
+	(9, 'TT650_Ins', 0.72, 1, 1, NULL, 2, 0.2, 0.8, 0, 0.8, 0, 0, 0, 120),
+	(10, 'TT650_TK_CIV_EP1', 0.72, 3, 1, NULL, 2, 0.2, 0.8, 0, 0.8, 0, 0, 0, 120),
+	(11, 'Old_bike_TK_CIV_EP1', 0.64, 8, 6, NULL, NULL, 0.2, 0.8, 0, 0, 0, 0, 0, 60),
+	(12, 'hilux1_civil_3_open', 0.59, 3, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(13, 'Ikarus', 0.59, 2, 11, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 180),
+	(14, 'Ikarus_TK_CIV_EP1', 0.59, 2, 11, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 180),
+	(15, 'Tractor', 0.7, 3, 12, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 60),
+	(16, 'S1203_TK_CIV_EP1', 0.69, 2, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(17, 'V3S_Civ', 0.66, 2, 13, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(18, 'UralCivil', 0.59, 2, 13, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(19, 'car_hatchback', 0.73, 2, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(20, 'Fishing_Boat', 0.61, 1, 14, NULL, 2, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(21, 'PBX', 0.59, 1, 14, NULL, 2, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(22, 'Smallboat_1', 0.59, 2, 14, NULL, 2, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(23, 'Volha_1_TK_CIV_EP1', 0.71, 3, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(24, 'Volha_2_TK_CIV_EP1', 0.71, 3, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(25, 'SUV_DZ', 0.59, 1, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(26, 'car_sedan', 0.59, 2, 10, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(27, 'UH1H_DZ', 0.59, 2, 2, NULL, 3, 0.2, 0.8, 0, 0.8, 0, 0, 0, 900),
+	(28, 'AH6X_DZ', 0.48, 3, 3, NULL, 4, 0.2, 0.8, 0, 0.8, 0, 0, 0, 900),
+	(29, 'Mi17_DZ', 0.49, 1, 4, NULL, 4, 0.2, 0.8, 0, 0.8, 0, 0, 0, 900),
+	(30, 'AN2_DZ', 0.6, 1, 5, NULL, NULL, 0, 0, 0.1, 0.4, 0, 0, 0, 900),
+	(31, 'BAF_Offroad_D', 0.54, 2, 7, NULL, 5, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(32, 'BAF_Offroad_W', 0.54, 2, 7, NULL, 5, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(33, 'MH6J_DZ', 0.48, 2, 3, NULL, 3, 0.2, 0.8, 0, 0.8, 0, 0, 0, 900),
+	(34, 'HMMWV_DZ', 0.21, 2, 7, NULL, 1, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(35, 'Pickup_PK_INS', 0.1, 2, 7, NULL, 6, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(36, 'Offroad_DSHKM_INS', 0.07, 1, 7, NULL, 6, 0.2, 0.8, 0, 0.8, 0, 0, 0, 300),
+	(37, 'AN2_2_DZ', 1, 1, 5, NULL, NULL, 0, 0, 0.1, 0.4, 0, 0, 0, 900),
+	(38, 'UH1H_2_DZ', 0.3, 1, 2, NULL, 3, 0.2, 0.8, 0, 0.8, 0, 0, 0, 900);
+/*!40000 ALTER TABLE `vehicle_spawns` ENABLE KEYS */;
+
 -- Dumping structure for table hivemind.vehicle_spawns_groups
 CREATE TABLE IF NOT EXISTS `vehicle_spawns_groups` (
   `Spawn_ID` int(11) NOT NULL,
@@ -904,7 +1384,41 @@ CREATE TABLE IF NOT EXISTS `vehicle_spawns_groups` (
   PRIMARY KEY (`Spawn_ID`,`Group_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table hivemind.vehicle_spawns_groups: ~29 rows (approximately)
+DELETE FROM `vehicle_spawns_groups`;
+/*!40000 ALTER TABLE `vehicle_spawns_groups` DISABLE KEYS */;
+INSERT INTO `vehicle_spawns_groups` (`Spawn_ID`, `Group_ID`) VALUES
+	(2, 6),
+	(4, 6),
+	(5, 6),
+	(6, 6),
+	(7, 6),
+	(12, 6),
+	(13, 5),
+	(14, 5),
+	(16, 6),
+	(17, 4),
+	(18, 4),
+	(19, 6),
+	(23, 6),
+	(24, 6),
+	(26, 6),
+	(27, 0),
+	(27, 10),
+	(28, 0),
+	(29, 0),
+	(30, 9),
+	(31, 1),
+	(32, 1),
+	(33, 0),
+	(34, 1),
+	(35, 2),
+	(36, 2),
+	(37, 9),
+	(38, 0),
+	(38, 10);
+/*!40000 ALTER TABLE `vehicle_spawns_groups` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
