@@ -443,7 +443,7 @@ INSERT INTO `object_spawns` (`ObjectUID`, `Classname`, `Worldspace`, `Inventory`
 
 -- Dumping structure for procedure hivemind.pCleanup
 DELIMITER //
-CREATE DEFINER=`dayz`@`localhost` PROCEDURE `pCleanup`()
+CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pCleanup`()
 BEGIN 
 #Last ran
 	update event_scheduler set LastRun = NOW() where System = "pCleanup";
@@ -683,7 +683,7 @@ DELIMITER ;
 
 -- Dumping structure for procedure hivemind.pCleanupOOB
 DELIMITER //
-CREATE DEFINER=`dayz`@`localhost` PROCEDURE `pCleanupOOB`()
+CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pCleanupOOB`()
 BEGIN
 
 	DECLARE intLineCount	INT DEFAULT 0;
@@ -1017,7 +1017,7 @@ DELIMITER ;
 
 -- Dumping structure for function hivemind.rndspawn
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` FUNCTION `rndspawn`(`chance` double) RETURNS tinyint(1)
+CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `rndspawn`(`chance` double) RETURNS tinyint(1)
     DETERMINISTIC
 BEGIN
 
