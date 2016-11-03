@@ -1,4 +1,3 @@
 //new
-//1 ""
-5  !(BanditW?1|Camo1|Soldier1|Sniper1|Survivor([123]|W2))_DZ 
+5 !(BanditW?1|Camo1|Soldier1|Sniper1|Survivor([123]|W2))_DZ !=""
 //5 Soldier1_DZ // Default here is soldier skin allowed. Uncomment the following if soldier skin is disabled

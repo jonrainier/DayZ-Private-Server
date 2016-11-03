@@ -1,5 +1,5 @@
 //new
-5  !=(remExField|remExFP) !=(PVCDZ_obj_GutBody|drn_AskServerDynamicWeatherEventArgs|BIS_effects_gepv|dayzLoad|achievement|dayzFlies) !=PVDZ_(drg_(RaDrag|RaLW|RLact)|getTickTime|hlt_Bleed|obj_(Delete|Publish|RoadFlare|Destroy|Fire)|objgather_Delete|veh_S(ave|F)) !=PVDZ_(plr_(Death|Discorem|Login[12]|LoginRecord|Save)|Server(_changeOwner|_Simulation|StoreVar)|receiveVar|sec_atp) !=PVDZ_playerMedicalSync !=PVDZ_(send(|Unconscious)) !=BIS_MPF_logic !=PVDZ_Server_LogIt !=PVDZ_obj_Fire !=PVDZ_Server_process(Code|SetAccessCode)
+5 !=(remExField|remExFP) !=(PVCDZ_obj_GutBody|drn_AskServerDynamicWeatherEventArgs|BIS_effects_gepv|achievement|dayzFlies) !=PVDZ_(drg_(RaDrag|RaLW|RLact)|getTickTime|hlt_Bleed|obj_(Delete|Publish|RoadFlare|Destroy|Fire)|veh_S(ave|F)) !=PVDZ_(plr_(Death|Login[12]|LoginRecord|Save|SwitchMove)|Server(_Simulation|StoreVar)|sec_atp) !=PVDZ_(playerMedicalSync|object_replace) !=PVDZ_(send(|Unconscious)) !=BIS_MPF_logic !=PVDZ_Server_(buildLock|LogIt) !=PVDZ_Server_process(Code|SetAccessCode) !=PVDZ_objgather_(Delete|Knockdown)
 
 ////////////////////////// Broadcast PV with EH
 1=PVDZ_drg_RaDrag
@@ -15,17 +15,14 @@
 1=PVDZ_obj_Delete
 1=PVDZ_obj_Publish
 1=PVDZ_plr_Death
-1=PVDZ_plr_Discorem
 //1=PVDZ_plr_Login1
 //1=PVDZ_plr_Login2
 1=PVDZ_plr_LoginRecord
 //1=PVDZ_plr_Save
 1=PVDZ_sec_atp
 1=PVDZ_send
-1=PVDZ_Server_changeOwner
 //1=PVDZ_Server_Simulation // very verbose
 //1=PVDZ_veh_Save // very verbose
-1=PVDZ_receiveVar 
 //1=PVDZ_serverStoreVar  // verbose
 1=PVDZ_veh_SF
 

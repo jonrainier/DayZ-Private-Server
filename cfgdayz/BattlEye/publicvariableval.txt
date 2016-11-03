@@ -1,5 +1,6 @@
 //new
-5  "[+;{&%]" !"e\+0" !PVDZ_sec_atp
+5 "[;{&%]"
+5 "\+" !"e\+0"
 1 switchmove !aidlpercmstps !amovpercm !amovpknlmstps !ZombieStandingAttac aidlpknlmstpsnonwnondnon_player_idlesteady01 aidlpknlmstpsnonwnondnon_player_idlesteady02 aidlpknlmstpsnonwnondnon_player_idlesteady03 ainvpknlmstpslaywrfldnon_1 ainvpknlmstpslaywrfldnon_amovpknlmstpsraswrfldnon ainvpknlmstpsnonwnondnon_3 amovpknlmrunsnonwnondf amovpknlmrunsraswrfldf amovpknlmrunsraswrfldfl amovpknlmwlksraswrfldf amovppnemstpsnonwnondnon amovppnemstpsraswrfldnon
 1 switchmove aidlpercmstps !nonwnondnon_player_idlesteady0[1234] !raswrfldnon_aiming0[12] !raswrfldnon_idlesteady0[1234] !raswpstdnon_player_idlesteady0[123] !lowwrfldnon_player_0s
 1 switchmove amovpercm !evasnonwnondf !evasraswrfldf !runslowwrfldf !runsnonwnondf !runsnonwnondfr !runsraswpstdf !runsraswrfldf !runsraswrfldfl !runsraswrfldfr !stpslowwrfldnon !stpslowwrfldnon_gear !stpsnonwnondnon !stpsraswpstdnon_gear !stpsraswrfldnon !stpsraswrfldnon_amovpknlmstpslowwrfldnon !stpsraswrfldnon_gear !wlksnonwnondf !wlksraswrfldf
