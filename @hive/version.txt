@@ -1,1 +1,1 @@
-DayZMod 1.8.8 
+DayZMod Dev 1.8.8-3db0fe8

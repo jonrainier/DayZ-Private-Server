@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.7.11-log - MySQL Community Server (GPL)
--- Server OS:                    Win64
--- HeidiSQL Version:             9.3.0.5119
+-- Server version:               10.1.19-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win32
+-- HeidiSQL Version:             9.4.0.5174
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,7 +11,7 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping structure for event hivemind.3h updates
+-- Dumping structure for event hivemind_189.3h updates
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` EVENT `3h updates` ON SCHEDULE EVERY 3 HOUR STARTS '2015-01-26 03:29:45' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 	update event_scheduler set LastRun = NOW() where System = "3hRespawns";
@@ -21,7 +21,7 @@ CREATE DEFINER=`dayzhivemind`@`%` EVENT `3h updates` ON SCHEDULE EVERY 3 HOUR ST
 END//
 DELIMITER ;
 
--- Dumping structure for table hivemind.character_data
+-- Dumping structure for table hivemind_189.character_data
 CREATE TABLE IF NOT EXISTS `character_data` (
   `CharacterID` int(11) NOT NULL AUTO_INCREMENT,
   `PlayerID` int(11) NOT NULL DEFAULT '1000',
@@ -54,12 +54,12 @@ CREATE TABLE IF NOT EXISTS `character_data` (
   KEY `Alive_PlayerUID` (`Alive`,`LastLogin`,`PlayerUID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table hivemind.character_data: ~0 rows (approximately)
+-- Dumping data for table hivemind_189.character_data: ~0 rows (approximately)
 DELETE FROM `character_data`;
 /*!40000 ALTER TABLE `character_data` DISABLE KEYS */;
 /*!40000 ALTER TABLE `character_data` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.character_dead
+-- Dumping structure for table hivemind_189.character_dead
 CREATE TABLE IF NOT EXISTS `character_dead` (
   `CharacterID` int(11) NOT NULL AUTO_INCREMENT,
   `PlayerID` int(11) NOT NULL DEFAULT '0',
@@ -92,12 +92,12 @@ CREATE TABLE IF NOT EXISTS `character_dead` (
   KEY `Alive_PlayerUID` (`Alive`,`LastLogin`,`PlayerUID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
--- Dumping data for table hivemind.character_dead: ~0 rows (approximately)
+-- Dumping data for table hivemind_189.character_dead: ~0 rows (approximately)
 DELETE FROM `character_dead`;
 /*!40000 ALTER TABLE `character_dead` DISABLE KEYS */;
 /*!40000 ALTER TABLE `character_dead` ENABLE KEYS */;
 
--- Dumping structure for function hivemind.countVehicles
+-- Dumping structure for function hivemind_189.countVehicles
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `countVehicles`(`inst` int) RETURNS int(11)
     READS SQL DATA
@@ -114,7 +114,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for function hivemind.countVehiclesClass
+-- Dumping structure for function hivemind_189.countVehiclesClass
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `countVehiclesClass`(`inst` int,`c` varchar(255)) RETURNS int(11)
     READS SQL DATA
@@ -132,7 +132,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for function hivemind.countVehiclesGroup
+-- Dumping structure for function hivemind_189.countVehiclesGroup
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `countVehiclesGroup`(`inst` int, `groupid` int) RETURNS int(11)
     READS SQL DATA
@@ -167,13 +167,13 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for table hivemind.event_scheduler
+-- Dumping structure for table hivemind_189.event_scheduler
 CREATE TABLE IF NOT EXISTS `event_scheduler` (
   `System` text,
   `LastRun` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table hivemind.event_scheduler: ~8 rows (approximately)
+-- Dumping data for table hivemind_189.event_scheduler: ~8 rows (approximately)
 DELETE FROM `event_scheduler`;
 /*!40000 ALTER TABLE `event_scheduler` DISABLE KEYS */;
 INSERT INTO `event_scheduler` (`System`, `LastRun`) VALUES
@@ -187,7 +187,7 @@ INSERT INTO `event_scheduler` (`System`, `LastRun`) VALUES
 	('pMain', '2016-06-19 09:36:55');
 /*!40000 ALTER TABLE `event_scheduler` ENABLE KEYS */;
 
--- Dumping structure for function hivemind.generateUID
+-- Dumping structure for function hivemind_189.generateUID
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `generateUID`(`inst` int) RETURNS bigint(20)
 BEGIN
@@ -208,7 +208,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for function hivemind.getNumSpawnable
+-- Dumping structure for function hivemind_189.getNumSpawnable
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `getNumSpawnable`(`inst` int, `spawnid` int) RETURNS int(11)
 BEGIN
@@ -229,7 +229,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for table hivemind.object_classes
+-- Dumping structure for table hivemind_189.object_classes
 CREATE TABLE IF NOT EXISTS `object_classes` (
   `Classname` varchar(32) NOT NULL DEFAULT '',
   `Chance` varchar(4) NOT NULL DEFAULT '0',
@@ -239,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `object_classes` (
   PRIMARY KEY (`Classname`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table hivemind.object_classes: 59 rows
+-- Dumping data for table hivemind_189.object_classes: 59 rows
 DELETE FROM `object_classes`;
 /*!40000 ALTER TABLE `object_classes` DISABLE KEYS */;
 INSERT INTO `object_classes` (`Classname`, `Chance`, `MaxNum`, `Damage`, `Type`) VALUES
@@ -304,7 +304,7 @@ INSERT INTO `object_classes` (`Classname`, `Chance`, `MaxNum`, `Damage`, `Type`)
 	('Pickup_PK_INS', '0.10', 1, '0.42500', 'car');
 /*!40000 ALTER TABLE `object_classes` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.object_data
+-- Dumping structure for table hivemind_189.object_data
 CREATE TABLE IF NOT EXISTS `object_data` (
   `ObjectID` int(11) NOT NULL AUTO_INCREMENT,
   `ObjectUID` bigint(20) NOT NULL DEFAULT '0',
@@ -324,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `object_data` (
   KEY `Instance` (`Damage`,`Instance`)
 ) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 
--- Dumping data for table hivemind.object_data: ~53 rows (approximately)
+-- Dumping data for table hivemind_189.object_data: ~53 rows (approximately)
 DELETE FROM `object_data`;
 /*!40000 ALTER TABLE `object_data` DISABLE KEYS */;
 INSERT INTO `object_data` (`ObjectID`, `ObjectUID`, `Instance`, `Classname`, `Datestamp`, `CharacterID`, `Worldspace`, `Inventory`, `Hitpoints`, `Fuel`, `Damage`, `last_updated`) VALUES
@@ -383,7 +383,7 @@ INSERT INTO `object_data` (`ObjectID`, `ObjectUID`, `Instance`, `Classname`, `Da
 	(53, 80656716, 1337, 'TT650_Ins', '2016-06-19 09:36:55', 0, '[291,[11945.78,9099.3633,0]]', '[]', '[["motor",0.7204]]', 0.52464, 0.48343, '2016-06-19 09:36:55');
 /*!40000 ALTER TABLE `object_data` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.object_spawns
+-- Dumping structure for table hivemind_189.object_spawns
 CREATE TABLE IF NOT EXISTS `object_spawns` (
   `ObjectUID` bigint(20) NOT NULL DEFAULT '0',
   `Classname` varchar(32) DEFAULT NULL,
@@ -395,7 +395,7 @@ CREATE TABLE IF NOT EXISTS `object_spawns` (
   PRIMARY KEY (`ObjectUID`,`MapID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table hivemind.object_spawns: 94 rows
+-- Dumping data for table hivemind_189.object_spawns: 94 rows
 DELETE FROM `object_spawns`;
 /*!40000 ALTER TABLE `object_spawns` DISABLE KEYS */;
 INSERT INTO `object_spawns` (`ObjectUID`, `Classname`, `Worldspace`, `Inventory`, `Hitpoints`, `MapID`, `Last_changed`) VALUES
@@ -495,7 +495,7 @@ INSERT INTO `object_spawns` (`ObjectUID`, `Classname`, `Worldspace`, `Inventory`
 	(16462967, 'Offroad_DSHKM_INS', '[-169,[4625.61,9675.62,0]]', '[[[],[]],[[],[]],[[],[]]]', '[["glass1",1],["glass2",1],["glass3",1],["motor",0.8],["palivo",0.8],["wheel_1_1_steering",1],["wheel_1_2_steering",1],["wheel_2_1_steering",1],["wheel_2_2_steering",1],["karoserie",1],["glass4",1]]', '', NULL);
 /*!40000 ALTER TABLE `object_spawns` ENABLE KEYS */;
 
--- Dumping structure for procedure hivemind.pCleanup
+-- Dumping structure for procedure hivemind_189.pCleanup
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pCleanup`()
 BEGIN 
@@ -594,7 +594,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for procedure hivemind.pCleanupBase
+-- Dumping structure for procedure hivemind_189.pCleanupBase
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pCleanupBase`()
 BEGIN
@@ -735,7 +735,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for procedure hivemind.pCleanupOOB
+-- Dumping structure for procedure hivemind_189.pCleanupOOB
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pCleanupOOB`()
 BEGIN
@@ -788,7 +788,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for table hivemind.player_data
+-- Dumping structure for table hivemind_189.player_data
 CREATE TABLE IF NOT EXISTS `player_data` (
   `playerID` int(11) NOT NULL DEFAULT '0',
   `playerUID` varchar(45) NOT NULL DEFAULT '0',
@@ -799,12 +799,12 @@ CREATE TABLE IF NOT EXISTS `player_data` (
   KEY `playerUID` (`playerUID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table hivemind.player_data: ~0 rows (approximately)
+-- Dumping data for table hivemind_189.player_data: ~0 rows (approximately)
 DELETE FROM `player_data`;
 /*!40000 ALTER TABLE `player_data` DISABLE KEYS */;
 /*!40000 ALTER TABLE `player_data` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.player_login
+-- Dumping structure for table hivemind_189.player_login
 CREATE TABLE IF NOT EXISTS `player_login` (
   `LoginID` int(11) NOT NULL AUTO_INCREMENT,
   `PlayerUID` varchar(45) NOT NULL,
@@ -814,12 +814,12 @@ CREATE TABLE IF NOT EXISTS `player_login` (
   PRIMARY KEY (`LoginID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table hivemind.player_login: ~0 rows (approximately)
+-- Dumping data for table hivemind_189.player_login: ~0 rows (approximately)
 DELETE FROM `player_login`;
 /*!40000 ALTER TABLE `player_login` DISABLE KEYS */;
 /*!40000 ALTER TABLE `player_login` ENABLE KEYS */;
 
--- Dumping structure for procedure hivemind.pMain
+-- Dumping structure for procedure hivemind_189.pMain
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pMain`(IN `i` INT)
     MODIFIES SQL DATA
@@ -838,7 +838,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for procedure hivemind.pSpawnVehicles
+-- Dumping structure for procedure hivemind_189.pSpawnVehicles
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pSpawnVehicles`(IN `i` int)
 BEGIN
@@ -947,7 +947,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for function hivemind.randomizeVehicleHitpoints
+-- Dumping structure for function hivemind_189.randomizeVehicleHitpoints
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `randomizeVehicleHitpoints`(`class` varchar(255)) RETURNS varchar(2000) CHARSET latin1
     READS SQL DATA
@@ -974,7 +974,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for function hivemind.randomizeVehicleInventory
+-- Dumping structure for function hivemind_189.randomizeVehicleInventory
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `randomizeVehicleInventory`(`c` varchar(255)) RETURNS longtext CHARSET latin1
     READS SQL DATA
@@ -1069,7 +1069,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for function hivemind.rndspawn
+-- Dumping structure for function hivemind_189.rndspawn
 DELIMITER //
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `rndspawn`(`chance` double) RETURNS tinyint(1)
     DETERMINISTIC
@@ -1086,14 +1086,14 @@ BEGIN
 END//
 DELIMITER ;
 
--- Dumping structure for table hivemind.vehicle_groups
+-- Dumping structure for table hivemind_189.vehicle_groups
 CREATE TABLE IF NOT EXISTS `vehicle_groups` (
   `ID` int(11) NOT NULL,
   `MaxNum` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='0 Helicopters\r\n1 Military cars (Landrover W, Landrover D, HMMWV)\r\n2 Armed cars\r\n3 Bikes\r\n4 Trucks\r\n5 Buses\r\n6 Civilian cars\r\n7 Civilian cars high end\r\n8 Civilian cars low end\r\n9 AN-2\r\n10 UH-1H';
 
--- Dumping data for table hivemind.vehicle_groups: 9 rows
+-- Dumping data for table hivemind_189.vehicle_groups: 9 rows
 DELETE FROM `vehicle_groups`;
 /*!40000 ALTER TABLE `vehicle_groups` DISABLE KEYS */;
 INSERT INTO `vehicle_groups` (`ID`, `MaxNum`) VALUES
@@ -1108,7 +1108,7 @@ INSERT INTO `vehicle_groups` (`ID`, `MaxNum`) VALUES
 	(10, 2);
 /*!40000 ALTER TABLE `vehicle_groups` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.vehicle_hitpoints
+-- Dumping structure for table hivemind_189.vehicle_hitpoints
 CREATE TABLE IF NOT EXISTS `vehicle_hitpoints` (
   `ID` int(11) NOT NULL,
   `PartName` varchar(255) CHARACTER SET latin1 NOT NULL,
@@ -1117,7 +1117,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_hitpoints` (
   PRIMARY KEY (`ID`,`PartName`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table hivemind.vehicle_hitpoints: 54 rows
+-- Dumping data for table hivemind_189.vehicle_hitpoints: 54 rows
 DELETE FROM `vehicle_hitpoints`;
 /*!40000 ALTER TABLE `vehicle_hitpoints` DISABLE KEYS */;
 INSERT INTO `vehicle_hitpoints` (`ID`, `PartName`, `MinDamage`, `MaxDamage`) VALUES
@@ -1177,7 +1177,7 @@ INSERT INTO `vehicle_hitpoints` (`ID`, `PartName`, `MinDamage`, `MaxDamage`) VAL
 	(6, 'glass4', 0.6000000000, 1.0000000000);
 /*!40000 ALTER TABLE `vehicle_hitpoints` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.vehicle_inventory
+-- Dumping structure for table hivemind_189.vehicle_inventory
 CREATE TABLE IF NOT EXISTS `vehicle_inventory` (
   `ID` int(11) NOT NULL,
   `Type` enum('Backpack','Magazine','Weapon') CHARACTER SET latin1 NOT NULL DEFAULT 'Magazine',
@@ -1189,7 +1189,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_inventory` (
   KEY `ObjectUID` (`ID`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table hivemind.vehicle_inventory: 14 rows
+-- Dumping data for table hivemind_189.vehicle_inventory: 14 rows
 DELETE FROM `vehicle_inventory`;
 /*!40000 ALTER TABLE `vehicle_inventory` DISABLE KEYS */;
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES
@@ -1209,14 +1209,14 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 	(25844760, 'Magazine', '10x_303', 1, 3, 1.0000000000);
 /*!40000 ALTER TABLE `vehicle_inventory` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.vehicle_locations
+-- Dumping structure for table hivemind_189.vehicle_locations
 CREATE TABLE IF NOT EXISTS `vehicle_locations` (
   `ID` int(11) NOT NULL,
   `Worldspace` varchar(255) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`ID`,`Worldspace`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='0 ATV\r\n1 Motorcycle\r\n2 Huey\r\n4 Mi-17\r\n3 Little bird\r\n5 AN-2\r\n6 Bike\r\n7 Military car (Landrover, HMMWV, Camo UAZs, Armed pickups)\r\n10 Civilian car (including SUV)\r\n11 Bus\r\n12 Tractor\r\n13 Truck\r\n14 Boat';
 
--- Dumping data for table hivemind.vehicle_locations: 144 rows
+-- Dumping data for table hivemind_189.vehicle_locations: 144 rows
 DELETE FROM `vehicle_locations`;
 /*!40000 ALTER TABLE `vehicle_locations` DISABLE KEYS */;
 INSERT INTO `vehicle_locations` (`ID`, `Worldspace`) VALUES
@@ -1366,7 +1366,7 @@ INSERT INTO `vehicle_locations` (`ID`, `Worldspace`) VALUES
 	(14, '[55,[13454.882, 13731.796,0]]');
 /*!40000 ALTER TABLE `vehicle_locations` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.vehicle_spawns
+-- Dumping structure for table hivemind_189.vehicle_spawns
 CREATE TABLE IF NOT EXISTS `vehicle_spawns` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Classname` varchar(255) NOT NULL,
@@ -1387,7 +1387,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_spawns` (
   UNIQUE KEY `Classname` (`Classname`) USING HASH
 ) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table hivemind.vehicle_spawns: 38 rows
+-- Dumping data for table hivemind_189.vehicle_spawns: 38 rows
 DELETE FROM `vehicle_spawns`;
 /*!40000 ALTER TABLE `vehicle_spawns` DISABLE KEYS */;
 INSERT INTO `vehicle_spawns` (`ID`, `Classname`, `Chance`, `MaxNum`, `Location`, `Inventory`, `Hitpoints`, `MinDamage`, `MaxDamage`, `MinFuel`, `MaxFuel`, `MaxWeapons`, `MaxMagazines`, `MaxBackpacks`, `CleanupTime`) VALUES
@@ -1431,14 +1431,14 @@ INSERT INTO `vehicle_spawns` (`ID`, `Classname`, `Chance`, `MaxNum`, `Location`,
 	(38, 'UH1H_2_DZ', 0.3, 1, 2, NULL, 3, 0.2, 0.8, 0, 0.8, 0, 0, 0, 900);
 /*!40000 ALTER TABLE `vehicle_spawns` ENABLE KEYS */;
 
--- Dumping structure for table hivemind.vehicle_spawns_groups
+-- Dumping structure for table hivemind_189.vehicle_spawns_groups
 CREATE TABLE IF NOT EXISTS `vehicle_spawns_groups` (
   `Spawn_ID` int(11) NOT NULL,
   `Group_ID` int(11) NOT NULL,
   PRIMARY KEY (`Spawn_ID`,`Group_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table hivemind.vehicle_spawns_groups: ~29 rows (approximately)
+-- Dumping data for table hivemind_189.vehicle_spawns_groups: ~29 rows (approximately)
 DELETE FROM `vehicle_spawns_groups`;
 /*!40000 ALTER TABLE `vehicle_spawns_groups` DISABLE KEYS */;
 INSERT INTO `vehicle_spawns_groups` (`Spawn_ID`, `Group_ID`) VALUES

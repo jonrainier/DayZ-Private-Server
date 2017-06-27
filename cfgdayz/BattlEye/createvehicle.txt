@@ -1,7 +1,7 @@
 //new
-5  !(^DZ_|^z_|^WeaponHolder|Box|^Smoke|^Chem|^._40mm|_DZ$|^Trap) !=(SeaGull|SmallSecondary|HelicopterExplo(Small|Big)|Stash(Small|Medium)(|[1-4])|(|Dome)TentStorage(|[0-4])) !=(CZ_VestPouch_EP1|R_M136_AT|Wire_cat1) !=(JackDaniels|(Tin|Soda)Can|RoadFlare|WoodenArrowF|zZombie_Base|ParachuteWest|Grenade(_|HandTimed)(West|East)) !=(CMflareAmmo|Pipebomb) !=(WildBoar|Rabbit|Sheep|Goat|Hen|Cow0[1234]) !=Blood_Trail_DZ !^(Wooden|Metal)Fence !^WoodenGate_ !=(ShantyHouse(|Stage[2-7])|SurvivorWorkshop(|Stage2|[ABC]Stage[345])|WorkBench) !=explosive_bolt
-5  SeaGull //set to its own line so we know which kick we have here with out looking in the logs
-1 ^DZ_ !=DZ_(British_ACU|Czech_Vest_Puch|(TK_Assault_Pack|Patrol_Pack|Assault_Pack|ALICE_Pack|CivilBackpack|Backpack)_EP1)
+5 !(^DZ_|^z_|^WeaponHolder|Box|^Smoke|^Chem|^._40mm|_DZ$|^Trap) !=(SeaGull|SmallSecondary|HelicopterExplo(Small|Big)|Stash(Small|Medium)(|[1-4])|(|Dome)TentStorage(|[0-4])) !=(CZ_VestPouch_EP1|R_M136_AT|Wire_cat1) !=(JackDaniels|(Tin|Soda)Can|RoadFlare|WoodenArrowF|zZombie_Base|ParachuteWest|Grenade(_|HandTimed)(West|East)) !=(CMflareAmmo|Pipebomb) !=(WildBoar|Rabbit|Sheep|Goat|Hen|Cow0[1234]) !=Blood_Trail_DZ !^(Wooden|Metal)Fence !^WoodenGate_ !=(ShantyHouse(|Stage[2-7])|SurvivorWorkshop(|Stage2|[ABC]Stage[345])|WorkBench) !=explosive_bolt !="CraterLong"
+5 SeaGull //set to its own line so we know which kick we have here with out looking in the logs
+1 ^DZ_ !=DZ_(British_ACU|Czech_Vest_Pouch|(TK_Assault_Pack|Patrol_Pack|Assault_Pack|ALICE_Pack|CivilBackpack|Backpack)_EP1)
 1 ^z_ !=z_((|new_)villager[1234]|(|new_)worker[1234]|teacher|hunter|suit[12]|soldier(|_pilot|_heavy)|policeman|doctor|priest)
 1 ^WeaponHolder !=WeaponHolder !WeaponHolder_part !=WeaponHolder_(Item(DomeTent|CamoNet|Crowbar|Fuelcan|Hatchet|Jerrycan|Tent)|Melee(BaseBallBat(|Nails)|BatBarbed|Machete)) !=WeaponHolder_Part(Engine|Fueltank|Generic|Glass|VRotor|Wheel)!=WeaponHolder_Item(WorkBench|MetalSheet|ConcreteBlock|RSJ)
 1 Box !=(MedBox[01]|AmmoBoxSmall_(556|762)|Item(Match|Tool)box|equip_pvc_box|FoodBox[012])
